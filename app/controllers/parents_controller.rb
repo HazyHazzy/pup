@@ -17,4 +17,15 @@ class ParentsController < ApplicationController
     @parent.destroy
   end
 
+  def update
+    @parent = Parent.find(params[:id])
+    @parent.update(parent_params)
+  end
+
+  private
+
+  def parent_params
+    params.require(:parent).permit(:name, :weight, :coat, :description, :gender)
+  end
+
 end
