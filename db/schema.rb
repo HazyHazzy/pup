@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_20_204326) do
+ActiveRecord::Schema.define(version: 2021_03_21_173815) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,14 +43,14 @@ ActiveRecord::Schema.define(version: 2021_03_20_204326) do
   end
 
   create_table "pups", force: :cascade do |t|
-    t.integer "litter_id"
     t.string "coat"
     t.string "gender"
     t.string "weight"
     t.string "name"
-    t.integer "breed_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "breed_id", null: false
+    t.index ["breed_id"], name: "index_pups_on_breed_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -65,4 +65,5 @@ ActiveRecord::Schema.define(version: 2021_03_20_204326) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "pups", "breeds"
 end
