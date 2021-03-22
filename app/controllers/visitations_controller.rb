@@ -1,0 +1,2 @@
+class VisitationsController < ApplicationController
+end
