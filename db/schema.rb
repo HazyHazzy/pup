@@ -10,15 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2021_03_22_194548) do
-=======
-
-
-
 ActiveRecord::Schema.define(version: 2021_03_23_225204) do
-
->>>>>>> e2d7ead410fdcc6231fb09d1a1de38ed8937ce05
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,7 +42,21 @@ ActiveRecord::Schema.define(version: 2021_03_23_225204) do
     t.integer "maximum_weight"
     t.integer "minimum_life_span"
     t.integer "maximum_life_span"
-   end
+  end
+
+  create_table "parents", force: :cascade do |t|
+    t.string "name"
+    t.integer "weight"
+    t.string "coat"
+    t.string "description"
+    t.string "gender"
+    t.bigint "breed_id", null: false
+    t.bigint "breeder_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["breed_id"], name: "index_parents_on_breed_id"
+    t.index ["breeder_id"], name: "index_parents_on_breeder_id"
+  end
 
   create_table "pups", force: :cascade do |t|
     t.string "coat"
@@ -61,34 +67,6 @@ ActiveRecord::Schema.define(version: 2021_03_23_225204) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "breed_id", null: false
     t.index ["breed_id"], name: "index_pups_on_breed_id"
-  end
-
-  create_table "parents", force: :cascade do |t|
-    t.string "name"
-    t.integer "weight"
-    t.string "coat"
-    t.string "description"
-    t.string "gender"
-    t.bigint "breed_id", null: false
-    t.bigint "breeder_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["breed_id"], name: "index_parents_on_breed_id"
-    t.index ["breeder_id"], name: "index_parents_on_breeder_id"
-  end
-
-  create_table "parents", force: :cascade do |t|
-    t.string "name"
-    t.integer "weight"
-    t.string "coat"
-    t.string "description"
-    t.string "gender"
-    t.bigint "breed_id", null: false
-    t.bigint "breeder_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["breed_id"], name: "index_parents_on_breed_id"
-    t.index ["breeder_id"], name: "index_parents_on_breeder_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -103,7 +81,6 @@ ActiveRecord::Schema.define(version: 2021_03_23_225204) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-<<<<<<< HEAD
   create_table "visitations", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "breeder_id", null: false
@@ -116,12 +93,7 @@ ActiveRecord::Schema.define(version: 2021_03_23_225204) do
 
   add_foreign_key "parents", "breeders"
   add_foreign_key "parents", "breeds"
+  add_foreign_key "pups", "breeds"
   add_foreign_key "visitations", "breeders"
   add_foreign_key "visitations", "users"
-=======
-  add_foreign_key "pups", "breeds"
-  add_foreign_key "parents", "breeders"
-  add_foreign_key "parents", "breeds"
-
->>>>>>> e2d7ead410fdcc6231fb09d1a1de38ed8937ce05
 end
