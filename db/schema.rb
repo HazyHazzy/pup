@@ -10,12 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2021_03_21_173815) do
-=======
 
-ActiveRecord::Schema.define(version: 2021_03_20_200607) do
->>>>>>> 68eb771b1b720b54d27bc7661fc18c156fe96bd8
+
+
+ActiveRecord::Schema.define(version: 2021_03_23_225204) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,28 +35,6 @@ ActiveRecord::Schema.define(version: 2021_03_20_200607) do
   create_table "breeds", force: :cascade do |t|
     t.string "name"
     t.string "description"
-<<<<<<< HEAD
-    t.string "life_span"
-    t.string "health_issue"
-    t.string "activity_level"
-    t.string "coats"
-    t.string "family_friendly"
-    t.string "trainability"
-    t.string "weight"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "pups", force: :cascade do |t|
-    t.string "coat"
-    t.string "gender"
-    t.string "weight"
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.bigint "breed_id", null: false
-    t.index ["breed_id"], name: "index_pups_on_breed_id"
-=======
     t.integer "health_issues"
     t.integer "activity_level"
     t.string "coats"
@@ -69,7 +46,31 @@ ActiveRecord::Schema.define(version: 2021_03_20_200607) do
     t.integer "maximum_weight"
     t.integer "minimum_life_span"
     t.integer "maximum_life_span"
->>>>>>> 68eb771b1b720b54d27bc7661fc18c156fe96bd8
+   end
+
+  create_table "pups", force: :cascade do |t|
+    t.string "coat"
+    t.string "gender"
+    t.string "weight"
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "breed_id", null: false
+    t.index ["breed_id"], name: "index_pups_on_breed_id"
+  end
+
+  create_table "parents", force: :cascade do |t|
+    t.string "name"
+    t.integer "weight"
+    t.string "coat"
+    t.string "description"
+    t.string "gender"
+    t.bigint "breed_id", null: false
+    t.bigint "breeder_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["breed_id"], name: "index_parents_on_breed_id"
+    t.index ["breeder_id"], name: "index_parents_on_breeder_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -85,4 +86,7 @@ ActiveRecord::Schema.define(version: 2021_03_20_200607) do
   end
 
   add_foreign_key "pups", "breeds"
+  add_foreign_key "parents", "breeders"
+  add_foreign_key "parents", "breeds"
+
 end
