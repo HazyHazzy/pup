@@ -1,1 +1,21 @@
-<h1>Handle requests</h1>
+<h1>The database of visitation need to be discussed, just put some codes here</h1>
+
+<h1>Make decision for this visitation</h1>
+
+<h2>
+  Visitation request for <%= @visitation.breeder.litter.pup.name %>
+</h2>
+
+<h2>
+  The visitor
+  Name: <%= @visitation.name %>
+  Address: <%= @visitation.address %>
+  Personal Information: <%= @visitation.description %>
+</h2>
+
+<%= simple_form_for [@visitation] do |v| %>
+  <div class="form-group">
+    <%= v.input :status, input_html: { class: "beautiful-dropdown" }, include_hidden: false, prompt: "Choose...", :collection => %w[Pending\ Approve\ Reject] %>
+  </div>
+  <%= v.submit class: 'btn btn-primary' %>
+<% end %>
