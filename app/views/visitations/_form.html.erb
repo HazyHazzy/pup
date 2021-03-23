@@ -1,0 +1,83 @@
+<h1>The database of visitation need to be discussed, just put some codes here</h1>
+
+
+<%= simple_form_for [@visitation] do |f| %>
+  <div class="form-group">
+    <%= f.input :first_name %>
+    <%= f.input :middle_name %>
+    <%= f.input :last_name %>
+    <%= f.input :address %>
+    <%= f.input :city %>
+    <%= f.input :province %>
+    <%= f.input :postal_code %>
+    <%= f.input :age %>
+    <%= f.input :martial_status %>
+    <%= f.input :pet_number %>
+    <%= f.input :description %>
+  </div>
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>
+
+<!-- <h2>These are only for my reference</h2>
+<form>
+  <div class="row">
+    <div class="col">
+      <input type="text" class="form-control" placeholder="First name">
+    </div>
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Middle name">
+    </div>
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Last name">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress">Address</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="Address Line 1">
+  </div>
+  <div class="form-group">
+    <label for="inputAddress2">Address 2</label>
+    <input type="text" class="form-control" id="inputAddress2" placeholder="Address Line 2">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputCity">City</label>
+      <input type="text" class="form-control" id="inputCity" placeholder="City">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputState">State</label>
+      <select id="inputState" class="form-control">
+        <option selected>Choose...</option>
+          <option>Ontario</option>
+          <option>Quebec</option>
+          <option>Manitoba</option>
+          <option>British Columbia</option>
+          <option>Alberta</option>
+      </select>
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputZip">Zip</label>
+      <input type="text" class="form-control" id="inputZip">
+    </div>
+  </div>
+  <div class="form-row" class="inputInformation">
+    <label for="inputInformation">Tell Us A Little About Yourself</label>
+    <div class="form-group col">
+      <input type="text" class="form-control" id="inputCity" placeholder="Age">
+    </div>
+    <div class="form-group col">
+      <input type="text" class="form-control" id="inputCity" placeholder="Marital Status">
+    </div>
+    <div class="form-group col">
+      <input type="text" class="form-control" id="inputCity" placeholder="How many pets you own">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Example textarea</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Why do you want to get a dog?"></textarea>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit Application</button>
+</form> -->
+
+
+
