@@ -49,8 +49,8 @@ end
     gender: Faker::Creature::Dog.gender,
     weight: rand(10..40),
     description: Faker::Creature::Dog.meme_phrase,
-    breeder_id: Breeder.find(1),
-    breed_id: Breed.find(1)
+    breeder_id: Breeder.find(1).id,
+    breed_id: Breed.find(1).id
   )
   parent.save!
 end
@@ -60,20 +60,20 @@ end
     name: Faker::Creature::Dog.name,
     birth_date: Faker::Date.birthday(min_age: 0, max_age: 13),
     stud_id: Parent.find(1).id,
-    mom_id: Parent.find(1),
-    breed_id: Breed.find(1)
+    mom_id: Parent.find(1).id,
+    breeder_id: Breeder.find(1).id
   )
   litter.save
 end
 
-3.times do
-  pup = Pup.new(
-    name: Faker::Creature::Dog.name,
-    coat: Faker::Creature::Dog.coat_length,
-    gender: Faker::Creature::Dog.gender,
-    weight: rand(10..40),
-    litter_id: Litter.find(1),
-    breed_id: Breed.find(1)
-  )
-  pup.save
-end
+# 3.times do
+#   pup = Pup.new(
+#     name: Faker::Creature::Dog.name,
+#     coat: Faker::Creature::Dog.coat_length,
+#     gender: Faker::Creature::Dog.gender,
+#     weight: rand(10..40),
+#     # litter_id: Litter.find(1).id,
+#     breed_id: Breed.find(1).id
+#   )
+#   pup.save
+# end
