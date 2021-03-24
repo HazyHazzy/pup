@@ -24,11 +24,15 @@ class PupsController < ApplicationController
         @pup.destroy
     
         redirect_to pups_path
-      end
+    end
+
+    def show
+        @pup = Pup.find(params[:id])
+    end
 
     private
 
     def pup_params
         params.require(:pup).permit(:name, :coat, :gender, :weight)
-      end
+    end
 end
