@@ -36,7 +36,7 @@ end
     email: Faker::Internet.email,
     phone_number: Faker::PhoneNumber.cell_phone,
     website_url: Faker::Internet.url,
-    about_us: %w[I love dog\ Dog is my friend].sample,
+    about_us: ['I love dog', 'Dog is my friend'].sample,
     user_id: user.id
   )
   breeder.save!
@@ -49,8 +49,8 @@ end
     gender: Faker::Creature::Dog.gender,
     weight: rand(10..40),
     description: Faker::Creature::Dog.meme_phrase,
-    breeder_id: Breeder.find(1).id,
-    breed_id: Breed.find(1).id
+    breeder_id: Breeder.find(rand(1..3)).id,
+    breed_id: Breed.find(rand(1..3)).id
   )
   parent.save!
 end
@@ -59,9 +59,9 @@ end
   litter = Litter.new(
     name: Faker::Creature::Dog.name,
     birth_date: Faker::Date.birthday(min_age: 0, max_age: 13),
-    stud_id: Parent.find(1).id,
-    mom_id: Parent.find(1).id,
-    breeder_id: Breeder.find(1).id
+    stud_id: Parent.find(rand(1..3)).id,
+    mom_id: Parent.find(rand(1..3)).id,
+    breeder_id: Breeder.find(rand(1..3)).id
   )
   litter.save
 end
