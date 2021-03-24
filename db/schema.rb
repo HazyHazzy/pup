@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 2021_03_24_003538) do
 
   # These are extensions that must be enabled in order to support this database
@@ -114,6 +113,8 @@ ActiveRecord::Schema.define(version: 2021_03_24_003538) do
     t.index ["user_id"], name: "index_visitations_on_user_id"
   end
 
+  add_foreign_key "breed_breeders", "breeders"
+  add_foreign_key "breed_breeders", "breeds"
   add_foreign_key "litters", "breeders"
   add_foreign_key "litters", "parents", column: "mom_id"
   add_foreign_key "litters", "parents", column: "stud_id"
