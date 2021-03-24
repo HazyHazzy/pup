@@ -16,17 +16,17 @@ user.save
   breed = Breed.new(
     name: Faker::Creature::Dog.breed,
     description: Faker::Creature::Dog.meme_phrase,
-    health_issues: %w[Yes\ No].sample,
-    activity_level: %w[High\ Medium \ Low].sample,
+    health_issues: [1,2].sample,
+    activity_level: [1,2,3].sample,
     coats: Faker::Creature::Dog.coat_length,
-    family_freindly: %w[Yes\ No].sample,
-    trainability: %w[Yes\ No].sample,
+    family_friendly: [1,2].sample,
+    trainability: [1,2].sample,
     minimum_weight: rand(10..20),
     maximum_weight: rand(27..40),
     minimum_life_span: rand(3..8),
     maximum_life_span: rand(9..13)
   )
-  breed.save
+  breed.save!
 end
 
 3.times do
@@ -39,29 +39,29 @@ end
     about_us: %w[I love dog\ Dog is my friend].sample,
     user_id: user.id
   )
-  breeder.save
+  breeder.save!
 end
 
 3.times do
   parent = Parent.new(
     name: Faker::Creature::Dog.name,
-    coats: Faker::Creature::Dog.coat_length,
+    coat: Faker::Creature::Dog.coat_length,
     gender: Faker::Creature::Dog.gender,
     weight: rand(10..40),
     description: Faker::Creature::Dog.meme_phrase,
-    breeder_id: breeder.id,
-    breed_id: breed.id
+    breeder_id: Breeder.find(1),
+    breed_id: Breed.find(1)
   )
-  parent.save
+  parent.save!
 end
 
 3.times do
   litter = Litter.new(
     name: Faker::Creature::Dog.name,
     birth_date: Faker::Date.birthday(min_age: 0, max_age: 13),
-    stud_id: parent.id,
-    mom_id: parent.id,
-    breed_id: breed.id
+    stud_id: Parent.find(1).id,
+    mom_id: Parent.find(1),
+    breed_id: Breed.find(1)
   )
   litter.save
 end
@@ -69,11 +69,11 @@ end
 3.times do
   pup = Pup.new(
     name: Faker::Creature::Dog.name,
-    coats: Faker::Creature::Dog.coat_length,
+    coat: Faker::Creature::Dog.coat_length,
     gender: Faker::Creature::Dog.gender,
     weight: rand(10..40),
-    litter_id: litter.id,
-    breed_id: breed.id
+    litter_id: Litter.find(1),
+    breed_id: Breed.find(1)
   )
   pup.save
 end
