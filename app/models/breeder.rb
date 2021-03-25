@@ -1,5 +1,7 @@
 class Breeder < ApplicationRecord
-  has_many :litters, :parents, :visitations
+  has_many :litters
+  has_many :parents
+  has_many :visitations
   validates :name, presence: true
   validates :name, uniqueness: true
   validates :city, presence: true
