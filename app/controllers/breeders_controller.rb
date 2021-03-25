@@ -12,8 +12,14 @@ class BreedersController < ApplicationController
   end
 
   def create
-    @breeder = Breeder.new
+    @breeder = Breeder.new(breeder_params)
+
     @breeder.save
+    if @breeder.save
+      redirect_to breeder_path(@breeder)
+    else
+      render :new
+    end
   end
 
   def edit
@@ -23,6 +29,8 @@ class BreedersController < ApplicationController
   def update
     @breeder = Breeder.find(params[:id])
     @breeder.update(breeder_params)
+
+    redirect_to breeder_path(@breeder)
   end
 
   def destroy

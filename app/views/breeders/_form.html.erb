@@ -1,0 +1,11 @@
+<%= simple_form_for [@breeder] do |f| %>
+  <div class="form-group">
+    <%= f.input :name %>
+    <%= f.input :city %>
+    <%= f.input :about_us %>
+    <%= f.input :website_url %>
+    <%= f.input :email %>
+    <%= f.input :phone_number %>
+  </div>
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>
