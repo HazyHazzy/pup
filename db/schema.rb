@@ -15,6 +15,15 @@ ActiveRecord::Schema.define(version: 2021_03_24_003538) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "breed_breeders", force: :cascade do |t|
+    t.bigint "breed_id", null: false
+    t.bigint "breeder_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["breed_id"], name: "index_breed_breeders_on_breed_id"
+    t.index ["breeder_id"], name: "index_breed_breeders_on_breeder_id"
+  end
+
   create_table "breeders", force: :cascade do |t|
     t.string "name"
     t.string "city"
@@ -104,6 +113,8 @@ ActiveRecord::Schema.define(version: 2021_03_24_003538) do
     t.index ["user_id"], name: "index_visitations_on_user_id"
   end
 
+  add_foreign_key "breed_breeders", "breeders"
+  add_foreign_key "breed_breeders", "breeds"
   add_foreign_key "litters", "breeders"
   add_foreign_key "litters", "parents", column: "mom_id"
   add_foreign_key "litters", "parents", column: "stud_id"
