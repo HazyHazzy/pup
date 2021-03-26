@@ -1,33 +1,33 @@
-class PupsController < ApplicationController
+class PuppiesController < ApplicationController
     def new
-        @pup = Pup.new
+        @pup = Puppy.new
     end
 
     def create
-        @pup = Pup.new(pup_params)
+        @pup = Puppy.new(pup_params)
         @pup.save
     end
 
     def edit
-        @pup = Pup.find(params[:id])
+        @pup = Puppy.find(params[:id])
     end
 
     def update
-        @pup = Pup.find(params[:id])
+        @pup = Puppy.find(params[:id])
         @pup.update(pup_params)
-    
+
         redirect_to pup_path(@pup)
     end
 
     def destroy
-        @pup = Pup.find(params[:id])
+        @pup = Puppy.find(params[:id])
         @pup.destroy
-    
+
         redirect_to pups_path
     end
 
     def show
-        @pup = Pup.find(params[:id])
+        @pup = Puppy.find(params[:id])
     end
 
     private
