@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Edit <%= @breed.name %></h1>
+
+  <%= render 'form', breed: @breed %>
+  <hr>
+  <%= link_to breeds_path do %>
+    <i class="fa fa-history"></i> Back to all breed
+  <% end %>
+</div>

@@ -7,9 +7,19 @@ class BreedsController < ApplicationController
     @breed = Breed.new
   end
 
+  def show
+    @breed = Breed.find(params[:id])
+  end
+
   def create
-    @breed = Breed.new
+    @breed = Breed.new(breed_params)
+
     @breed.save
+    if @breed.save
+      redirect_to breed_path(@breed)
+    else
+      render :new
+    end
   end
 
   def edit

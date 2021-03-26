@@ -1,0 +1,16 @@
+<%= simple_form_for [@breed] do |f| %>
+  <div class="form-group">
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :health_issues %>
+    <%= f.input :activity_level %>
+    <%= f.input :coats %>
+    <%= f.input :family_friendly %>
+    <%= f.input :trainability %>
+    <%= f.input :minimum_weight %>
+    <%= f.input :maximum_weight %>
+    <%= f.input :minimum_life_span %>
+    <%= f.input :maximum_life_span %>
+  </div>
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>
