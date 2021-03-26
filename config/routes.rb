@@ -16,7 +16,8 @@ Rails.application.routes.draw do
 #   end
 # end
 
-   get 'requests', to: 'pages#requests'
+  get 'my_requests', to: 'pages#my_requests', as: 'my_requests'
+  get 'my_brand', to: 'pages#my_brand', as: 'my_brand'
     end
   end
 end
