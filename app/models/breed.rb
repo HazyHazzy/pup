@@ -1,4 +1,4 @@
 class Breed < ApplicationRecord
-  has_many :pups
+  has_many :puppies
   has_many :parents
 end

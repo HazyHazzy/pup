@@ -1,38 +1,38 @@
 class PuppiesController < ApplicationController
     def new
-        @pup = Puppy.new
+        @puppy = Puppy.new
     end
 
     def create
-        @pup = Puppy.new(pup_params)
-        @pup.save
+        @puppy = Puppy.new(puppy_params)
+        @puppy.save
     end
 
     def edit
-        @pup = Puppy.find(params[:id])
+        @puppy = Puppy.find(params[:id])
     end
 
     def update
-        @pup = Puppy.find(params[:id])
-        @pup.update(pup_params)
+        @puppy = Puppy.find(params[:id])
+        @puppy.update(puppy_params)
 
-        redirect_to pup_path(@pup)
+        redirect_to puppy_path(@puppy)
     end
 
     def destroy
-        @pup = Puppy.find(params[:id])
-        @pup.destroy
+        @puppy = Puppy.find(params[:id])
+        @puppy.destroy
 
-        redirect_to pups_path
+        redirect_to puppies_path
     end
 
     def show
-        @pup = Puppy.find(params[:id])
+        @puppy = Puppy.find(params[:id])
     end
 
     private
 
     def pup_params
-        params.require(:pup).permit(:name, :coat, :gender, :weight)
+        params.require(:puppy).permit(:name, :coat, :gender, :weight)
     end
 end
