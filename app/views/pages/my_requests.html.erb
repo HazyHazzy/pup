@@ -1,7 +1,9 @@
 <h1>Your visitation requests</h1>
 
 <% @my_visitations.reverse_each do |visitation| %>
-  visitation for <%= visitation.breeder.name %> is <%= visitation.status %>
+<li>
+    visitation for <%= visitation.breeder.name %> is <%= visitation.status %>
+</li>
 <% end %>
 
 </br>

@@ -10,9 +10,10 @@
 <h1>visitation Inquiry</h1>
 <% @my_visitations.reverse_each do |visitation| %>
   <h2>
-    Request for visitation from <% visitation.user_id.fist_name %>
+    Request for visitation from <%= visitation.name %>
   </h2>
-  <p>
-    <%= link_to "look into details", breeder_visitation%>
-  </p>
+  <%= link_to "look into details for this visitation", edit_breeder_visitation_path(visitation.breeder_id, visitation.id), class: "btn btn-outline-dark" %>
 <% end %>
+
+</br>
+<%= link_to "home page", root_path, class: "btn btn-dark popular" %>

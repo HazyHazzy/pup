@@ -14,6 +14,7 @@ class BreedersController < ApplicationController
   def create
     @breeder = Breeder.new(breeder_params)
 
+    @breeder.user = current_user
     @breeder.save
     # raise
     if @breeder.save

@@ -25,30 +25,14 @@ class VisitationsController < ApplicationController
     # raise
   end
 
-  def edit; end
+  def edit
+    @breeder = Breeder.find(params[:breeder_id])
+  end
 
   def update
     @visitation.update(visit_params)
-    redirect_to visitation_path(@visitation)
+    redirect_to my_brand_path
   end
-
-  # def approve
-  #   @breeder = Breeder.find(params[:breeder_id])
-  #   @visitation = Visitation.find_by_id(params[:id])
-  #   if @visitation.user_id == current_user.id
-  #     @visitation.status = "approved"
-  #     @visitation.save
-  #   end
-  # end
-
-  # def decline
-  #   @breeder = Breeder.find(params[:breeder_id])
-  #   @visitation = Visitation.find_by_id(params[:id])
-  #   if @visitation.user_id == current_user.id
-  #     @visitation.status = "decline"
-  #     @visitation.save
-  #   end
-  # end
 
   private
 
