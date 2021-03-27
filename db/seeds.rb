@@ -16,11 +16,11 @@ user.save
   breed = Breed.new(
     name: Faker::Creature::Dog.breed,
     description: Faker::Creature::Dog.meme_phrase,
-    health_issues: [1,2].sample,
-    activity_level: [1,2,3].sample,
+    health_issues: rand(1..5),
+    activity_level: rand(1..5),
     coats: Faker::Creature::Dog.coat_length,
-    family_friendly: [1,2].sample,
-    trainability: [1,2].sample,
+    family_friendly: rand(1..5),
+    trainability: rand(1..5),
     minimum_weight: rand(10..20),
     maximum_weight: rand(27..40),
     minimum_life_span: rand(3..8),
@@ -66,14 +66,14 @@ end
   litter.save
 end
 
-# 3.times do
-#   pup = Pup.new(
-#     name: Faker::Creature::Dog.name,
-#     coat: Faker::Creature::Dog.coat_length,
-#     gender: Faker::Creature::Dog.gender,
-#     weight: rand(10..40),
-#     # litter_id: Litter.find(1).id,
-#     breed_id: Breed.find(1).id
-#   )
-#   pup.save
-# end
+3.times do
+  puppy = Puppy.new(
+    name: Faker::Creature::Dog.name,
+    coat: Faker::Creature::Dog.coat_length,
+    gender: Faker::Creature::Dog.gender,
+    weight: rand(10..40),
+    litter_id: Litter.find(rand(1..3)).id,
+    breed_id: Breed.find(rand(1..3)).id
+  )
+  puppy.save
+end

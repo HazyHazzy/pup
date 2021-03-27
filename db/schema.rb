@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_25_232605) do
+ActiveRecord::Schema.define(version: 2021_03_26_014159) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,15 +80,15 @@ ActiveRecord::Schema.define(version: 2021_03_25_232605) do
     t.index ["breeder_id"], name: "index_parents_on_breeder_id"
   end
 
-  create_table "pups", force: :cascade do |t|
+  create_table "puppies", force: :cascade do |t|
     t.string "name"
     t.string "gender"
     t.string "weight"
     t.string "coat"
     t.bigint "breed_id", null: false
     t.bigint "litter_id", null: false
-    t.index ["breed_id"], name: "index_pups_on_breed_id"
-    t.index ["litter_id"], name: "index_pups_on_litter_id"
+    t.index ["breed_id"], name: "index_puppies_on_breed_id"
+    t.index ["litter_id"], name: "index_puppies_on_litter_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -120,8 +120,8 @@ ActiveRecord::Schema.define(version: 2021_03_25_232605) do
   add_foreign_key "litters", "parents", column: "stud_id"
   add_foreign_key "parents", "breeders"
   add_foreign_key "parents", "breeds"
-  add_foreign_key "pups", "breeds"
-  add_foreign_key "pups", "litters"
+  add_foreign_key "puppies", "breeds"
+  add_foreign_key "puppies", "litters"
   add_foreign_key "visitations", "breeders"
   add_foreign_key "visitations", "users"
 end
