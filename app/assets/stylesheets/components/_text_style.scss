@@ -1,0 +1,38 @@
+//Headers
+h1 {
+  font-family: Fjalla One;
+  font-size: $header-one;
+  color: $font-color;
+}
+
+h2 {
+  font-family: Fjalla One;
+  font-size: $header-two;
+  color: $font-color;
+}
+
+h3 {
+  font-family: Fjalla One;
+  font-size: $header-three;
+  color: $font-color;
+}
+
+h4 {
+  font-family: Fjalla One;
+  font-size: $header-four;
+  color: $font-color;
+}
+
+//paragrahs
+// regular paragraph
+p {
+  font-family: Lato;
+  font-size: $body-regular;
+  color: $font-color;
+}
+
+.p-card {
+  font-family: Lato;
+  font-size: $body-card;
+  color: $font-color;
+}
