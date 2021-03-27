@@ -8,6 +8,10 @@ class ParentsController < ApplicationController
     @parent.save
   end
 
+  def show
+    @parent = Parent.find(params[:id])
+  end
+
   def edit
     @parent = Parent.find(params[:id])
   end
