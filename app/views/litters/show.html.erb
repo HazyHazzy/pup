@@ -1,4 +1,5 @@
 <h2 ><%= @litter.name %></h2>
 
+<%= link_to "See all #{@litter.breeder.name} puppies", breeder_litter_puppies_path(@litter.breeder), class: "btn btn-dark popular" %>
 <%= link_to "See all #{@litter.breeder.name} litters", breeder_litters_path(@litter.breeder), class: "btn btn-dark popular" %>
 <%= link_to "See all breeders", breeders_path, class: "btn btn-dark popular" %>
