@@ -2,6 +2,9 @@
 
 <%= link_to "Edit me", edit_breeder_path, class: "btn btn-outline-danger" %>
 
+<div>
+  <%= link_to "send visitation", new_breeder_visitation_path(@breeder.id), class: "btn btn-danger btn-lg shadow" %>
+</div>
 
 </br>
 <%= link_to "See all #{@breeder.name} litters", breeder_litters_path(@breeder.id), class: "btn btn-dark popular" %>
@@ -11,3 +14,5 @@
 
 </br>
 <%= link_to "See all breeders", breeders_path, class: "btn btn-dark popular" %>
+
+

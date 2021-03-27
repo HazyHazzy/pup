@@ -1,4 +1,18 @@
 <h1>my brand page</h1>
 
-<br>
-<%= link_to "Edit my profile", edit_breeder_path, class: "btn btn-outline-dark" %>
+<%= link_to "create a breeder", new_breeder_path, class: "btn btn-outline-dark" %>
+
+
+<h1>all my litters</h1>
+
+
+
+<h1>visitation Inquiry</h1>
+<% @my_visitations.reverse_each do |visitation| %>
+  <h2>
+    Request for visitation from <% visitation.user_id.fist_name %>
+  </h2>
+  <p>
+    <%= link_to "look into details", breeder_visitation%>
+  </p>
+<% end %>

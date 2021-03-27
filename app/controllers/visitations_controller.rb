@@ -12,16 +12,16 @@ class VisitationsController < ApplicationController
 
   def create
     @breeder = Breeder.find(params[:breeder_id])
-    @visitation = Visitation.new(rental_params)
+    @visitation = Visitation.new(visit_params)
     @visitation.user = current_user
     @visitation.breeder = @breeder
     @visitation.status = "pending"
     @visitation.save
-    # if @visitation.save
-    #   redirect_to rentals_path
-    # else
-    #   render :new
-    # end
+    if @visitation.save
+      redirect_to my_requests_path
+    else
+      render :new
+    end
     # raise
   end
 
@@ -57,6 +57,6 @@ class VisitationsController < ApplicationController
   end
 
   def visit_params
-    params.require(:visitation).permit(:status)
+    params.require(:visitation).permit(:name, :status, :home_address, :email_address, :contact_number, :occupation, :reference, :screening_question)
   end
 end

@@ -4,14 +4,15 @@ class PagesController < ApplicationController
   def home
   end
 
-  def my_breeders
-    @breeders = Breeder.where(user: current_user)
+  def my_brand
+    @breeder = Breeder.where(user: current_user)
     # rentals = @games.map do |game|
     #   game.rentals
     # end
     # @my_rentals = rentals.flatten
     # @my_rentals = current_user.incoming_rentals
   end
+
   def visitation
     @my_visitations = current_user.visitations
   end
