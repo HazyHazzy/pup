@@ -1,0 +1,50 @@
+
+.footer {
+  background: #FBF7FD;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  height: 175px;
+  padding: 0px 50px;
+  color: black;
+  width: 100vw;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  z-index: 1;
+  opacity: .7;
+}
+
+.footer-links {
+  padding-bottom: 10px;
+}
+
+.footer-links a {
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 0px 20px;
+}
+
+.footer-links-icons {
+  padding-bottom: 10px;
+}
+
+.footer-links-icons a {
+  color: black;
+  opacity: 0.15;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 0px 10px;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+}
+.footer .fa-heart {
+  color: #D23333;
+}
+
+
+
