@@ -6,4 +6,5 @@ class Breeder < ApplicationRecord
   validates :name, uniqueness: true
   validates :city, presence: true
   validates :about_us, presence: true
+  has_one_attached :photo
 end

@@ -39,6 +39,6 @@ class BreedersController < ApplicationController
   end
 
   def breeder_params
-    params.require(:breeder).permit(:name, :about_us, :email, :phone_number, :city)
+    params.require(:breeder).permit(:name, :about_us, :email, :phone_number, :city, :photo)
   end
 end

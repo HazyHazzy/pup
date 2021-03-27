@@ -40,6 +40,6 @@ class BreedsController < ApplicationController
     params.require(:breed).permit(:name, :description, :family_friendly,
                                   :trainability, :minimum_weight,
                                   :maximum_weight, :minimum_life_span,
-                                  :maximum_life_span, :health_issues)
+                                  :maximum_life_span, :health_issues, :photo)
   end
 end

@@ -29,7 +29,6 @@ class ParentsController < ApplicationController
   private
 
   def parent_params
-    params.require(:parent).permit(:name, :weight, :coat, :description, :gender)
+    params.require(:parent).permit(:name, :weight, :coat, :description, :gender, :photo)
   end
-
 end
