@@ -12,43 +12,27 @@ class VisitationsController < ApplicationController
 
   def create
     @breeder = Breeder.find(params[:breeder_id])
-    @visitation = Visitation.new(rental_params)
+    @visitation = Visitation.new(visit_params)
     @visitation.user = current_user
     @visitation.breeder = @breeder
     @visitation.status = "pending"
     @visitation.save
-    # if @visitation.save
-    #   redirect_to rentals_path
-    # else
-    #   render :new
-    # end
+    if @visitation.save
+      redirect_to my_requests_path
+    else
+      render :new
+    end
     # raise
   end
 
-  def edit; end
+  def edit
+    @breeder = Breeder.find(params[:breeder_id])
+  end
 
   def update
     @visitation.update(visit_params)
-    redirect_to visitation_path(@visitation)
+    redirect_to my_brand_path
   end
-
-  # def approve
-  #   @breeder = Breeder.find(params[:breeder_id])
-  #   @visitation = Visitation.find_by_id(params[:id])
-  #   if @visitation.user_id == current_user.id
-  #     @visitation.status = "approved"
-  #     @visitation.save
-  #   end
-  # end
-
-  # def decline
-  #   @breeder = Breeder.find(params[:breeder_id])
-  #   @visitation = Visitation.find_by_id(params[:id])
-  #   if @visitation.user_id == current_user.id
-  #     @visitation.status = "decline"
-  #     @visitation.save
-  #   end
-  # end
 
   private
 
@@ -57,6 +41,6 @@ class VisitationsController < ApplicationController
   end
 
   def visit_params
-    params.require(:visitation).permit(:status)
+    params.require(:visitation).permit(:name, :status, :home_address, :email_address, :contact_number, :occupation, :reference, :screening_question)
   end
 end
