@@ -26,6 +26,8 @@ user.save
     minimum_life_span: rand(3..8),
     maximum_life_span: rand(9..13)
   )
+  file = File.open("app/assets/images/breed.jpg")
+  breed.photo.attach(io: file, filename: 'breed.jpg', content_type: 'image/jpg')
   breed.save!
 end
 
@@ -39,6 +41,8 @@ end
     about_us: ['I love dog', 'Dog is my friend'].sample,
     user_id: user.id
   )
+  file = File.open("app/assets/images/breeder.jpg")
+  breeder.photo.attach(io: file, filename: 'breeder.jpg', content_type: 'image/jpg')
   breeder.save!
 end
 
@@ -52,6 +56,8 @@ end
     breeder_id: Breeder.find(rand(1..3)).id,
     breed_id: Breed.find(rand(1..3)).id
   )
+  file = File.open("app/assets/images/parent.jpg")
+  parent.photo.attach(io: file, filename: 'parent.jpg', content_type: 'image/jpg')
   parent.save!
 end
 
@@ -63,6 +69,8 @@ end
     mom_id: Parent.find(rand(1..3)).id,
     breeder_id: Breeder.find(rand(1..3)).id
   )
+  file = File.open("app/assets/images/litter.jpg")
+  litter.photo.attach(io: file, filename: 'litter.jpg', content_type: 'image/jpg')
   litter.save
 end
 
@@ -75,5 +83,7 @@ end
     litter_id: Litter.find(rand(1..3)).id,
     breed_id: Breed.find(rand(1..3)).id
   )
+  file = File.open("app/assets/images/puppy.jpg")
+  puppy.photo.attach(io: file, filename: 'puppy.jpg', content_type: 'image/jpg')
   puppy.save
 end
