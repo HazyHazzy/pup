@@ -3,3 +3,5 @@
 <p>Gender: <%= @puppy.gender %></p>
 <p>Weight: <%= @puppy.weight %></p>
 <p>Coat: <%= @puppy.coat %></p>
+
+<%= link_to "back to puppies", breeder_litter_puppies_path(@puppy.litter, @puppy.litter.breeder), class: "btn btn-outline-dark" %>
