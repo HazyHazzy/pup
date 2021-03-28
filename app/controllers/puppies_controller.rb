@@ -24,6 +24,7 @@ class PuppiesController < ApplicationController
 
     def edit
         @puppy = Puppy.find(params[:id])
+        @breeds = Breed.all
     end
 
     def update
