@@ -4,12 +4,21 @@ class PuppiesController < ApplicationController
     end
     
     def new
+        @litter = Litter.find(params[:litter_id])
+        @breeds = Breed.all
         @puppy = Puppy.new
     end
 
     def create
+        @litter = Litter.find(params[:litter_id])
         @puppy = Puppy.new(puppy_params)
-        @puppy.save
+        @puppy.litter = @litter
+        
+        if @puppy.save
+            redirect_to puppy_path(@puppy)
+          else
+            render :new
+        end
     end
 
     def edit
@@ -36,7 +45,7 @@ class PuppiesController < ApplicationController
 
     private
 
-    def pup_params
-        params.require(:puppy).permit(:name, :coat, :gender, :weight)
+    def puppy_params
+        params.require(:puppy).permit(:name, :coat, :gender, :weight, :breed_id)
     end
 end

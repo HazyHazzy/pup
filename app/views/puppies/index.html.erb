@@ -1,10 +1,7 @@
 <h1>All Puppies</h1>
 
-<% @Puppies.each do |puppy| %>
+<% @puppies.each do |puppy| %>
   <h2><%= link_to puppy.name, puppy_path(puppy) %></h2>
 <% end %>
 
-
-<%= link_to "create a puppy", new_breeder_litter_puppy_path, class: "btn btn-outline-dark" %>
-</br>
 <%= link_to "home page", root_path, class: "btn btn-dark popular" %>
