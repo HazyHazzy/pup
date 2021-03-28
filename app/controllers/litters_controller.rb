@@ -37,7 +37,7 @@ class LittersController < ApplicationController
         @litter = Litter.find(params[:id])
         @litter.destroy
     
-        redirect_to litters_path
+        redirect_to breeder_litters_path(@litter.breeder)
     end
 
     def show

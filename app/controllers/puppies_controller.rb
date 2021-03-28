@@ -38,7 +38,7 @@ class PuppiesController < ApplicationController
         @puppy = Puppy.find(params[:id])
         @puppy.destroy
 
-        redirect_to puppies_path
+        redirect_to breeder_litter_puppies_path(@puppy.litter.breeder, @puppy.litter)
     end
 
     def show
