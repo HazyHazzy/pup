@@ -1,5 +1,6 @@
 class PuppiesController < ApplicationController
     def index
+        @litter = Litter.find(params[:litter_id])
         @puppies = Puppy.all
     end
     
