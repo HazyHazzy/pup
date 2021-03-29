@@ -1,11 +1,16 @@
-<h1>All breeds</h1>
+<div class="container">
+  <h1>All breeds</h1>
 
-<% @breeds.reverse_each do |breed|%>
-  <h2><%= link_to breed.name, breed_path(breed.id) %></h2>
-<% end %>
+  <% @breeds.reverse_each do |breed|%>
+    <h2><%= link_to breed.name, breed_path(breed.id) %></h2>
+  <% end %>
 
-<%= link_to "create a breed", new_breed_path, class: "btn btn-outline-dark" %>
+  <br>
+  <br>
 
+  <%= link_to "Create a breed", new_breed_path, class: "btn-primary-pup" %>
 
-</br>
-<%= link_to "home page", root_path, class: "btn btn-dark popular" %>
+  <br>
+  <br>
+  <%= link_to "home page", root_path, class: "btn-secondary-pup" %>
+</div>
