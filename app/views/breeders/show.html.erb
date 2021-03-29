@@ -2,6 +2,9 @@
 <p><%= @breeder.about_us %></p>
 <%= link_to "Edit me", edit_breeder_path, class: "btn btn-outline-danger" %>
 
+<div>
+  <%= link_to "send visitation", new_breeder_visitation_path(@breeder.id), class: "btn btn-danger btn-lg shadow" %>
+</div>
 
 </br>
 <%= link_to "All of #{@breeder.name} litters", breeder_litters_path(@breeder.id), class: "btn-primary-pup" %>
@@ -10,4 +13,10 @@
 <%= link_to "See all #{@breeder.name} parents", breeder_parents_path(@breeder.id), class: "btn btn-dark popular" %> -->
 
 </br>
+<<<<<<< HEAD
 <%= link_to "See all breeders", breeders_path, class: "btn-secondary-pup" %>
+=======
+<%= link_to "See all breeders", breeders_path, class: "btn btn-dark popular" %>
+
+
+>>>>>>> 726943b8d6ca0afe6b4f958c08294a102f1f76a1

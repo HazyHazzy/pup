@@ -14,11 +14,15 @@ class BreedersController < ApplicationController
   def create
     @breeder = Breeder.new(breeder_params)
 
+    @breeder.user = current_user
     @breeder.save
+    # raise
     if @breeder.save
       redirect_to breeder_path(@breeder)
+      # raise
     else
       render :new
+      # raise
     end
   end
 
@@ -39,6 +43,6 @@ class BreedersController < ApplicationController
   end
 
   def breeder_params
-    params.require(:breeder).permit(:name, :about_us, :email, :phone_number, :city)
+    params.require(:breeder).permit(:name, :about_us, :email, :phone_number, :city, :website_url)
   end
 end
