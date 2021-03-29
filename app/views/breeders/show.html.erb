@@ -1,13 +1,13 @@
 <h2 ><%= @breeder.name %></h2>
-
+<p><%= @breeder.about_us %></p>
 <%= link_to "Edit me", edit_breeder_path, class: "btn btn-outline-danger" %>
 
 
 </br>
-<%= link_to "See all #{@breeder.name} litters", breeder_litters_path(@breeder.id), class: "btn btn-dark popular" %>
+<%= link_to "All of #{@breeder.name} litters", breeder_litters_path(@breeder.id), class: "btn-primary-pup" %>
 
 <!-- </br>
 <%= link_to "See all #{@breeder.name} parents", breeder_parents_path(@breeder.id), class: "btn btn-dark popular" %> -->
 
 </br>
-<%= link_to "See all breeders", breeders_path, class: "btn btn-dark popular" %>
+<%= link_to "See all breeders", breeders_path, class: "btn-secondary-pup" %>
