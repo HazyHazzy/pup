@@ -1,13 +1,22 @@
-<h2 ><%= @breeder.name %></h2>
 
-<%= link_to "Edit me", edit_breeder_path, class: "btn btn-outline-danger" %>
+<h1><%= @breeder.name %></h1>
 
+<h2>About Us</h2>
+<%= @breeder.about_us %>
 
-</br>
-<%= link_to "See all #{@breeder.name} litters", breeder_litters_path(@breeder.id), class: "btn btn-dark popular" %>
+<h3>Parents</h3>
+<% @breeder.parents.reverse_each do |parent|%>
+  <h2><%= link_to parent.name, breeder_parent_path(@breeder.id, parent.id) %></h2>
+<% end %>
 
-<!-- </br>
-<%= link_to "See all #{@breeder.name} parents", breeder_parents_path(@breeder.id), class: "btn btn-dark popular" %> -->
+<h3>Litters</h3>
+<% @breeder.litters.reverse_each do |litter|%>
+  <h2><%= link_to litter.name, breeder_litter_path(@breeder.id, litter.id) %></h2>
+<% end %>
 
-</br>
-<%= link_to "See all breeders", breeders_path, class: "btn btn-dark popular" %>
+<div>
+  <%= link_to "send visitation", new_breeder_visitation_path(@breeder.id), class: "btn btn-danger btn-lg shadow" %>
+</div>
+
+<%= link_to "See all breeders", breeders_path, class: "btn-secondary-pup" %>
+
