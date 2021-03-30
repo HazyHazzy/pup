@@ -9,7 +9,7 @@
 
 <%= simple_form_for [@breeder, @visitation] do |v| %>
   <div class="form-group">
-    <%= v.input :status, input_html: { class: "beautiful-dropdown" }, include_hidden: false, prompt: "Choose...", :collection => %w[Pending Approve Reject] %>
+    <%= v.input :status, collection: %w[Pending Approve Reject] %>
   </div>
   <%= v.submit class: 'btn btn-primary' %>
 <% end %>

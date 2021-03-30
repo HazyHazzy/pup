@@ -1,13 +1,13 @@
 
 <%= simple_form_for [@breeder, @visitation] do |f| %>
   <div class="form-group">
-    <%= f.input :name %>
+    <%= f.input :name, placeholder: 'Which puppy / action' %>
     <%= f.input :home_address %>
     <%= f.input :email_address %>
     <%= f.input :contact_number %>
     <%= f.input :occupation %>
     <%= f.input :reference %>
-    <%= f.input :screening_question, placeholder: 'Which puppy and/or puppies are you interested in visiting?' %>
+    <%= f.input :screening_question %>
   </div>
   <%= f.submit class: 'btn btn-primary' %>
 <% end %>
