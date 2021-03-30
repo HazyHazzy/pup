@@ -1,5 +1,6 @@
 <h1>Discover Breeds in Montreal</h1>
 
 <% @breeds.reverse_each do |breed|%>
-  <h2><%= link_to breed.name, breed_path(breed.id) %></h2>
+  <h2><%= link_to breed.name, breed_path(breed.id), class: "btn-primary-pup" %></h2>
 <% end %>
+
