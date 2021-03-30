@@ -1,0 +1,48 @@
+.card-breeder {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 330px;
+  border-radius: $border-radius;
+}
+
+.card-breeder > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-breeder h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-breeder p {
+  font-size: 14px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-breeder .card-breeder-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.breeder-cards {
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 24px;
+}
+
+.breeder-name {
+  color: $font-color;
+}
+
+.breeder-name:hover {
+  color: $font-color;
+}
