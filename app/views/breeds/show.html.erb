@@ -1,11 +1,16 @@
 <h2 ><%= @breed.name %></h2>
 
 <h3>origin</h3>
-Average Life-Span: <%= @breed.minimum_life_span %> - <%= @breed.maximum_life_span %> Years
-Average Life-Span: <%= @breed.minimum_weight %> - <%= @breed.maximum_weight %> Kg
-Coats: <%= @breed.coats %>
+<ul>Average Life-Span: <%= @breed.minimum_life_span %> - <%= @breed.maximum_life_span %> Years</ul>
+<ul>Average Life-Span: <%= @breed.minimum_weight %> - <%= @breed.maximum_weight %> Kg</ul>
+<ul>Coats: <%= @breed.coats %></ul>
 
 <h3>find nearby</h3>
 <h3>Attributes</h3>
+<ul>Family Friendly: <%= @breed.family_friendly %></ul>
+<ul>Trainability: <%= @breed.trainability %></ul>
+<ul>Activity Level: <%= @breed.activity_level %></ul>
+<ul>Health: <%= @breed.health_issues %></ul>
+
 
 <h3>Similar Breeds</h3>
