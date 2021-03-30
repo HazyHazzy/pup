@@ -1,4 +1,3 @@
-
 <%= simple_form_for [@breeder, @visitation] do |f| %>
   <div class="form-group">
     <%= f.input :name %>
@@ -7,9 +6,7 @@
     <%= f.input :contact_number %>
     <%= f.input :occupation %>
     <%= f.input :reference %>
-    <%= f.input :screening_question, placeholder: 'Which puppy and/or puppies are you interested in visiting?' %>
+    <%= f.input :screening_question, placeholder: "Which puppy and/or puppies are you interested in visiting?\nWhy do you want a dog?\nHave you owned a dog before?\nWhy are you interested in this breed?\nAre you aware of the potential health issues associated with this breed?\nWho will be the primary caretaker of the dog?\nWhat type of dwelling do you live in?\nDo you have children at home?\nHow active is your lifestyle?\nHow many hours a day will the dog be left alone?" %>
   </div>
   <%= f.submit class: 'btn btn-primary' %>
 <% end %>
-
-

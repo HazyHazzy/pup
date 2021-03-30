@@ -5,8 +5,8 @@ class PagesController < ApplicationController
   end
 
   def my_brand
-    @breeders = Breeder.where(user: current_user)
-    visitations = @breeders.map do |breeder|
+    @breeder = Breeder.where(user: current_user)
+    visitations = @breeder.map do |breeder|
       breeder.visitations
     end
     @my_visitations = visitations.flatten
