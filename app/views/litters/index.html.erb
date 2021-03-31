@@ -1,2 +1,10 @@
-<h1>Page Name</h1>
-<h1>index page</h1>
+<h1>All Litters</h1>
+
+<% @litters.each do |litter| %>
+  <h2><%= link_to litter.name, litter_path(litter) %></h2>
+<% end %>
+
+
+<%= link_to "create a litter", new_breeder_litter_path, class: "btn btn-outline-dark" %>
+</br>
+<%= link_to "home page", root_path, class: "btn btn-dark popular" %>

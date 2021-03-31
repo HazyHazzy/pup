@@ -1,5 +1,10 @@
-<h1>Page Name</h1>
+<h1><%= @puppy.name %></h1>
 
-<div>
-  <%= link_to "send visitation", new_breeder_visitation_path(params[:breeder_id]), class: "btn btn-danger btn-lg shadow" %>
-</div>
+<p>Gender: <%= @puppy.gender %></p>
+<p>Weight: <%= @puppy.weight %></p>
+<p>Coat: <%= @puppy.coat %></p>
+
+<%= link_to "Edit #{@puppy.name} Puppy", edit_puppy_path(@puppy), class: "btn btn-dark popular" %>
+<%= link_to "Delete #{@puppy.name} Puppy", puppy_path(@puppy), method: "delete", class: "btn btn-dark popular" %>
+<%= link_to "back to #{@puppy.litter.name} litter puppies", breeder_litter_puppies_path(@puppy.litter.breeder, @puppy.litter), class: "btn btn-outline-dark" %>
+<%= link_to "send visitation", new_breeder_visitation_path(params[:breeder_id]), class: "btn btn-danger btn-lg shadow" %>

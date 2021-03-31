@@ -1,5 +1,9 @@
 <h2 ><%= @breed.name %></h2>
 
+<<<<<<< HEAD
+<%= link_to "Edit me", edit_breed_path, class: "btn btn-outline-danger" %>
+<%= link_to "See all breeds", breeds_path, class: "btn btn-dark popular" %>
+=======
 <h3>origin</h3>
 <ul>Average Life-Span: <%= @breed.minimum_life_span %> - <%= @breed.maximum_life_span %> Years</ul>
 <ul>Average Life-Span: <%= @breed.minimum_weight %> - <%= @breed.maximum_weight %> Kg</ul>
@@ -21,3 +25,4 @@
 
 </br>
 <%= link_to "See all #{@breed.name} puppies", breed_puppies_path(@breed.id), class: "btn-primary-pup" %>
+>>>>>>> 7583635f6e06bc62b4895864cae7737e7a43890c
