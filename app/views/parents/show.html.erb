@@ -1,0 +1,13 @@
+<h1><%= @parent.name  %></h1>
+
+<p>Image placeholder</p>
+
+<p> About <%= @parent.name  %></p>
+
+<p> Gender: <%= @parent.gender  %></p>
+<p> Weight: <%= @parent.weight  %></p>
+<p> Coat: <%= @parent.coat  %></p>
+
+<%= link_to "Back to #{@parent.breeder.name} breeder", breeder_path(@parent.breeder), class: "btn-secondary-pup" %>
+
+
