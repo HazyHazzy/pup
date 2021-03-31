@@ -1,11 +1,25 @@
 class LittersController < ApplicationController
+    def index 
+        @litters = Litter.all
+    end 
+
     def new
+        @breeder = Breeder.find(params[:breeder_id])
+        @studs = Parent.where(gender: "Male")
+        @moms = Parent.where(gender: "Female")
         @litter = Litter.new
     end
 
     def create
+        @breeder = Breeder.find(params[:breeder_id])
         @litter = Litter.new(litter_params)
-        @litter.save
+        @litter.breeder = @breeder
+
+        if @litter.save
+            redirect_to litter_path(@litter)
+          else
+            render :new
+        end
     end
 
     def edit
@@ -23,7 +37,7 @@ class LittersController < ApplicationController
         @litter = Litter.find(params[:id])
         @litter.destroy
     
-        redirect_to litters_path
+        redirect_to breeder_litters_path(@litter.breeder)
     end
 
     def show
@@ -33,6 +47,6 @@ class LittersController < ApplicationController
     private
 
     def litter_params
-        params.require(:litter).permit(:name, :birth_date)
+        params.require(:litter).permit(:name, :birth_date, :stud_id, :mom_id)
     end
 end

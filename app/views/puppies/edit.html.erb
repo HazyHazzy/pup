@@ -1,0 +1,12 @@
+<h1>Edit <%= @puppy.name %> Puppy</h1>
+
+<%= simple_form_for [@puppy] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :weight %>
+  <%= f.input :gender %>
+  <%= f.input :coat %>
+  <%= f.input :breed_id, collection: @breeds  %>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to "Back to #{@puppy.name} litter", puppy_path(@puppy), class: "btn btn-dark popular" %>
