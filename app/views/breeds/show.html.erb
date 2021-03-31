@@ -22,16 +22,9 @@
     <ul>Health: <%= @breed.health_issues %></ul>
   </div>
 
-  <h3>Similar Breeds</h3>
-
-  <%= link_to "See all breeds", breeds_path, class: "btn-secondary-pup" %>
-
-  </br>
-  <%= link_to "See all #{@breed.name} puppies", breed_puppies_path(@breed.id), class: "btn-primary-pup" %>
-  <%= link_to "Edit me", edit_breed_path, class: "btn btn-outline-danger" %>
-</div>
-
-
-
-
- 
+<%= link_to "Edit me", edit_breed_path, class: "btn btn-outline-danger" %>
+<%= link_to "See all breeds", breeds_path, class: "btn btn-dark popular" %>
+<h3>origin</h3>
+<ul>Average Life-Span: <%= @breed.minimum_life_span %> - <%= @breed.maximum_life_span %> Years</ul>
+<ul>Average Life-Span: <%= @breed.minimum_weight %> - <%= @breed.maximum_weight %> Kg</ul>
+<ul>Coats: <%= @breed.coats %></ul>
