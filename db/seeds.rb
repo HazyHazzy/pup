@@ -43,7 +43,7 @@ end
   )
   breeder.save!
 
-  3.times do
+  2.times do
   parent = Parent.new(
     name: Faker::Creature::Dog.name,
     coat: Faker::Creature::Dog.coat_length,
@@ -55,7 +55,7 @@ end
   )
   parent.save!
 
-  3.times do
+  4.times do
   litter = Litter.new(
     name: Faker::Creature::Dog.name,
     birth_date: Faker::Date.birthday(min_age: 0, max_age: 13),
@@ -65,7 +65,7 @@ end
   )
   litter.save!
 
-  3.times do
+  4.times do
   puppy = Puppy.new(
     name: Faker::Creature::Dog.name,
     coat: Faker::Creature::Dog.coat_length,
