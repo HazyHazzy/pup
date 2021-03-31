@@ -1,5 +1,6 @@
 class Breeder < ApplicationRecord
   has_many :litters
+  has_many :puppies, through: :litters
   has_many :parents
   has_many :visitations
   belongs_to :user

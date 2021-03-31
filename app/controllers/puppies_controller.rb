@@ -1,15 +1,30 @@
 class PuppiesController < ApplicationController
+    def index
+        @litter = Litter.find(params[:litter_id])
+        @puppies = Puppy.all
+    end
+    
     def new
+        @litter = Litter.find(params[:litter_id])
+        @breeds = Breed.all
         @puppy = Puppy.new
     end
 
     def create
+        @litter = Litter.find(params[:litter_id])
         @puppy = Puppy.new(puppy_params)
-        @puppy.save
+        @puppy.litter = @litter
+        
+        if @puppy.save
+            redirect_to puppy_path(@puppy)
+          else
+            render :new
+        end
     end
 
     def edit
         @puppy = Puppy.find(params[:id])
+        @breeds = Breed.all
     end
 
     def update
@@ -23,7 +38,7 @@ class PuppiesController < ApplicationController
         @puppy = Puppy.find(params[:id])
         @puppy.destroy
 
-        redirect_to puppies_path
+        redirect_to breeder_litter_puppies_path(@puppy.litter.breeder, @puppy.litter)
     end
 
     def show
@@ -32,7 +47,7 @@ class PuppiesController < ApplicationController
 
     private
 
-    def pup_params
-        params.require(:puppy).permit(:name, :coat, :gender, :weight)
+    def puppy_params
+        params.require(:puppy).permit(:name, :coat, :gender, :weight, :breed_id)
     end
 end

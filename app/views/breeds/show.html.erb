@@ -22,11 +22,16 @@
     <ul>Health: <%= @breed.health_issues %></ul>
   </div>
 
-
   <h3>Similar Breeds</h3>
 
   <%= link_to "See all breeds", breeds_path, class: "btn-secondary-pup" %>
 
   </br>
   <%= link_to "See all #{@breed.name} puppies", breed_puppies_path(@breed.id), class: "btn-primary-pup" %>
+  <%= link_to "Edit me", edit_breed_path, class: "btn btn-outline-danger" %>
 </div>
+
+
+
+
+ 

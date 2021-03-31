@@ -1,12 +1,13 @@
 <%= simple_form_for [@breeder, @visitation] do |f| %>
   <div class="form-group">
     <%= f.input :name %>
-    <%= f.input :home_address %>
-    <%= f.input :email_address %>
-    <%= f.input :contact_number %>
+    <%= f.input :home_address, :label => "Home Address" %>
+    <%= f.input :email_address, :label => "Email Address" %>
+    <%= f.input :contact_number, :label => "Contact Number" %>
     <%= f.input :occupation %>
     <%= f.input :reference %>
-    <%= f.input :screening_question, placeholder: "Which puppy and/or puppies are you interested in visiting?\nWhy do you want a dog?\nHave you owned a dog before?\nWhy are you interested in this breed?\nAre you aware of the potential health issues associated with this breed?\nWho will be the primary caretaker of the dog?\nWhat type of dwelling do you live in?\nDo you have children at home?\nHow active is your lifestyle?\nHow many hours a day will the dog be left alone?" %>
+    <%= f.input :puppy_select, :label => "Which puppy and/or puppies are you interested in visiting?", input_html: { class: "beautiful-dropdown" }, collection: @puppy_names %>
+    <%= f.input :screening_question, placeholder: "Why do you want a dog?\nHave you owned a dog before?\nWhy are you interested in this breed?\nAre you aware of the potential health issues associated with this breed?\nWho will be the primary caretaker of the dog?\nWhat type of dwelling do you live in?\nDo you have children at home?\nHow active is your lifestyle?\nHow many hours a day will the dog be left alone?" %>
   </div>
   <%= f.submit class: 'btn btn-primary' %>
 <% end %>

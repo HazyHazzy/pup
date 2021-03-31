@@ -1,7 +1,10 @@
-<%= simple_form_for[@puppy] do |f| %>
+<h1>Create New Puppy</h1>
+
+<%= simple_form_for [@litter.breeder, @litter, @puppy] do |f| %>
   <%= f.input :name %>
   <%= f.input :weight %>
   <%= f.input :gender %>
   <%= f.input :coat %>
+  <%= f.input :breed_id, collection: @breeds  %>
   <%= f.submit %>
 <% end %>
