@@ -29,15 +29,16 @@ class LittersController < ApplicationController
     def update
         @litter = Litter.find(params[:id])
         @litter.update(litter_params)
-    
+
         redirect_to litter_path(@litter)
     end
 
     def destroy
         @litter = Litter.find(params[:id])
         @litter.destroy
-    
+
         redirect_to breeder_litters_path(@litter.breeder)
+
     end
 
     def show
