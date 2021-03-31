@@ -1,7 +1,7 @@
 class LittersController < ApplicationController
-    def index 
+    def index
         @litters = Litter.all
-    end 
+    end
 
     def new
         @breeder = Breeder.find(params[:breeder_id])

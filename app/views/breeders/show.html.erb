@@ -1,5 +1,5 @@
 <div class="container">
-  
+
   <h1><%= @breeder.name %></h1>
 
   <h2>About Us</h2>
@@ -16,9 +16,5 @@
   <% end %>
 
   <%= link_to "See all breeders", breeders_path, class: "btn-secondary-pup" %>
-
-  <div>
-    <%= link_to "send visitation", new_breeder_visitation_path(@breeder.id), class: "btn-primary-pup" %>
-  </div>
 
 </div>

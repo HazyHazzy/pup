@@ -31,7 +31,7 @@ user.save
   breed.save!
 end
 
-3.times do
+1.times do
   breeder = Breeder.new(
     name: Faker::Name.name,
     city: Faker::Address.city,
@@ -42,40 +42,40 @@ end
     user_id: user.id
   )
   breeder.save!
-end
 
-3.times do
+  2.times do
   parent = Parent.new(
     name: Faker::Creature::Dog.name,
     coat: Faker::Creature::Dog.coat_length,
     gender: Faker::Creature::Dog.gender,
     weight: rand(10..40),
     description: Faker::Creature::Dog.meme_phrase,
-    breeder_id: Breeder.find(rand(1..3)).id,
-    breed_id: Breed.find(rand(1..3)).id
+    breeder_id: Breeder.find(rand(1..Breeder.ids.length)).id,
+    breed_id: Breed.find(rand(1..Breed.ids.length)).id
   )
   parent.save!
-end
 
-3.times do
+  4.times do
   litter = Litter.new(
     name: Faker::Creature::Dog.name,
     birth_date: Faker::Date.birthday(min_age: 0, max_age: 13),
-    stud_id: Parent.find(rand(1..3)).id,
-    mom_id: Parent.find(rand(1..3)).id,
-    breeder_id: Breeder.find(rand(1..3)).id
+    stud_id: Parent.find(rand(1..Parent.ids.length)).id,
+    mom_id: Parent.find(rand(1..Parent.ids.length)).id,
+    breeder_id: Breeder.find(rand(1..Breeder.ids.length)).id
   )
-  litter.save
-end
+  litter.save!
 
-3.times do
+  4.times do
   puppy = Puppy.new(
     name: Faker::Creature::Dog.name,
     coat: Faker::Creature::Dog.coat_length,
     gender: Faker::Creature::Dog.gender,
     weight: rand(10..40),
-    litter_id: Litter.find(rand(1..3)).id,
-    breed_id: Breed.find(rand(1..3)).id
+    litter_id: Litter.find(rand(1..Litter.ids.length)).id,
+    breed_id: Breed.find(rand(1..Breed.ids.length)).id
   )
   puppy.save
+  end
+  end
+  end
 end
