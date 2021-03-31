@@ -7,11 +7,15 @@ class VisitationsController < ApplicationController
   def new
     @breeder = Breeder.find(params[:breeder_id])
     @visitation = Visitation.new
+    @litter = Litter.find(params[:litter_id])
+    @puppy_names = @litter.puppies.map(&:name)
     # raise
   end
 
   def create
     @breeder = Breeder.find(params[:breeder_id])
+    # @litters = Litter.find(@breeder.litter_ids[0])
+    # raise
     @visitation = Visitation.new(visit_params)
     @visitation.user = current_user
     @visitation.breeder = @breeder
@@ -41,6 +45,6 @@ class VisitationsController < ApplicationController
   end
 
   def visit_params
-    params.require(:visitation).permit(:name, :status, :home_address, :email_address, :contact_number, :occupation, :reference, :screening_question)
+    params.require(:visitation).permit(:name, :status, :home_address, :email_address, :contact_number, :occupation, :reference, :screening_question, :puppy_select)
   end
 end

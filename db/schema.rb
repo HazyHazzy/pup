@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_27_173748) do
+ActiveRecord::Schema.define(version: 2021_03_30_230905) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,8 @@ ActiveRecord::Schema.define(version: 2021_03_27_173748) do
     t.integer "maximum_weight"
     t.integer "minimum_life_span"
     t.integer "maximum_life_span"
+    t.integer "guardian_insticts"
+    t.integer "grooming_requirements"
   end
 
   create_table "litters", force: :cascade do |t|
@@ -116,6 +118,7 @@ ActiveRecord::Schema.define(version: 2021_03_27_173748) do
     t.string "occupation"
     t.string "reference"
     t.text "screening_question"
+    t.string "puppy_select"
     t.index ["breeder_id"], name: "index_visitations_on_breeder_id"
     t.index ["user_id"], name: "index_visitations_on_user_id"
   end
