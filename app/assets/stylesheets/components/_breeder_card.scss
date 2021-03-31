@@ -46,3 +46,15 @@
 .breeder-name:hover {
   color: $font-color;
 }
+
+@media(max-width: 992px) {
+  .breeder-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 768px) {
+  .breeder-cards {
+    grid-template-columns: 1fr;
+  }
+}
