@@ -30,7 +30,11 @@ class ParentsController < ApplicationController
 
   def destroy
     @parent = Parent.find(params[:id])
+    @breeder = Breeder.find(params[:breeder_id])
+    @parent.breeder = @breeder
     @parent.destroy
+
+    redirect_to breeder_path(@breeder)
   end
 
   def update
