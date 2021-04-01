@@ -23,7 +23,9 @@ class ParentsController < ApplicationController
   end
 
   def edit
+    @breeder = Breeder.find(params[:breeder_id])
     @parent = Parent.find(params[:id])
+    @parent.breeder = @breeder
   end
 
   def destroy
@@ -32,8 +34,12 @@ class ParentsController < ApplicationController
   end
 
   def update
+    @breeder = Breeder.find(params[:breeder_id])
     @parent = Parent.find(params[:id])
+    @parent.breeder = @breeder
     @parent.update(parent_params)
+
+    redirect_to breeder_parent_path(@breeder, @parent)
   end
 
   private

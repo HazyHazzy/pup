@@ -8,4 +8,5 @@
 <p> Weight: <%= @parent.weight  %></p>
 <p> Coat: <%= @parent.coat  %></p>
 
+<%= link_to "Edit #{@parent.name} parent", edit_breeder_parent_path(@parent.breeder, @parent), class: "btn btn-dark popular" %>
 <%= link_to "Back to #{@parent.breeder.name} breeder", breeder_path(@parent.breeder), class: "btn-secondary-pup" %>
