@@ -11,7 +11,7 @@
 
   <h3>Litters</h3>
   <% @breeder[0].litters.reverse_each do |litter|%>
-    <h2><%= link_to litter.name, breeder_litter_path(@breeder[0].id, litter.id) %></h2>
+    <h2><%= link_to litter.name, litter_path(litter.id) %></h2>
   <% end %>
 
   <h1>visitation Inquiry</h1>
@@ -21,6 +21,11 @@
     </h2>
     <%= link_to "look into details for this visitation", edit_breeder_visitation_path(visitation.breeder_id, visitation.id), class: "btn btn-outline-dark" %>
   <% end %>
+  <%= link_to "edit my brand page", edit_breeder_path(@breeder.ids), class: "btn btn-outline-dark" %>
+  <%= link_to "add parents", new_breeder_parent_path(@breeder.ids), class: "btn btn-outline-dark" %>
+  <%= link_to "add litters", new_breeder_litter_path(@breeder.ids), class: "btn btn-outline-dark" %>
+
+
 <% else %>
   <p>You don't have a brand page yet</p>
   <%= link_to "create my brand page", new_breeder_path, class: "btn btn-outline-dark" %>
