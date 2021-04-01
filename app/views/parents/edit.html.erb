@@ -1,0 +1,12 @@
+<h1>Edit <%= @parent.name %> </h1>
+
+<%= simple_form_for [@breeder, @parent] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :weight %>
+    <%= f.input :coat %>
+    <%= f.input :gender %>
+    <%= f.input :description %>
+    <%= f.input :breed_id, collection: @breed  %>
+    <%= f.submit %>
+<% end %> 
+
