@@ -29,6 +29,7 @@ class BreedsController < ApplicationController
   def update
     @breed = Breed.find(params[:id])
     @breed.update(breed_params)
+    redirect_to breed_path(@breed)
   end
 
   def destory
@@ -40,6 +41,7 @@ class BreedsController < ApplicationController
     params.require(:breed).permit(:name, :description, :family_friendly,
                                   :trainability, :minimum_weight,
                                   :maximum_weight, :minimum_life_span,
-                                  :maximum_life_span, :health_issues)
+                                  :maximum_life_span, :health_issues, :origin,
+                                  :guardian_insticts, :grooming_requirements)
   end
 end
