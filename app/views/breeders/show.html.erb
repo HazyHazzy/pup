@@ -12,7 +12,7 @@
 
   <h3>Litters</h3>
   <% @breeder.litters.reverse_each do |litter|%>
-    <h2><%= link_to litter.name, breeder_litters_path(@breeder.id, litter.id) %></h2>
+    <h2><%= link_to litter.name, litter_path %></h2>
   <% end %>
 
   <%= link_to "See all breeders", breeders_path, class: "btn-secondary-pup" %>
