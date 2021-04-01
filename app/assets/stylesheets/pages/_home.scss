@@ -1,1 +1,23 @@
-// Specific CSS for your home-page
+
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 100px;
+}
+
+.homepage-image {
+
+  width: 546px;
+  height: 348px;
+}
+
+.middle-section {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.bottom-section {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 100px;
+}
