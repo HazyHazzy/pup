@@ -26,7 +26,8 @@ user.save
     minimum_life_span: rand(3..8),
     maximum_life_span: rand(9..13),
     guardian_insticts: rand(1..5),
-    grooming_requirements: rand(1..5)
+    grooming_requirements: rand(1..5),
+    origin: Faker::Address.country
   )
   breed.save!
 end

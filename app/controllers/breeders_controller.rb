@@ -5,6 +5,7 @@ class BreedersController < ApplicationController
 
   def show
     @breeder = Breeder.find(params[:id])
+    # raise
   end
 
   def new

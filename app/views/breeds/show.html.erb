@@ -5,7 +5,7 @@
     </div>
     <div>
       <h1><%= @breed.name %></h1>
-      <ul>origin</ul>
+      <ul>origin: <%= @breed.origin %></ul>
       <ul>Average Life-Span: <%= @breed.minimum_life_span %> - <%= @breed.maximum_life_span %> Years</ul>
       <ul>Average Life-Span: <%= @breed.minimum_weight %> - <%= @breed.maximum_weight %> Kg</ul>
       <ul>Coats: <%= @breed.coats %></ul>
@@ -22,9 +22,7 @@
     <ul>Health: <%= @breed.health_issues %></ul>
   </div>
 
-<%= link_to "Edit me", edit_breed_path, class: "btn btn-outline-danger" %>
-<%= link_to "See all breeds", breeds_path, class: "btn btn-dark popular" %>
-<h3>origin</h3>
-<ul>Average Life-Span: <%= @breed.minimum_life_span %> - <%= @breed.maximum_life_span %> Years</ul>
-<ul>Average Life-Span: <%= @breed.minimum_weight %> - <%= @breed.maximum_weight %> Kg</ul>
-<ul>Coats: <%= @breed.coats %></ul>
+  <%= link_to "Edit me", edit_breed_path, class: "btn btn-outline-danger" %>
+  <%= link_to "See all breeds", breeds_path, class: "btn btn-dark popular" %>
+
+</div>
