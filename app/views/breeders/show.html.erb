@@ -4,6 +4,7 @@
 
   <h2>About Us</h2>
   <%= @breeder.about_us %>
+  
   <div class="row-container">
     <h3>Parents</h3>
     <div class="row">
@@ -13,11 +14,9 @@
 
   <div class="row-container">
     <h3>Litters</h3>
-      <div class="row">
-      <% @breeder.litters.reverse_each do |litter|%>
-        <h2><%= link_to litter.name, litter_path(litter.id) %></h2>
-      <% end %>
-      </div>
+    <div class="row">
+      <%= render 'litter_cards' %>
+    </div>
   </div>
 
   <br>
