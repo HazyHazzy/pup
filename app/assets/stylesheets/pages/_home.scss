@@ -1,3 +1,6 @@
+.homepage-title {
+  padding-top: 24px;
+}
 
 .top-section {
   display: flex;
@@ -8,7 +11,7 @@
 .homepage-image {
 
   width: 546px;
-  height: 348px;
+  height: 372px;
 }
 
 .middle-section {
@@ -17,7 +20,8 @@
 }
 
 .bottom-section {
-  display: flex;
-  justify-content: flex-end;
+ /* display: flex;
+  justify-content: flex-end;*/
+  text-align: right;
   margin-bottom: 100px;
 }
