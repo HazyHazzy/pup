@@ -1,0 +1,16 @@
+<div class="litter-cards">
+  <% @breeder.litters.reverse_each do |litter|%>
+     <div class="card-litter">
+        <img src="<%= image_path 'litter_pic.jpg' %>" />
+        <div class="card-litter-infos">
+          <div>
+            <h2><%= link_to litter.name, litter_path(litter.id), class: "litter-name" %></h2>
+            <p><%= litter.birth_date %></p>
+          </div>
+        </div>
+      </div>
+  <% end %>
+</div>
+
+
+
