@@ -4,11 +4,13 @@
 
   <h2>About Us</h2>
   <%= @breeder.about_us %>
-
-  <h3>Parents</h3>
-  <% @breeder.parents.reverse_each do |parent|%>
-    <h2><%= link_to parent.name, breeder_parent_path(@breeder.id, parent.id) %></h2>
-  <% end %>
+  
+  <div class="row-container">
+    <h3>Parents</h3>
+    <div class="row">
+      <%= render 'parent_cards' %>
+    </div>
+  </div>
 
   <div class="row-container">
     <h3>Litters</h3>
@@ -17,8 +19,9 @@
     </div>
   </div>
 
-
-
+  <br>
   <%= link_to "See all breeders", breeders_path, class: "btn-secondary-pup" %>
 
 </div>
+
+
