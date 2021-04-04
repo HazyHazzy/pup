@@ -38,6 +38,14 @@
   grid-gap: 16px;
 }
 
+.dog-attribute {
+ display: flex;
+ justify-content: center;
+}
+
+.dog {
+  width: 500px;
+}
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .breed-cards {
