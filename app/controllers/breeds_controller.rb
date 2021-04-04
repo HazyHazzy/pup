@@ -42,6 +42,7 @@ class BreedsController < ApplicationController
                                   :trainability, :minimum_weight,
                                   :maximum_weight, :minimum_life_span,
                                   :maximum_life_span, :health_issues, :origin,
-                                  :guardian_insticts, :grooming_requirements)
+                                  :guardian_insticts, :grooming_requirements,
+                                  :coats, :activity_level)
   end
 end
