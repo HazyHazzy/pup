@@ -3,8 +3,12 @@
 <h2>
   The visitor
   <ul>Name: <%= @visitation.name %></ul>
-  <ul>Address: <%= @visitation.home_address %></ul>
-  <ul>Personal Information: <%= @visitation.screening_question %></ul>
+  <ul>Home Address: <%= @visitation.home_address %></ul>
+  <ul>Email Address: <%= @visitation.email_address %></ul>
+  <ul>Contact Number: <%= @visitation.contact_number %></ul>
+  <ul>Occupation: <%= @visitation.occupation %></ul>
+  <ul>Reference: <%= @visitation.reference %></ul>
+  <ul>Personal Statement: <%= @visitation.screening_question %></ul>
 </h2>
 
 <%= simple_form_for [@breeder, @visitation] do |v| %>

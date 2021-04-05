@@ -1,9 +1,14 @@
 <h1>Your visitation requests</h1>
 
 <% @my_visitations.reverse_each do |visitation| %>
-<li>
-    visitation for <%= visitation.breeder.name %> is <%= visitation.status %>
-</li>
+<ul>
+    <% if visitation.status == "Approve" %>
+      <%= "Congratulations, your visitation request for #{visitation.breeder.name} got approved" %>
+      <%= "You can contact the breeder through Email: #{visitation.breeder.email} Phone: #{visitation.breeder.phone_number}" %>
+    <% else %>
+      Visitation for <%= visitation.breeder.name %> is <%= visitation.status %>
+    <% end %>
+</ul>
 <% end %>
 
 </br>
