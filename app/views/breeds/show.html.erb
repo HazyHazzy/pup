@@ -14,15 +14,28 @@
   <!-- <h3>find nearby</h3> -->
   <div class="text-center">
     <h2>Attributes</h2>
-  </div>
-  <div class="text-center">
-    <ul>Family Friendly: <%= @breed.family_friendly %></ul>
-    <ul>Trainability: <%= @breed.trainability %></ul>
-    <ul>Activity Level: <%= @breed.activity_level %></ul>
-    <ul>Health: <%= @breed.health_issues %></ul>
+    <% def icon (attribute) %>
+      <% attribute.times do %>
+        <img src="https://img.icons8.com/cotton/20/000000/dog-heart--v4.png"/>
+      <% end %>
+      <% (5 - attribute).times do %>
+        <img src="https://img.icons8.com/cotton/20/000000/dog-heart--v1.png"/>
+      <% end %>
+    <% end %>
+    <div class="dog-attribute">
+      <div class="attribute-left">
+        <ul>Family Friendly<br><% icon(@breed.family_friendly) %></ul>
+        <ul>Trainability<br><% icon(@breed.trainability) %></ul>
+        <ul>Activity Level<br><% icon(@breed.activity_level) %></ul>
+      </div>
+      <div class="attribute-right">
+        <ul>Health<br><% icon(@breed.health_issues) %></ul>
+        <ul>Guardian Insticts<br><% icon(@breed.guardian_insticts) %></ul>
+        <ul>Grooming Requirements<br><% icon(@breed.grooming_requirements) %></ul>
+      </div>
+    </div>
   </div>
 
-  <%= link_to "Edit me", edit_breed_path, class: "btn btn-outline-danger" %>
   <%= link_to "See all breeds", breeds_path, class: "btn btn-dark popular" %>
 
 </div>
