@@ -2,17 +2,14 @@
   <h1>Your visitation requests</h1>
 
   <% @my_visitations.reverse_each do |visitation| %>
-    <div class="card-product">
-      <div class="card-product-infos">
+    <div class="card-visitation">
+      <div class="card-front">
+        <h2>Visitation for <%= visitation.breeder.name %></h2>
+      </div>
+      <div class="card-back">
         <% if visitation.status == "Approve" %>
-          <div class="flash flash-success alert alert-dismissible fade show" role="alert">
-            <span><strong>Yay!</strong> 🎉 You got good news from <%= visitation.breeder.name %>   </span>
-            <a data-dismiss="alert" aria-label="Close">
-              <i class="fas fa-times"></i>
-            </a>
-          </div>
           <h3><%= "Congratulations, your visitation request for #{visitation.breeder.name} got approved" %></h3>
-          <h4><%= "You can contact the breeder through Email: #{visitation.breeder.email} Phone: #{visitation.breeder.phone_number}" %></h4>
+          <p><%= "You can contact the breeder through Email: #{visitation.breeder.email} Phone: #{visitation.breeder.phone_number}" %></p>
         <% else %>
           <h2>Visitation for <%= visitation.breeder.name %> is <%= visitation.status %></h2>
         <% end %>
@@ -23,3 +20,4 @@
   </br>
   <%= link_to "home page", root_path, class: "btn btn-dark popular" %>
 </div>
+
