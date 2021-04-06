@@ -1,9 +1,11 @@
-<h1>All <strong><%= @litter.name %></strong> Litter Puppies</h1>
+<div class="container">
+  <h1>All <strong><%= @litter.name %></strong> Litter Puppies</h1>
 
-<% @litter.puppies.each do |puppy| %>
-  <h2><%= link_to puppy.name, puppy_path(puppy) %></h2>
-<% end %>
+  <%= render 'puppies_card' %>
 
-<%= link_to "create a puppy", new_breeder_litter_puppy_path, class: "btn btn-outline-dark" %>
-<%= link_to "back to #{@litter.name} litter", litter_path(@litter), class: "btn btn-outline-dark" %>
-<%= link_to "home page", root_path, class: "btn btn-dark popular" %>
+  <br>
+  <br>
+  <%= link_to "create a puppy", new_breeder_litter_puppy_path, class: "btn-secondary-pup" %>
+  <%= link_to "back to #{@litter.name} litter", litter_path(@litter), class: "btn-secondary-pup" %>
+  <%= link_to "home page", root_path, class: "btn-primary-pup" %>
+</div>
