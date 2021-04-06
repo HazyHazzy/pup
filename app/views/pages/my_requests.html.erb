@@ -1,10 +1,23 @@
-<h1>Your visitation requests</h1>
+<div class="container">
+  <h1>Your visitation requests</h1>
 
-<% @my_visitations.reverse_each do |visitation| %>
-<li>
-    visitation for <%= visitation.breeder.name %> is <%= visitation.status %>
-</li>
-<% end %>
+  <% @my_visitations.reverse_each do |visitation| %>
+    <div class="card-visitation">
+      <div class="card-front">
+        <h2>Visitation for <%= visitation.breeder.name %></h2>
+      </div>
+      <div class="card-back">
+        <% if visitation.status == "Approve" %>
+          <h3><%= "Congratulations, your visitation request for #{visitation.breeder.name} got approved" %></h3>
+          <p><%= "You can contact the breeder through Email: #{visitation.breeder.email} Phone: #{visitation.breeder.phone_number}" %></p>
+        <% else %>
+          <h2>Visitation for <%= visitation.breeder.name %> is <%= visitation.status %></h2>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
 
-</br>
-<%= link_to "home page", root_path, class: "btn btn-dark popular" %>
+  </br>
+  <%= link_to "home page", root_path, class: "btn btn-dark popular" %>
+</div>
+
