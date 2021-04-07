@@ -44,21 +44,6 @@
     </div>
   </div>
 
-
-  <h1>Visitation Inquiry</h1>
-  <% @my_visitations.reverse_each do |visitation| %>
-    <div class="card-brand">
-      <div class="card-brand-infos">
-        <h2>
-          <%= visitation.name %> request to visitation your puppy <%= visitation.puppy_select %>
-        </h2>
-        <p>
-          <%= link_to "look into details for this visitation", edit_breeder_visitation_path(visitation.breeder_id, visitation.id), class: "btn btn-outline-dark" %>
-        </p>
-      </div>
-    </div>
-  <% end %>
-
     <%= link_to "edit my brand page", edit_breeder_path(@breeder.ids), class: "btn btn-outline-dark" %>
     <%= link_to "add parents", new_breeder_parent_path(@breeder.ids), class: "btn btn-outline-dark" %>
     <%= link_to "add litters", new_breeder_litter_path(@breeder.ids), class: "btn btn-outline-dark" %>
