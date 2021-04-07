@@ -21,7 +21,7 @@
 
   <h2>Your visitation requests</h2>
   <% if @my_visitations.blank? %>
-    <%= link_to "Find a breeder", breeders_path, class: "btn-primary-pup" %>
+    <%= link_to "Find a breeder and send visitation?", breeders_path, class: "btn-primary-pup" %>
   <% else %>
     <% @my_visitations.reverse_each do |visitation| %>
       <div class="card-visitation">
