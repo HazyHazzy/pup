@@ -1,5 +1,5 @@
 class ParentsController < ApplicationController
-  
+
   def new
     @breeder = Breeder.find(params[:breeder_id])
     @breed = Breed.all
@@ -10,7 +10,7 @@ class ParentsController < ApplicationController
     @breeder = Breeder.find(params[:breeder_id])
     @parent = Parent.new(parent_params)
     @parent.breeder = @breeder
-    
+
     if @parent.save
       redirect_to breeder_parent_path(@breeder, @parent)
     else
@@ -49,7 +49,7 @@ class ParentsController < ApplicationController
   private
 
   def parent_params
-    params.require(:parent).permit(:name, :weight, :coat, :description, :gender, :breed_id)
+    params.require(:parent).permit(:name, :weight, :coat, :description, :gender, :breed_id, :photo)
   end
 
 end

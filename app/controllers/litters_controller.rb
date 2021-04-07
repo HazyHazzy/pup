@@ -48,6 +48,6 @@ class LittersController < ApplicationController
     private
 
     def litter_params
-        params.require(:litter).permit(:name, :birth_date, :stud_id, :mom_id)
+        params.require(:litter).permit(:name, :birth_date, :stud_id, :mom_id, :photo)
     end
 end

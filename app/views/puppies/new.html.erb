@@ -6,5 +6,6 @@
   <%= f.input :gender %>
   <%= f.input :coat %>
   <%= f.input :breed_id, collection: @breeds  %>
+  <%= f.input :photo, as: :file %>
   <%= f.submit %>
 <% end %>
