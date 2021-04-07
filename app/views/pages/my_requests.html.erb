@@ -1,41 +1,48 @@
 <div class="container">
 
   <h2>Visitation Inquiry</h2>
-  <% @my_visit.reverse_each do |visitation| %>
-    <div class="card-brand">
-      <div class="card-brand-infos">
-        <h2>
-          <%= visitation.name.capitalize() %> request to visitation your puppy <%= visitation.puppy_select %>
-        </h2>
-        <p>
-          <%= link_to "look into details for this visitation", edit_breeder_visitation_path(visitation.breeder_id, visitation.id), class: "btn-primary-pup" %>
-          <%= link_to "Delete this inquiry", visitation_path(visitation.id), method: "delete", class: "btn-secondary-pup" %>
-        </p>
+  <% if @my_visit.blank? %>
+    <%= link_to "No one send visitation, Polish your brand page?", my_brand_path, class: "btn-primary-pup" %>
+  <% else %>
+    <% @my_visit.reverse_each do |visitation| %>
+      <div class="card-brand">
+        <div class="card-brand-infos">
+          <h2>
+            <%= visitation.name.capitalize() %> request to visitation your puppy <%= visitation.puppy_select %>
+          </h2>
+          <p>
+            <%= link_to "look into details for this visitation", edit_breeder_visitation_path(visitation.breeder_id, visitation.id), class: "btn-primary-pup" %>
+            <%= link_to "Delete this inquiry", visitation_path(visitation.id), method: "delete", class: "btn-secondary-pup" %>
+          </p>
+        </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
 
   <h2>Your visitation requests</h2>
-
-  <% @my_visitations.reverse_each do |visitation| %>
-    <div class="card-visitation">
-      <div class="card-front">
-        <h2>Visitation for <%= visitation.breeder.name.capitalize() %></h2>
-      </div>
-      <div class="card-back">
-        <div>
-          <% if visitation.status == "Approve" %>
-            <h3><%= "Congratulations, your visitation request for #{visitation.breeder.name.capitalize()} got approved" %></h3>
-            <p><%= "You can contact the breeder through Email: #{visitation.breeder.email} Phone: #{visitation.breeder.phone_number}" %></p>
-          <% else %>
-            <h2>Visitation for <%= visitation.breeder.name.capitalize() %> is <%= visitation.status %></h2>
-          <% end %>
+  <% if @my_visitations.blank? %>
+    <%= link_to "Find a breeder", breeders_path, class: "btn-primary-pup" %>
+  <% else %>
+    <% @my_visitations.reverse_each do |visitation| %>
+      <div class="card-visitation">
+        <div class="card-front">
+          <h2>Visitation for <%= visitation.breeder.name.capitalize() %></h2>
         </div>
-        <div>
-          <%= link_to "Cancel this visitation", visitation_path(visitation.id), method: "delete", class: "btn-secondary-pup" %>
+        <div class="card-back">
+          <div>
+            <% if visitation.status == "Approve" %>
+              <h3><%= "Congratulations, your visitation request for #{visitation.breeder.name.capitalize()} got approved" %></h3>
+              <p><%= "You can contact the breeder through Email: #{visitation.breeder.email} Phone: #{visitation.breeder.phone_number}" %></p>
+            <% else %>
+              <h2>Visitation for <%= visitation.breeder.name.capitalize() %> is <%= visitation.status %></h2>
+            <% end %>
+          </div>
+          <div>
+            <%= link_to "Cancel this visitation", visitation_path(visitation.id), method: "delete", class: "btn-secondary-pup" %>
+          </div>
         </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
 
   </br>
