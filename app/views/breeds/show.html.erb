@@ -5,13 +5,17 @@
     </div>
     <div>
       <h1><%= @breed.name %></h1>
-      <ul>origin: <%= @breed.origin %></ul>
-      <ul>Average Life-Span: <%= @breed.minimum_life_span %> - <%= @breed.maximum_life_span %> Years</ul>
-      <ul>Average Life-Span: <%= @breed.minimum_weight %> - <%= @breed.maximum_weight %> Kg</ul>
-      <ul>Coats: <%= @breed.coats %></ul>
+      <h4>Origin: <%= @breed.origin %></h4>
+      <h4>Average Life-Span: <%= @breed.minimum_life_span %> - <%= @breed.maximum_life_span %> Years</h4>
+      <h4>Average Life-Span: <%= @breed.minimum_weight %> - <%= @breed.maximum_weight %> Kg</h4>
+      <h4>Coats: <%= @breed.coats %></h4>
+      <a href="#" class="btn-primary-pup">Find Nearby</a>
     </div>
   </div>
-  <!-- <h3>find nearby</h3> -->
+  <p>Spicy jalapeno bacon ipsum dolor amet meatloaf brisket strip steak venison, culpa aliqua id tri-tip beef ham quis kevin eu. Deserunt strip steak ut, pork belly ullamco burgdoggen corned beef occaecat short loin. Elit consequat exercitation anim, shank ball tip frankfurter lorem commodo ex eiusmod. Tenderloin frankfurter sunt beef ribs ipsum proident jowl voluptate incididunt jerky consectetur t-bone.</p>
+  <p>Est labore officia jowl cow lorem boudin jerky sausage pig fugiat. Andouille in ad sint kielbasa, chicken laborum leberkas adipisicing pancetta. Turkey ut ut rump pig, tenderloin cupidatat beef. Corned beef flank tail meatloaf.</p>
+  <p>Prosciutto tempor id shank andouille adipisicing. Tenderloin voluptate exercitation pork belly pork chop. Tri-tip eu hamburger laborum, in quis landjaeger prosciutto tempor nulla cupim doner ut culpa. Consectetur sint pastrami bresaola chislic. Shankle tempor alcatra, fugiat minim nostrud ex officia adipisicing. Esse ad mollit sint sed short loin shoulder tongue exercitation in tri-tip. Irure aute nulla nisi burgdoggen corned beef consectetur rump.</p>
+  <p>Quis buffalo frankfurter short loin, filet mignon reprehenderit venison pork belly eiusmod ipsum elit cupidatat beef ribs. Ut in bacon, excepteur pork ground round ut voluptate doner laboris meatloaf sint frankfurter. In exercitation ad sunt pig anim ball tip est tongue deserunt tail do drumstick quis. Shank occaecat lorem incididunt, officia venison ut. Magna labore ribeye kielbasa, lorem fatback beef ribs burgdoggen jowl meatball. Dolore shankle aliqua, ham hock magna swine ham meatball id turkey frankfurter. Pariatur culpa anim salami.</p>
   <div class="text-center">
     <h2>Attributes</h2>
     <% def icon (attribute) %>
@@ -24,18 +28,20 @@
     <% end %>
     <div class="dog-attribute">
       <div class="attribute-left">
-        <ul>Family Friendly<br><% icon(@breed.family_friendly) %></ul>
-        <ul>Trainability<br><% icon(@breed.trainability) %></ul>
-        <ul>Activity Level<br><% icon(@breed.activity_level) %></ul>
+        <h4>Family Friendly<br><% icon(@breed.family_friendly) %></h4>
+        <h4>Trainability<br><% icon(@breed.trainability) %></h4>
+        <h4>Activity Level<br><% icon(@breed.activity_level) %></h4>
       </div>
       <div class="attribute-right">
-        <ul>Health<br><% icon(@breed.health_issues) %></ul>
-        <ul>Guardian Insticts<br><% icon(@breed.guardian_insticts) %></ul>
-        <ul>Grooming Requirements<br><% icon(@breed.grooming_requirements) %></ul>
+        <h4>Health<br><% icon(@breed.health_issues) %></h4>
+        <h4>Guardian Insticts<br><% icon(@breed.guardian_insticts) %></h4>
+        <h4>Grooming Requirements<br><% icon(@breed.grooming_requirements) %></h4>
       </div>
     </div>
   </div>
-
-  <%= link_to "See all breeds", breeds_path, class: "btn btn-dark popular" %>
+  <div class="text-center">
+    <h2>Similar Breeds</h2>
+  </div>
+<!-- <%= link_to "See all breeds", breeds_path, class: "btn btn-dark popular" %> -->
 
 </div>
