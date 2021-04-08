@@ -1,5 +1,5 @@
 class VisitationsController < ApplicationController
-  before_action :set_visitation, only: [:edit, :update]
+  before_action :set_visitation, only: [:edit, :update, :destroy]
 
   def index
   end
@@ -9,13 +9,10 @@ class VisitationsController < ApplicationController
     @visitation = Visitation.new
     @litter = Litter.find(params[:litter_id])
     @puppy_names = @litter.puppies.map(&:name)
-    # raise
   end
 
   def create
     @breeder = Breeder.find(params[:breeder_id])
-    # @litters = Litter.find(@breeder.litter_ids[0])
-    # raise
     @visitation = Visitation.new(visit_params)
     @visitation.user = current_user
     @visitation.breeder = @breeder
@@ -26,7 +23,6 @@ class VisitationsController < ApplicationController
     else
       render :new
     end
-    # raise
   end
 
   def edit
@@ -35,7 +31,12 @@ class VisitationsController < ApplicationController
 
   def update
     @visitation.update(visit_params)
-    redirect_to my_brand_path
+    redirect_to my_requests_path
+  end
+
+  def destroy
+    @visitation.destroy
+    redirect_to my_requests_path
   end
 
   private

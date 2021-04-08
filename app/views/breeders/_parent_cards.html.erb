@@ -1,13 +1,13 @@
- <div class="parent-cards">
+<div class="parent-cards">
   <% @breeder.parents.reverse_each do |parent|%>
     <div class="card-parent">
       <img src="<%= image_path 'dalmatian_adult.jpg' %>" />
       <div class="card-parent-infos">
         <div>
           <h2><%= link_to parent.name, breeder_parent_path(@breeder.id, parent.id), class: "parent-name" %></h2>
-          <p><%= parent.description %></p>
+          <p class="p-card"><%= parent.description %></p>
         </div>
-        <p class="card-parent-pricing"><%= parent.coat %></p>
+        <p class="p-card"><%= parent.coat %></p>
       </div>
     </div>
   <% end %>
