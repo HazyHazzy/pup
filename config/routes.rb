@@ -6,12 +6,13 @@ Rails.application.routes.draw do
     resources :parents
   end
   resources :breeders do
-    resources :visitations
+    resources :visitations, except: [:destroy]
     resources :parents
     resources :litters, except: [:show, :destroy, :edit, :update] do
       resources :puppies, except: [:show, :destroy, :edit, :update]
     end
   end
+  resources :visitations, only: [:destroy]
   get 'my_requests', to: 'pages#my_requests', as: 'my_requests'
   get 'my_brand', to: 'pages#my_brand', as: 'my_brand'
   resources :litters, only: [:show, :destroy, :edit, :update]
