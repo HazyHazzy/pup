@@ -12,12 +12,12 @@
       <ul>Reference: <%= @visitation.reference %></ul>
       <ul>Personal Statement: <%= @visitation.screening_question %></ul>
     </div>
-    <button aria-expanded="false" aria-controls="more" class="toggle-content" hidden><span class="text">Show More</span> <span class="visually-hidden">about this visitor</span></button>
+    <button text-expanded="false" text-controls="more" class="toggle-content" hidden><span class="text">Show More</span> <span class="visually-hidden">about this visitor</span></button>
   </div>
 
   <%= simple_form_for [@breeder, @visitation] do |v| %>
     <div >
-      <%= v.input :status, collection: %w[Pending Approve Reject] %>
+      <%= v.input :status, label: "Make your decision", hint: "You can Approve, Reject or Pend", collection: %w[Pending Approve Reject] %>
     </div>
     <%= v.submit class: 'btn btn-primary' %>
   <% end %>

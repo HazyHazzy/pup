@@ -1,18 +1,6 @@
 import consumer from "./consumer";
 
 const flipButton = () => {
-  // const button = document.querySelector("#toggle");
-  // const text = document.querySelector("#text");
-  // button.addEventListener("click", (event) => {
-  //   let element = button.innerText;
-  //   if (element == "Read More") {
-  //     element = "Read Less";
-  //     text.slideToggle();
-  //   } else {
-  //     element = "Read More";
-  //     text.slideToggle();
-  //   }
-  // });
 
   const toggleButtons = document.querySelectorAll('.toggle-content');
   const fullTextWrappers = document.querySelectorAll('.fulltext');
@@ -36,11 +24,11 @@ const flipButton = () => {
       if (!fullTextWrapper.hasAttribute('hidden')) {
         toggleButtonText.innerText = 'Show More';
         fullTextWrapper.setAttribute('hidden', true);
-        toggleButton.setAttribute('aria-expanded', false);
+        toggleButton.setAttribute('text-expanded', false);
       } else {
         toggleButtonText.innerText = 'Show Less';
         fullTextWrapper.removeAttribute('hidden');
-        toggleButton.setAttribute('aria-expanded', true);
+        toggleButton.setAttribute('text-expanded', true);
       }
     });
   });
