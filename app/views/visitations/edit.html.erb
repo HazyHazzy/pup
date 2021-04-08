@@ -1,19 +1,24 @@
-<h1>Make decision for this visitation</h1>
+<div class="container">
+  <h1>Make decision for this visitation</h1>
 
-<h2>
-  The visitor
-  <ul>Name: <%= @visitation.name %></ul>
-  <ul>Home Address: <%= @visitation.home_address %></ul>
-  <ul>Email Address: <%= @visitation.email_address %></ul>
-  <ul>Contact Number: <%= @visitation.contact_number %></ul>
-  <ul>Occupation: <%= @visitation.occupation %></ul>
-  <ul>Reference: <%= @visitation.reference %></ul>
-  <ul>Personal Statement: <%= @visitation.screening_question %></ul>
-</h2>
-
-<%= simple_form_for [@breeder, @visitation] do |v| %>
-  <div >
-    <%= v.input :status, collection: %w[Pending Approve Reject] %>
+  <div>
+    <h2>The Visitor</h2>
+    <ul>Name: <%= @visitation.name %></ul>
+    <ul>Home Address: <%= @visitation.home_address %></ul>
+    <ul>Email Address: <%= @visitation.email_address %></ul>
+    <ul>Contact Number: <%= @visitation.contact_number %></ul>
+    <div id="more" class="fulltext">
+      <ul>Occupation: <%= @visitation.occupation %></ul>
+      <ul>Reference: <%= @visitation.reference %></ul>
+      <ul>Personal Statement: <%= @visitation.screening_question %></ul>
+    </div>
+    <button aria-expanded="false" aria-controls="more" class="toggle-content" hidden><span class="text">Show More</span> <span class="visually-hidden">about this visitor</span></button>
   </div>
-  <%= v.submit class: 'btn btn-primary' %>
-<% end %>
+
+  <%= simple_form_for [@breeder, @visitation] do |v| %>
+    <div >
+      <%= v.input :status, collection: %w[Pending Approve Reject] %>
+    </div>
+    <%= v.submit class: 'btn btn-primary' %>
+  <% end %>
+</div>
