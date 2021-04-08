@@ -1,12 +1,16 @@
-<h1><%= @puppy.name %></h1>
+<div class="container">
+  <div class="pop shadow text-center">
+    <h2 style="margin-left: -520px;"><%= @puppy.name %></h2>
+    <img class="puppies-img" src="<%= image_path 'dalmoation_puppy.jpg' %>" />
 
-<p>Gender: <%= @puppy.gender %></p>
-<p>Weight: <%= @puppy.weight %></p>
-<p>Coat: <%= @puppy.coat %></p>
+    <p>Gender: <%= @puppy.gender %></p>
+    <p>Weight: <%= @puppy.weight %></p>
+    <p>Coat: <%= @puppy.coat %></p>
 
-<%= link_to "Edit #{@puppy.name} Puppy", edit_puppy_path(@puppy), class: "btn btn-dark popular" %>
-<%= link_to "Delete #{@puppy.name} Puppy", puppy_path(@puppy), method: "delete", class: "btn btn-dark popular" %>
-<%= link_to "back to #{@puppy.litter.name} litter puppies", breeder_litter_puppies_path(@puppy.litter.breeder, @puppy.litter), class: "btn btn-outline-dark" %>
-<div>
-  <%= link_to "send visitation", new_breeder_visitation_path(Litter.find(@puppy.litter_id).breeder_id, litter_id: Litter.find(@puppy.litter_id)), class: "btn btn-danger btn-lg shadow" %>
+    <%= link_to "Edit #{@puppy.name} Puppy", edit_puppy_path(@puppy), class: "btn-secondary-pup" %>
+    <%= link_to "Delete #{@puppy.name} Puppy", puppy_path(@puppy), method: "delete", class: "btn-secondary-pup" %>
+    <%= link_to "back to #{@puppy.litter.name} litter puppies", breeder_litter_puppies_path(@puppy.litter.breeder, @puppy.litter), class: "btn-secondary-pup" %>
+    <%= link_to "send visitation", new_breeder_visitation_path(Litter.find(@puppy.litter_id).breeder_id, litter_id: Litter.find(@puppy.litter_id)), class: "btn-primary-pup shadow" %>
+  </div>
+  <div class="space"></div>
 </div>
