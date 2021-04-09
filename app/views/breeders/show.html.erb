@@ -1,27 +1,27 @@
 <div class="container">
+  <div>
+    <h1><%= @breeder.name %></h1>
 
-  <h1><%= @breeder.name %></h1>
+    <h2>About Us</h2>
+    <%= @breeder.about_us %>
 
-  <h2>About Us</h2>
-  <%= @breeder.about_us %>
-
-  <div class="row-container">
-    <h3 style="margin-top: 24px;">Parents</h3>
-    <div class="row">
-      <%= render 'parent_cards' %>
+    <div class="row-container">
+      <h3 style="margin-top: 24px;">Parents</h3>
+      <div class="row">
+        <%= render 'parent_cards' %>
+      </div>
     </div>
-  </div>
 
-  <div class="row-container">
-    <h3 style="margin-top: 24px;">Litters</h3>
-    <div class="row">
-      <%= render 'litter_cards' %>
+    <div class="row-container">
+      <h3 style="margin-top: 24px;">Litters</h3>
+      <div class="row">
+        <%= render 'litter_cards' %>
+      </div>
     </div>
+
+    <br>
+    <%= link_to "See all breeders", breeders_path, class: "btn-secondary-pup" %>
   </div>
-
-  <br>
-  <%= link_to "See all breeders", breeders_path, class: "btn-secondary-pup" %>
-
 </div>
 
 

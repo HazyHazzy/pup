@@ -1,0 +1,14 @@
+<div class="parent-card-litter">
+  <% @litter.breeder.parents.reverse_each do |parent|%>
+    <div class="card-parent">
+        <%= cl_image_tag parent.photo.key, crop: :fill, class: 'show-img'%>
+      <div class="card-parent-infos">
+        <div>
+          <h2><%= link_to parent.name, breeder_parent_path(@litter.breeder.id, parent.id), class: "parent-name" %></h2>
+          <p class="p-card"><%= parent.description %></p>
+        </div>
+        <p class="p-card"><%= parent.coat %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
