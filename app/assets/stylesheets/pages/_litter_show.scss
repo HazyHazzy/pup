@@ -8,3 +8,9 @@
  display: flex;
  justify-content: center;
 }
+
+.parent-card-litter {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 32px;
+}
