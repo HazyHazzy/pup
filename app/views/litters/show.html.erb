@@ -1,12 +1,31 @@
 <div class="container">
-  <h2><%= @litter.name %> Litter</h2>
 
-  <p>Birth Date: <%= @litter.birth_date %></p>
+  <div class="header-sec">
+    <div>
+      <h1><%= @litter.name %> Litter</h1>
+    </div>
+    <div>
+      <img src="<%= image_path 'litter_hp_pic.svg' %>" style="opacity: .9; height: 275px; width: 450px; object-fit: cover;" />
+    </div>
+  </div>
 
-  <%= link_to "Edit #{@litter.name} Litter", edit_litter_path(@litter), class: "btn-secondary-pup" %>
-  <%= link_to "Delete #{@litter.name} Litter", litter_path(@litter), method: "delete", class: "btn-secondary-pup" %>
-  <%= link_to "#{@litter.name}'s puppies", breeder_litter_puppies_path(@litter.breeder, @litter), class: "btn-secondary-pup" %>
-  <%= link_to "See all breeders", breeders_path, class: "btn-secondary-pup" %>
-  <%= link_to "send visitation", new_breeder_visitation_path(@litter.breeder.id, litter_id: @litter.id), class: "btn-primary-pup shadow" %>
+  <div>
+    <p>Birth Date: <%= @litter.birth_date %></p>
+    <br>
+
+    <br>
+    <h2>Puppies</h2>
+    <div class="row puppy-card">
+      <%= render 'puppies/puppies_card' %>
+    </div>
+
+    <br><br>
+    <%= link_to "Edit #{@litter.name} Litter", edit_litter_path(@litter), class: "btn-secondary-pup" %>
+    <%= link_to "Delete #{@litter.name} Litter", litter_path(@litter), method: "delete", class: "btn-secondary-pup" %>
+    <%= link_to "#{@litter.name}'s puppies", breeder_litter_puppies_path(@litter.breeder, @litter), class: "btn-secondary-pup" %>
+    <%= link_to "See all breeders", breeders_path, class: "btn-secondary-pup" %>
+    <%= link_to "send visitation", new_breeder_visitation_path(@litter.breeder.id, litter_id: @litter.id), class: "btn-primary-pup shadow" %>
+  </div>
+  <div class="space"></div>
 </div>
 
