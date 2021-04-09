@@ -1,7 +1,10 @@
 <div class="breed-cards">
   <% @breeds.reverse_each do |breed|%>
-    <div class="breed-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "Breed_bulldog.jpg" %>')">
+    <div class="breed-category"  >
+      <%= cl_image_tag breed.photo.key, class: 'breed-img'%>
       <%= link_to breed.name, breed_path(breed.id), class: "breed-name" %>
     </div>
   <% end %>
 </div>
+
+
