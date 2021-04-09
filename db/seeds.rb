@@ -40,7 +40,7 @@ end
 def dog_description
   url = 'https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1'
   dog_serialized = open(url).read
-  return dog_description = "This dog is #{dog[0]["breeds"][0]["bred_for"]}, #{dog[0]["breeds"][0]["breed_group"]}, #{dog[0]["breeds"][0]["temperament"]}"
+  return dog_description = "#{dog[0]["breeds"][0]["bred_for"]}, #{dog[0]["breeds"][0]["breed_group"]}, #{dog[0]["breeds"][0]["temperament"]}"
 end
 
 9.times do

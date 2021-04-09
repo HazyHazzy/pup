@@ -1,6 +1,6 @@
 <div class="breed-cards">
   <% @breeds.reverse_each do |breed|%>
-    <div class="breed-category"  >
+    <div class="breed-category" >
       <%= cl_image_tag breed.photo.key, class: 'breed-img'%>
       <%= link_to breed.name, breed_path(breed.id), class: "breed-name" %>
     </div>
