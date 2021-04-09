@@ -5,6 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'json'
+require 'open-uri'
+
+puts "Starting seed"
+
+puts "Creating user"
 user = User.new(
   email: Faker::Internet.email,
   first_name: Faker::Name.first_name,
@@ -14,10 +20,26 @@ user = User.new(
 puts "#{user} created"
 user.save
 
+def dog
+  url = 'https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1'
+  dog_serialized = open(url).read
+  return dog = JSON.parse(dog_serialized)
+  # All the information needed as follow
+  # dog_name = dog[0]["breeds"][0]["name"]
+  # dog_image = dog[0]["url"]
+end
+
+def dog_description
+  url = 'https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1'
+  dog_serialized = open(url).read
+  return dog_description = "This breed is #{dog[0]["breeds"][0]["bred_for"]}, #{dog[0]["breeds"][0]["breed_group"]}, #{dog[0]["breeds"][0]["temperament"]}"
+end
+
+
 3.times do
   breed = Breed.new(
-    name: Faker::Creature::Dog.breed,
-    description: Faker::Creature::Dog.meme_phrase,
+    name: dog[0]["breeds"][0]["name"],
+    description: dog_description,
     health_issues: rand(1..5),
     activity_level: rand(1..5),
     coats: Faker::Creature::Dog.coat_length,
@@ -32,6 +54,7 @@ user.save
     origin: Faker::Address.country
     )
   breed.save!
+  puts "Created breed #{breed.name}"
 end
 
 1.times do
@@ -44,49 +67,50 @@ end
     about_us: ['I love dog', 'Dog is my friend'].sample,
     user_id: user.id
     )
-  file = File.open("app/assets/images/breeder_pic.jpg")
+  file = URI.open(dog[0]["url"])
   breeder.photo.attach(io: file, filename: 'breeder_pic.jpg', content_type: 'image/jpg')
   breeder.save!
-
-  2.times do
-    parent = Parent.new(
-      name: Faker::Creature::Dog.name,
-      coat: Faker::Creature::Dog.coat_length,
-      gender: Faker::Creature::Dog.gender,
-      weight: rand(10..40),
-      description: Faker::Creature::Dog.meme_phrase,
-      breeder_id: Breeder.find(rand(1..Breeder.ids.length)).id,
-      breed_id: Breed.find(rand(1..Breed.ids.length)).id
-      )
-    file = File.open("app/assets/images/dalmatian_adult.jpg")
-    parent.photo.attach(io: file, filename: 'dalmatian_adult.jpg', content_type: 'image/jpg')
-    parent.save!
-
-    4.times do
-      litter = Litter.new(
-        name: Faker::Creature::Dog.name,
-        birth_date: Faker::Date.birthday(min_age: 0, max_age: 13),
-        stud_id: Parent.find(rand(1..Parent.ids.length)).id,
-        mom_id: Parent.find(rand(1..Parent.ids.length)).id,
-        breeder_id: Breeder.find(rand(1..Breeder.ids.length)).id
-        )
-      file = File.open("app/assets/images/litter_pic.jpg")
-      litter.photo.attach(io: file, filename: 'litter_pic.jpg', content_type: 'image/jpg')
-      litter.save!
-
-      4.times do
-        puppy = Puppy.new(
-          name: Faker::Creature::Dog.name,
-          coat: Faker::Creature::Dog.coat_length,
-          gender: Faker::Creature::Dog.gender,
-          weight: rand(10..40),
-          litter_id: Litter.find(rand(1..Litter.ids.length)).id,
-          breed_id: Breed.find(rand(1..Breed.ids.length)).id
-          )
-        file = File.open("app/assets/images/Breed_bulldog.jpg")
-        puppy.photo.attach(io: file, filename: 'Breed_bulldog.jpg', content_type: 'image/jpg')
-        puppy.save
-      end
-    end
-  end
+  puts "Created breeder #{breeder.name}"
 end
+#   2.times do
+#     parent = Parent.new(
+#       name: Faker::Creature::Dog.name,
+#       coat: Faker::Creature::Dog.coat_length,
+#       gender: Faker::Creature::Dog.gender,
+#       weight: rand(10..40),
+#       description: Faker::Creature::Dog.meme_phrase,
+#       breeder_id: Breeder.find(rand(1..Breeder.ids.length)).id,
+#       breed_id: Breed.find(rand(1..Breed.ids.length)).id
+#       )
+#     file = File.open("app/assets/images/dalmatian_adult.jpg")
+#     parent.photo.attach(io: file, filename: 'dalmatian_adult.jpg', content_type: 'image/jpg')
+#     parent.save!
+
+#     4.times do
+#       litter = Litter.new(
+#         name: Faker::Creature::Dog.name,
+#         birth_date: Faker::Date.birthday(min_age: 0, max_age: 13),
+#         stud_id: Parent.find(rand(1..Parent.ids.length)).id,
+#         mom_id: Parent.find(rand(1..Parent.ids.length)).id,
+#         breeder_id: Breeder.find(rand(1..Breeder.ids.length)).id
+#         )
+#       file = File.open("app/assets/images/litter_pic.jpg")
+#       litter.photo.attach(io: file, filename: 'litter_pic.jpg', content_type: 'image/jpg')
+#       litter.save!
+
+#       4.times do
+#         puppy = Puppy.new(
+#           name: Faker::Creature::Dog.name,
+#           coat: Faker::Creature::Dog.coat_length,
+#           gender: Faker::Creature::Dog.gender,
+#           weight: rand(10..40),
+#           litter_id: Litter.find(rand(1..Litter.ids.length)).id,
+#           breed_id: Breed.find(rand(1..Breed.ids.length)).id
+#           )
+#         file = File.open("app/assets/images/Breed_bulldog.jpg")
+#         puppy.photo.attach(io: file, filename: 'Breed_bulldog.jpg', content_type: 'image/jpg')
+#         puppy.save
+#       end
+#     end
+#   end
+# end
