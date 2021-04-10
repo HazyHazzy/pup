@@ -22,7 +22,7 @@
     <p><%= @breed.description %></p>
   </div>
   <div class="text-center mt-5">
-    <h2>Attributes</h2>
+    <h2><span class="highlight-parent"><span class="highlight"></span>Attributes</span></h2>
     <% def icon (attribute) %>
       <% attribute.times do %>
         <img src="https://img.icons8.com/cotton/20/000000/dog-heart--v4.png"/>
@@ -46,7 +46,7 @@
   </div>
 
   <div class="text-center mt-5">
-    <h2>Similar Breeds</h2>
+    <h2><span class="highlight-parent"><span class="highlight"></span>Similar</span> Breeds</h2>
     <div class="mt-4">
       <%= render 'breed_cards' %>
     </div>

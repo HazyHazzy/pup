@@ -3,6 +3,7 @@
   <div class="header-sec">
     <div>
       <h1><%= @litter.name %> Litter</h1>
+      <p>Date of Birth: <%= @litter.birth_date %></p>
     </div>
     <div>
       <img src="<%= image_path 'litter_hp_pic.svg' %>" style="opacity: .9; height: 275px; width: 450px; object-fit: cover;" />
@@ -10,17 +11,14 @@
   </div>
 
   <div>
-    <p>Birth Date: <%= @litter.birth_date %></p>
     <br>
-
-    <br>
-    <h2>Parents</h2>
+    <h2><span class="highlight-parent"><span class="highlight"></span>Parents</span></h2>
     <div class="row puppy-card d-flex justify-content-center">
       <%= render 'parent_card_litter' %>
     </div>
     <br><br>
 
-    <h2>Puppies</h2>
+    <h2><span class="highlight-parent"><span class="highlight"></span>Puppies</span></h2>
     <div class="row puppy-card">
       <%= render 'puppies/puppies_card' %>
     </div>

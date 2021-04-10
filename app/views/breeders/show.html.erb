@@ -1,19 +1,27 @@
 <div class="container">
   <div>
     <h1><%= @breeder.name %></h1>
-
-    <h2>About Us</h2>
-    <%= @breeder.about_us %>
+    <div class="d-flex">
+      <div>
+        <h2><span class="highlight-parent"><span class="highlight"></span>About</span> Us</h2>
+        <%= @breeder.about_us %>
+      </div>
+      <div>
+        <div class="breed-info-card">
+          <img src="<%= image_path 'Montreal_map.jpg' %>" style="height: 275px; width: 200px; object-fit: cover; border-radius: 4px;"/>
+        </div>
+      </div>
+    </div>
 
     <div class="row-container">
-      <h3 style="margin-top: 24px;">Parents</h3>
+      <h3 style="margin-top: 24px;"><span class="highlight-parent-h3"><span class="highlight-h3"></span>Parents</span></h3>
       <div class="row">
         <%= render 'parent_cards' %>
       </div>
     </div>
 
     <div class="row-container">
-      <h3 style="margin-top: 24px;">Litters</h3>
+      <h3 style="margin-top: 24px;"><span class="highlight-parent-h3"><span class="highlight-h3"></span>Litters</span></h3>
       <div class="row">
         <%= render 'litter_cards' %>
       </div>
