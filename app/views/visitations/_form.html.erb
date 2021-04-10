@@ -1,13 +1,23 @@
-<%= simple_form_for [@breeder, @visitation] do |f| %>
-  <div class="form-group">
-    <%= f.input :name %>
-    <%= f.input :home_address, :label => "Home Address" %>
-    <%= f.input :email_address, :label => "Email Address" %>
-    <%= f.input :contact_number, :label => "Contact Number" %>
-    <%= f.input :occupation %>
-    <%= f.input :reference %>
-    <%= f.input :puppy_select, :label => "Which puppy and/or puppies are you interested in visiting?", input_html: { class: "beautiful-dropdown" }, collection: @puppy_names %>
-    <%= f.input :screening_question, placeholder: "Why do you want a dog?\nHave you owned a dog before?\nWhy are you interested in this breed?\nAre you aware of the potential health issues associated with this breed?\nWho will be the primary caretaker of the dog?\nWhat type of dwelling do you live in?\nDo you have children at home?\nHow active is your lifestyle?\nHow many hours a day will the dog be left alone?" %>
-  </div>
-  <%= f.submit class: 'btn btn-primary' %>
-<% end %>
+<div class="container">
+  <%= simple_form_for [@breeder, @visitation] do |f| %>
+    <div class="form-group">
+      <h2 class="col-12">Personal Info</h2>
+      <div class="personal-info-1">
+        <div class="col-4"><%= f.input :name %></div>
+        <div class="col-4"><%= f.input :contact_number, :label => "Contact Number" %></div>
+        <div class="col-4"><%= f.input :occupation %></div>
+      </div>
+      <div class="personal-info-2">
+        <div class="col-7"><%= f.input :home_address, as: :text, :label => "Home Address" %></div>
+        <div class="col-4"><%= f.input :reference %></div>
+      </div>
+      <div class="col-7"><%= f.input :email_address, :label => "Email Address" %></div>
+      <h2 class="col-12">Screening Question</h2>
+      <div class="col-7"><%= f.input :puppy_select, :label => "Which puppy and/or puppies are you interested in visiting?", input_html: { class: "beautiful-dropdown" }, collection: @puppy_names %></div>
+      <div class="col-7"><%= f.input :screening_question, placeholder: "Have you owned a dog before?" %></div>
+      <div class="col-7"><%= f.input :screening_question, placeholder: "Why d you want a dog?" %></div>
+    </div>
+    <%= f.submit class: 'btn-primary-pup' %>
+  <% end %>
+</div>
+

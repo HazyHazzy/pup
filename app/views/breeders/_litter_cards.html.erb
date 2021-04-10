@@ -1,7 +1,7 @@
 <div class="litter-cards">
   <% @breeder.litters.reverse_each do |litter|%>
      <div class="card-litter">
-          <%= cl_image_tag litter.photo.key, crop: :fill, class: 'show-img'%>
+          <%= cl_image_tag litter.photo.key, crop: :fill if litter.photo.attached? %>
         <div class="card-litter-infos">
           <div>
             <h2><%= link_to litter.name, litter_path(litter.id), class: "litter-name" %></h2>
