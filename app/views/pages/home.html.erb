@@ -6,10 +6,24 @@
 
       <p>Connecting Dog Lovers with <br>Reputable Breeders in their area</p>
     </div>
-    <div>
-      <%= image_tag 'Homepage-img.png', class: "homepage-image" %>
+      <div>
+        <%= image_tag 'Homepage-img.png', class: "homepage-image" %>
+      </div>
     </div>
-  </div>
+    <div class="search-homepage">
+    <%= form_tag breeders_path, method: :get do %>
+    <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+      placeholder: "Find a Breeder"
+      %>
+    <%= button_tag(type: 'submit', class: "btn btn-primary-pup") do %>
+    <i class="fas fa-search"></i>
+  <% end %>
+      <!-- submit_tag "", class: "btn-primary-pup"
+      <i class="fas fa-search"></i> -->
+      <% end %>
+    </div>
 
 
 
