@@ -45,6 +45,6 @@ class BreedsController < ApplicationController
                                   :maximum_weight, :minimum_life_span,
                                   :maximum_life_span, :health_issues, :origin,
                                   :guardian_insticts, :grooming_requirements,
-                                  :coats, :activity_level)
+                                  :coats, :activity_level, :photo)
   end
 end

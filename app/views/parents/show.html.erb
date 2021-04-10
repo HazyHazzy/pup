@@ -1,9 +1,9 @@
 <h1><%= @parent.name  %></h1>
 
-<p>Image placeholder</p>
+<%= cl_image_tag @parent.photo.key, class: 'breed-img'%>
 
 <p> About <%= @parent.name  %></p>
-
+<p><%= @parent.description %></p>
 <p> Gender: <%= @parent.gender  %></p>
 <p> Weight: <%= @parent.weight  %></p>
 <p> Coat: <%= @parent.coat  %></p>
