@@ -1,7 +1,7 @@
 <div class="puppies-cards">
   <% @litter.puppies.each do |puppy| %>
     <div class="card-puppies">
-      <img src="<%= image_path 'dalmoation_puppy.jpg' %>" />
+      <%= cl_image_tag puppy.photo.key, crop: :fill, class: 'show-img'%>
       <div class="card-puppies-infos">
         <div>
           <h2><%= link_to puppy.name, puppy_path(puppy), class: "puppies-name" %></h2>
