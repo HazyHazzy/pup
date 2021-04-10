@@ -1,14 +1,22 @@
 <div class="container">
   <div>
     <h1><%= @breeder.name %></h1>
-    <div class="d-flex">
-      <div>
+    <div class="d-flex justify-content-around">
+      <div style="max-width: 700px;">
         <h2><span class="highlight-parent"><span class="highlight"></span>About</span> Us</h2>
         <%= @breeder.about_us %>
       </div>
       <div>
-        <div class="breed-info-card">
-          <img src="<%= image_path 'Montreal_map.jpg' %>" style="height: 275px; width: 200px; object-fit: cover; border-radius: 4px;"/>
+        <div class="breed-info-card shadow">
+          <div class="text-center">
+            <img src="<%= image_path 'Montreal_map.jpg' %>" class="info-map shadow"/>
+          </div>
+          <ul class="list">
+            <li><i class="fas fa-map-marker-alt"></i> <%= @breeder.city %> </li>
+            <li><i class="fas fa-link"></i> <%= @breeder.website_url %> </li>
+            <li><i class="fas fa-paper-plane"></i> <%= @breeder.email %></li>
+            <li><i class="fas fa-phone-alt"></i> <%= @breeder.phone_number %></li>
+          </ul>
         </div>
       </div>
     </div>
