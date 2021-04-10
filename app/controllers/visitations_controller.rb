@@ -46,6 +46,9 @@ class VisitationsController < ApplicationController
   end
 
   def visit_params
-    params.require(:visitation).permit(:name, :status, :home_address, :email_address, :contact_number, :occupation, :reference, :screening_question, :puppy_select)
+    params.require(:visitation).permit(:name, :status, :home_address, :email_address,
+      :contact_number, :occupation, :reference, :why_dog, :puppy_select, :have_dog,
+      :why_interested, :health_issues_aware, :primary_caretaker, :dewelling, :have_children,
+      :lifestyle, :hours_dog_leftalone)
   end
 end
