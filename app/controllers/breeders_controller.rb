@@ -1,6 +1,10 @@
 class BreedersController < ApplicationController
   def index
-    @breeders = Breeder.all
+    if params[:query].present?
+      @breeders = Breeder.all.search_by_name_and_breed(params[:query])
+    else
+      @breeders = Breeder.all
+    end
   end
 
   def show
