@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_06_232854) do
+ActiveRecord::Schema.define(version: 2021_04_10_193624) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -141,8 +141,16 @@ ActiveRecord::Schema.define(version: 2021_04_06_232854) do
     t.string "contact_number"
     t.string "occupation"
     t.string "reference"
-    t.text "screening_question"
+    t.text "why_dog"
     t.string "puppy_select"
+    t.text "have_dog"
+    t.text "why_interested"
+    t.text "health_issues_aware"
+    t.text "primary_caretaker"
+    t.text "dewelling"
+    t.text "have_children"
+    t.text "lifestyle"
+    t.text "hours_dog_leftalone"
     t.index ["breeder_id"], name: "index_visitations_on_breeder_id"
     t.index ["user_id"], name: "index_visitations_on_user_id"
   end
