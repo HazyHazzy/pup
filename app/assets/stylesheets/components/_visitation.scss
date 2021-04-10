@@ -63,3 +63,32 @@
   display: flex;
   justify-content: space-between;
 }
+
+.visitation-decision {
+  overflow: hidden;
+  height: 250px;
+  width: 300px;
+  align-items: center;
+  background-color: #F6CCFF;
+  margin: auto;
+  border-radius: 10%;
+}
+
+.visitation-decision h2 {
+  margin-top: 8px;
+  margin-left: 15px;
+}
+
+.visitation-decision .btn-primary-pup {
+  margin-left: 15px;
+}
+
+.visitor-info {
+  width: 600px;
+}
+
+.visitation-edit {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
