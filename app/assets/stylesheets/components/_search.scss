@@ -1,0 +1,57 @@
+//Homepage Styling
+
+
+.search-homepage {
+  margin-top: -50px;
+  margin-bottom: 100px;
+}
+
+.search-homepage form {
+  display: flex;
+
+}
+
+.search-homepage .btn-primary-pup {
+  width:80px;
+  transform: translateX(-50px);
+  height: 48px;
+
+}
+
+.search-homepage .form-control {
+  width: 647px;
+  height: 48px;
+  position: relative;
+}
+
+//Navbar Styling
+
+.search-navbar {
+  margin-top: 0px;
+  margin-bottom:0px;
+}
+
+.search-navbar form {
+  display: flex;
+  padding-top:4px;
+
+}
+
+.search-navbar .btn-primary-pup {
+  width:52px;
+  transform: translateX(-40px);
+  height: 30px;
+
+}
+
+.search-navbar .form-control {
+  width: 400px;
+  height: 30px;
+  position: relative;
+  padding-top: 10px;
+}
+
+.search-navbar i {
+  transform: translateY(-10px);
+  font-size:15px;
+}
