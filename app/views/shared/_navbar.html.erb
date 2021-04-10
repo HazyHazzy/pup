@@ -12,6 +12,7 @@
     <li class="nav-item">
       <%= link_to "About Us", '#' , class: "nav-link" %>
     </li>
+    <% unless action_name == "home" %>
     <div class="search-navbar">
     <%= form_tag breeders_path, method: :get do %>
     <%= text_field_tag :query,
@@ -24,6 +25,7 @@
     <% end %>
     <% end %>
     </div>
+    <% end %>
   </ul>
 
 
