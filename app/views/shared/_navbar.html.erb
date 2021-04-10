@@ -12,7 +12,21 @@
     <li class="nav-item">
       <%= link_to "About Us", '#' , class: "nav-link" %>
     </li>
+    <div class="search-navbar">
+    <%= form_tag breeders_path, method: :get do %>
+    <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+      placeholder: "Find a Breeder"
+      %>
+    <%= button_tag(type: 'submit', class: "btn btn-primary-pup") do %>
+    <i class="fas fa-search"></i>
+    <% end %>
+    <% end %>
+    </div>
   </ul>
+
+
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
