@@ -15,8 +15,45 @@
 
     <br>
     <h2>Parents</h2>
+    <!-- Button trigger modal -->
+    <button type="button" data-toggle="modal" data-target="#exampleModalLong">
+      
+    </button>
     <div class="row puppy-card d-flex justify-content-center">
-      <%= render 'parent_card_litter' %>
+      <div class="parent-card-litter">
+        <% @litter.breeder.parents.reverse_each do |parent|%>
+          <div class="card-parent">
+              <%= cl_image_tag parent.photo.key, crop: :fill, class: 'show-img'%>
+            <div class="card-parent-infos">
+              <div>
+                <h2 data-toggle="modal" data-target="#exampleModalLong"><%= link_to parent.name, breeder_parent_path(@litter.breeder.id, parent.id), class: "parent-name" %></h2>
+                <p class="p-card"><%= parent.description %></p>
+              </div>
+              <p class="p-card"><%= parent.coat %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Back</button>
+          </div>
+        </div>
+      </div>
     </div>
     <br><br>
 
