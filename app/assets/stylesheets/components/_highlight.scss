@@ -1,0 +1,45 @@
+/*highlight for h1 tags*/
+
+.mark-parent {
+  position: relative;
+}
+
+.marc {
+  position: absolute;
+  width: 100%;
+  bottom: 14px;
+  height: 14px;
+  background-color: $primary-color;
+  opacity: .8;
+  z-index: -1;
+}
+
+/*highlight for h2 tags*/
+.highlight-parent {
+  position: relative;
+}
+
+.highlight {
+  position: absolute;
+  width: 100%;
+  bottom: 6px;
+  height: 8px;
+  background-color: $primary-color;
+  opacity: .8;
+  z-index: -1;
+}
+
+/*highlight for h3 tags*/
+.highlight-parent-h3 {
+  position: relative;
+}
+
+.highlight-h3 {
+  position: absolute;
+  width: 100%;
+  bottom: 4px;
+  height: 6px;
+  background-color: $primary-color;
+  opacity: .8;
+  z-index: -1;
+}

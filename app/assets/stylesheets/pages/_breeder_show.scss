@@ -1,0 +1,20 @@
+.breed-info-card {
+  background-color: #fdf9fe;
+  padding: 12px 12px;
+  border-radius: $border-radius;
+  width: 300px;
+}
+
+.info-map {
+  height: 225px;
+  width: 250px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.list {
+  list-style: none;
+  padding-left: 4px;
+  margin-top: 8px;
+  text-size: 8px !important;
+}
