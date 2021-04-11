@@ -89,10 +89,18 @@
 
 .visitation-edit {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: space-between;
+  align-items: end;
 }
 
 .visitation-margin {
   margin-bottom: 10px;
+}
+
+// .visitor-info > p {
+//    text-decoration: underline #be00e8;
+// }
+
+.text-underline {
+   text-decoration: underline #be00e8;
 }

@@ -1,6 +1,6 @@
 <div class="container">
 
-  <h1><span class="mark-parent"><span class="marc"></span>Visitation</span>Inquiry</h1>
+  <h1><span class="mark-parent"><span class="marc"></span>Visitation </span>Inquiry</h1>
   <% if @my_visit.blank? %>
     <%= link_to "No one send visitation, Polish your brand page?", my_brand_path, class: "btn-primary-pup visitation-margin" %>
   <% else %>
@@ -19,7 +19,7 @@
     <% end %>
   <% end %>
 
-  <h1>Your Visitation<span class="mark-parent"><span class="marc"></span>Request</span></h1>
+  <h1>Your Visitation <span class="mark-parent"><span class="marc"></span>Request</span></h1>
   <% if @my_visitations.blank? %>
     <%= link_to "Find a breeder and send visitation?", breeders_path, class: "btn-primary-pup visitation-margin" %>
   <% else %>

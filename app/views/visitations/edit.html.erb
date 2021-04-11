@@ -1,7 +1,7 @@
 <div class="container">
   <div class="header-sec">
     <div>
-      <h1>Make<span class="mark-parent"><span class="marc"></span>Decision</span></h1>
+      <h1>Make <span class="mark-parent"><span class="marc"></span>Decision</span></h1>
     </div>
     <div>
       <img src="<%= image_path 'visitation-edit-page.png' %>" style="opacity: .9; height: 275px; width: 450px; object-fit: cover;" />
@@ -10,24 +10,24 @@
 
   <div class="visitation-edit">
     <div class="visitor-info">
-      <h2>The Puppy: <%= @visitation.puppy_select %></h2>
-      <h2>The Visitor</h2>
-      <p>Name: <%= @visitation.name %></p>
-      <p>Home Address: <%= @visitation.home_address %></p>
-      <p>Email Address: <%= @visitation.email_address %></p>
-      <p>Contact Number: <%= @visitation.contact_number %></p>
+      <h2>The Puppy request to visit: <%= @visitation.puppy_select %></h2>
+      <h2>The Visitor Info</h2>
+      <p><strong class="text-underline">Name:</strong> <%= @visitation.name %></p>
+      <p><strong class="text-underline">Home Address:</strong> <%= @visitation.home_address %></p>
+      <p><strong class="text-underline">Email Address:</strong> <%= @visitation.email_address %></p>
+      <p><strong class="text-underline">Contact Number:</strong> <%= @visitation.contact_number %></p>
       <div id="more" class="fulltext">
-        <p>Occupation: <%= @visitation.occupation %></p>
-        <p>Reference: <%= @visitation.reference %></p>
-        <p>Why do you want a dog: <%= @visitation.why_dog %></p>
-        <p>Have you owned a dog before, if so what kind: <%= @visitation.have_dog %></p>
-        <p>Why are you interested in this breed: <%= @visitation.why_interested %></p>
-        <p>Are you aware of the potential health issues associated with this breed: <%= @visitation.health_issues_aware %></p>
-        <p>Who will be the primary caretaker of the dog: <%= @visitation.primary_caretaker %></p>
-        <p>What type of dwelling do you live in: <%= @visitation.dewelling %></p>
-        <p>Do you have children at home: <%= @visitation.have_children %></p>
-        <p>How active is your lifestyle: <%= @visitation.lifestyle %></p>
-        <p>How many hours a day will the dog be left alone: <%= @visitation.hours_dog_leftalone %></p>
+        <p><strong class="text-underline">Occupation:</strong> <%= @visitation.occupation %></p>
+        <p><strong class="text-underline">Reference:</strong> <%= @visitation.reference %></p>
+        <p><strong class="text-underline">Why do you want a dog:</strong> <%= @visitation.why_dog %></p>
+        <p><strong class="text-underline">Have you owned a dog before, if so what kind:</strong> <%= @visitation.have_dog %></p>
+        <p><strong class="text-underline">Why are you interested in this breed:</strong> <%= @visitation.why_interested %></p>
+        <p><strong class="text-underline">Are you aware of the potential health issues associated with this breed:</strong> <%= @visitation.health_issues_aware %></p>
+        <p><strong class="text-underline">Who will be the primary caretaker of the dog:</strong> <%= @visitation.primary_caretaker %></p>
+        <p><strong class="text-underline">What type of dwelling do you live in:</strong> <%= @visitation.dewelling %></p>
+        <p><strong class="text-underline">Do you have children at home:</strong> <%= @visitation.have_children %></p>
+        <p><strong class="text-underline">How active is your lifestyle:</strong> <%= @visitation.lifestyle %></p>
+        <p><strong class="text-underline">How many hours a day will the dog be left alone:</strong> <%= @visitation.hours_dog_leftalone %></p>
       </div>
       <button text-expanded="false" text-controls="more" class="toggle-content btn-secondary-pup" hidden><span class="text">Learn More</span> <span class="visually-hidden">about this visitor</span></button>
     </div>
