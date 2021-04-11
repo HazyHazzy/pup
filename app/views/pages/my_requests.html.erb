@@ -1,14 +1,14 @@
 <div class="container">
 
-  <h2>Visitation Inquiry</h2>
+  <h1><span class="mark-parent"><span class="marc"></span>Visitation</span>Inquiry</h1>
   <% if @my_visit.blank? %>
-    <%= link_to "No one send visitation, Polish your brand page?", my_brand_path, class: "btn-primary-pup" %>
+    <%= link_to "No one send visitation, Polish your brand page?", my_brand_path, class: "btn-primary-pup visitation-margin" %>
   <% else %>
     <% @my_visit.reverse_each do |visitation| %>
       <div class="card-brand">
         <div class="card-brand-infos">
           <h2>
-            <%= visitation.name.capitalize() %> request to visitation your puppy <%= visitation.puppy_select %>
+            <%= visitation.name.capitalize() %> request to visit your puppy <%= visitation.puppy_select %>
           </h2>
           <p>
             <%= link_to "look into details for this visitation", edit_breeder_visitation_path(visitation.breeder_id, visitation.id), class: "btn-primary-pup" %>
@@ -19,9 +19,9 @@
     <% end %>
   <% end %>
 
-  <h2>Your visitation requests</h2>
+  <h1>Your Visitation<span class="mark-parent"><span class="marc"></span>Request</span></h1>
   <% if @my_visitations.blank? %>
-    <%= link_to "Find a breeder and send visitation?", breeders_path, class: "btn-primary-pup" %>
+    <%= link_to "Find a breeder and send visitation?", breeders_path, class: "btn-primary-pup visitation-margin" %>
   <% else %>
     <% @my_visitations.reverse_each do |visitation| %>
       <div class="card-visitation">
@@ -44,7 +44,4 @@
       </div>
     <% end %>
   <% end %>
-
-  </br>
-  <%= link_to "home page", root_path, class: "btn-secondary-pup" %>
 </div>
