@@ -1,5 +1,4 @@
 <div class="container">
-
   <div class="header-sec">
     <div>
       <h1><%= @litter.name %> Litter</h1>
@@ -9,54 +8,23 @@
       <img src="<%= image_path 'litter_hp_pic.svg' %>" style="opacity: .9; height: 275px; width: 450px; object-fit: cover;" />
     </div>
   </div>
-
   <div>
     <br>
-<<<<<<< HEAD
-
-    <br>
-    <h2>Parents</h2>
-    <!-- Button trigger modal -->
-    <button type="button" data-toggle="modal" data-target="#exampleModalLong">
-      
-    </button>
-=======
     <h2><span class="highlight-parent"><span class="highlight"></span>Parents</span></h2>
->>>>>>> 70601dfcc1097a3450ac6ec65116d67a3627ce43
     <div class="row puppy-card d-flex justify-content-center">
       <div class="parent-card-litter">
-        <% @litter.breeder.parents.reverse_each do |parent|%>
+        <% @parents.reverse_each do |parent|%>
           <div class="card-parent">
               <%= cl_image_tag parent.photo.key, crop: :fill, class: 'show-img'%>
             <div class="card-parent-infos">
               <div>
-                <h2 data-toggle="modal" data-target="#exampleModalLong"><%= link_to parent.name, breeder_parent_path(@litter.breeder.id, parent.id), class: "parent-name" %></h2>
+                <h2><%= link_to parent.name, breeder_parent_path(@litter.breeder.id, parent.id), class: "parent-name" %></h2>
                 <p class="p-card"><%= parent.description %></p>
               </div>
               <p class="p-card"><%= parent.coat %></p>
-            </div>
+            </div>            
           </div>
         <% end %>
-      </div>
-    </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            ...
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Back</button>
-          </div>
-        </div>
       </div>
     </div>
     <br><br>
@@ -73,6 +41,17 @@
     <%= link_to "See all breeders", breeders_path, class: "btn-secondary-pup" %>
     <%= link_to "send visitation", new_breeder_visitation_path(@litter.breeder.id, litter_id: @litter.id), class: "btn-primary-pup shadow" %>
   </div>
+
+  <button class="trigger">Click here to trigger the modal!</button>
+  <div class="modal">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <h1>Hello, I am a modal!</h1>
+    </div>
+  </div>
+
   <div class="space"></div>
 </div>
+
+<%= javascript_pack_tag 'litters-show-page' %>
 
