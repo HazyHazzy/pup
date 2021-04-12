@@ -1,8 +1,16 @@
 <div class="container">
 
-  <h1><span class="mark-parent"><span class="marc"></span>Visitation </span>Inquiry</h1>
+  <div class="header-sec">
+    <div>
+      <h1><span class="mark-parent"><span class="marc"></span>Visitation</span> Inquiry & Request</h1>
+    </div>
+    <div>
+      <img src="<%= image_path 'pablo-good-job.png' %>" style="opacity: .9; height: 275px; width: 450px; object-fit: cover;" />
+    </div>
+  </div>
+
   <% if @my_visit.blank? %>
-    <%= link_to "No one send visitation, Polish your brand page?", my_brand_path, class: "btn-primary-pup visitation-margin" %>
+    <%= link_to "No one send visitation, Polish your brand page?", my_brand_path, class: "btn-secondary-pup visitation-margin" %>
   <% else %>
     <% @my_visit.reverse_each do |visitation| %>
       <div class="card-brand">
@@ -19,9 +27,9 @@
     <% end %>
   <% end %>
 
-  <h1>Your Visitation <span class="mark-parent"><span class="marc"></span>Request</span></h1>
   <% if @my_visitations.blank? %>
-    <%= link_to "Find a breeder and send visitation?", breeders_path, class: "btn-primary-pup visitation-margin" %>
+    <br>
+    <%= link_to "Find a breeder and send visitation?", breeders_path, class: "btn-secondary-pup visitation-margin" %>
   <% else %>
     <% @my_visitations.reverse_each do |visitation| %>
       <div class="card-visitation">
