@@ -1,10 +1,10 @@
 <div class="container">
   <% if @breeder != [] %>
     <div>
-      <h1><%= @breeder[0].name.capitalize() %> Profile</h1>
-      <div class="d-flex justify-content-around">
+      <h1><span class="highlight-parent"><span class="highlight"></span><%= @breeder[0].name.capitalize() %></span> Profile</h1>
+      <div class="d-flex justify-content-between">
         <div style="max-width: 700px;">
-          <h2><span class="highlight-parent"><span class="highlight"></span>Myself</span></h2>
+          <h2 style="margin-top: 24px;">Myself</h2>
           <%= @breeder[0].about_us %>
         </div>
         <div>
