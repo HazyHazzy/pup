@@ -43,6 +43,14 @@
  justify-content: center;
 }
 
+// .breed-category:hover {
+//   transform: scale(1.05) translateZ(1);
+// }
+
+.breed-cards:hover > .breed-category:not(:hover) {
+  filter: brightness(0.5) saturate(1) contrast(1) blur(2px);
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .breed-cards {
@@ -77,3 +85,4 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
