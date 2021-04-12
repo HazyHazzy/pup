@@ -9,6 +9,7 @@
     </div>
   </div>
 
+  <br>
   <% if @my_visit.blank? %>
     <%= link_to "No one send visitation, Polish your brand page?", my_brand_path, class: "btn-secondary-pup visitation-margin" %>
   <% else %>
@@ -34,15 +35,15 @@
     <% @my_visitations.reverse_each do |visitation| %>
       <div class="card-visitation">
         <div class="card-front">
-          <h2>Visitation for <%= visitation.breeder.name.capitalize() %></h2>
+          <h2>Visitation request to <%= visitation.breeder.name.capitalize() %></h2>
         </div>
         <div class="card-back">
           <div>
             <% if visitation.status == "Approve" %>
-              <h3><%= "Congratulations, your visitation request for #{visitation.breeder.name.capitalize()} got approved" %></h3>
+              <h3><%= "Congratulations, your visitation request to #{visitation.breeder.name.capitalize()} got approved" %></h3>
               <p><%= "You can contact the breeder through Email: #{visitation.breeder.email} Phone: #{visitation.breeder.phone_number}" %></p>
             <% else %>
-              <h2>Visitation for <%= visitation.breeder.name.capitalize() %> is <%= visitation.status %></h2>
+              <h2>Visitation request to <%= visitation.breeder.name.capitalize() %> is <%= visitation.status %></h2>
             <% end %>
           </div>
           <div>
