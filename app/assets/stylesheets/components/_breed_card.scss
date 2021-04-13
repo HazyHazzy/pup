@@ -58,28 +58,18 @@
 // }
 
 
-.breed-title-move {
+.mark-parent {
   animation-name: title-move;
   animation-duration: 3s;
   position: relative;
 }
 
 @keyframes title-move {
-  0%   {right:0px; top:0px;}
-  25%  {right:100px; top:0px;}
-  70%  {right:0px; top:0px;}
-}
-
-.breed-picture-move {
-  animation-name: picture-move;
-  animation-duration: 3s;
-  position: relative;
-}
-
-@keyframes picture-move {
   0%   {left:0px; top:0px;}
-  25%  {left:100px; top:0px;}
-  70%  {left:0px; top:0px;}
+  25%  {left:200px; top:0px;}
+  50%  {left:200px; top:230px;}
+  75%  {left:0px; top:230px;}
+  100% {left:0px; top:0px;}
 }
 
 // Smallest device
