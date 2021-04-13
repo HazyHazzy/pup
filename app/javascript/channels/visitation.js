@@ -34,4 +34,16 @@ const flipButton = () => {
   });
 }
 
+// const updateVisitation = () => {
+//   const visitationClick = document.querySelector('update-visitation');
+//   console.log(visitationClick);
+//   visitationClick.addEventListener('click', function () {
+//     const visitationState = document.querySelector('.insert-html');
+//     visitationState.insertAdjacentHTML('beforeend', 'France');
+//   });
+// }
+
+
 export { flipButton };
+// export { updateVisitation };
+
