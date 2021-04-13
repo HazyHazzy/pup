@@ -24,12 +24,18 @@
   margin-bottom: 32px;
 }
 
+.breed-index-img:hover {
+  transform: scale(1.3);
+  transition: 0.5s;
+}
+
 .breed-name {
   color: white;
 }
 
 .breed-name:hover {
   color: white;
+  text-decoration: none;
 }
 
 .breed-cards {
@@ -41,6 +47,29 @@
 .dog-attribute {
  display: flex;
  justify-content: center;
+}
+
+// .breed-category:hover {
+//   transform: scale(1.05) translateZ(1);
+// }
+
+// .breed-cards:hover > .breed-category:not(:hover) {
+//   filter: brightness(0.5) saturate(1) contrast(1) blur(2px);
+// }
+
+
+.mark-parent {
+  animation-name: title-move;
+  animation-duration: 3s;
+  position: relative;
+}
+
+@keyframes title-move {
+  0%   {left:0px; top:0px;}
+  25%  {left:200px; top:0px;}
+  50%  {left:200px; top:100px;}
+  75%  {left:0px; top:100px;}
+  100% {left:0px; top:0px;}
 }
 
 // Smallest device
@@ -77,3 +106,4 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
