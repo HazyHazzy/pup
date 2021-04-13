@@ -1,33 +1,48 @@
 <div class="container">
-  <h1>Make decision for this visitation</h1>
-
-  <div>
-    <h2>The Puppy he/she want to visit: <%= @visitation.puppy_select %></h2>
-    <h2>The Visitor</h2>
-    <ul>Name: <%= @visitation.name %></ul>
-    <ul>Home Address: <%= @visitation.home_address %></ul>
-    <ul>Email Address: <%= @visitation.email_address %></ul>
-    <ul>Contact Number: <%= @visitation.contact_number %></ul>
-    <div id="more" class="fulltext">
-      <ul>Occupation: <%= @visitation.occupation %></ul>
-      <ul>Reference: <%= @visitation.reference %></ul>
-      <ul>Why do you want a dog: <%= @visitation.why_dog %></ul>
-      <ul>Have you owned a dog before, if so what kind: <%= @visitation.have_dog %></ul>
-      <ul>Why are you interested in this breed: <%= @visitation.why_interested %></ul>
-      <ul>Are you aware of the potential health issues associated with this breed: <%= @visitation.health_issues_aware %></ul>
-      <ul>Who will be the primary caretaker of the dog: <%= @visitation.primary_caretaker %></ul>
-      <ul>What type of dwelling do you live in: <%= @visitation.dewelling %></ul>
-      <ul>Do you have children at home: <%= @visitation.have_children %></ul>
-      <ul>How active is your lifestyle: <%= @visitation.lifestyle %></ul>
-      <ul>How many hours a day will the dog be left alone: <%= @visitation.hours_dog_leftalone %></ul>
+  <div class="header-sec">
+    <div>
+      <h1>Make <span class="mark-parent"><span class="marc"></span>Decision</span></h1>
     </div>
-    <button text-expanded="false" text-controls="more" class="toggle-content" hidden><span class="text">Show More</span> <span class="visually-hidden">about this visitor</span></button>
+    <div>
+      <img src="<%= image_path 'visitation-edit-page.png' %>" style="opacity: .9; height: 275px; width: 450px; object-fit: cover;" />
+    </div>
   </div>
 
-  <%= simple_form_for [@breeder, @visitation] do |v| %>
-    <div >
-      <%= v.input :status, label: "Make your decision", hint: "You can Approve, Reject or Pend", collection: %w[Pending Approve Reject] %>
+  <div class="visitation-edit">
+    <div class="visitor-info">
+      <h2>The 🐶 request to visit: <%= @visitation.puppy_select %></h2>
+      <h2>The Visitor👨 Info</h2>
+      <p><strong class="text-underline">Name:</strong> <%= @visitation.name %></p>
+      <p><strong class="text-underline">Home Address:</strong> <%= @visitation.home_address %></p>
+      <p><strong class="text-underline">Email Address:</strong> <%= @visitation.email_address %></p>
+      <p><strong class="text-underline">Contact Number:</strong> <%= @visitation.contact_number %></p>
+      <div id="more" class="fulltext">
+        <p><strong class="text-underline">Occupation:</strong> <%= @visitation.occupation %></p>
+        <p><strong class="text-underline">Reference:</strong> <%= @visitation.reference %></p>
+        <p><strong class="text-underline">Why do you want a dog:</strong> <%= @visitation.why_dog %></p>
+        <p><strong class="text-underline">Have you owned a dog before, if so what kind:</strong> <%= @visitation.have_dog %></p>
+        <p><strong class="text-underline">Why are you interested in this breed:</strong> <%= @visitation.why_interested %></p>
+        <p><strong class="text-underline">Are you aware of the potential health issues associated with this breed:</strong> <%= @visitation.health_issues_aware %></p>
+        <p><strong class="text-underline">Who will be the primary caretaker of the dog:</strong> <%= @visitation.primary_caretaker %></p>
+        <p><strong class="text-underline">What type of dwelling do you live in:</strong> <%= @visitation.dewelling %></p>
+        <p><strong class="text-underline">Do you have children at home:</strong> <%= @visitation.have_children %></p>
+        <p><strong class="text-underline">How active is your lifestyle:</strong> <%= @visitation.lifestyle %></p>
+        <p><strong class="text-underline">How many hours a day will the dog be left alone:</strong> <%= @visitation.hours_dog_leftalone %></p>
+      </div>
+      <button text-expanded="false" text-controls="more" class="toggle-content btn-secondary-pup" hidden><span class="text">Learn More</span> <span class="visually-hidden">about this visitor</span></button>
     </div>
-    <%= v.submit class: 'btn-primary-pup' %>
-  <% end %>
+
+    <div class="visitation-decision">
+      <h2>Choose your decision</h2>
+      <%= simple_form_for [@breeder, @visitation] do |v| %>
+        <div class="col-12">
+          <%= v.input :status, label: false, hint: "You can Approve, Reject or Pend", collection: %w[Pending Approve Reject] %>
+        </div>
+        <%= v.submit class: 'btn-primary-pup update-visitation' %>
+      <% end %>
+    </div>
+
+  </div>
 </div>
+
+
