@@ -57,6 +57,31 @@
 //   filter: brightness(0.5) saturate(1) contrast(1) blur(2px);
 // }
 
+
+.breed-title-move {
+  animation-name: title-move;
+  animation-duration: 3s;
+  position: relative;
+}
+
+@keyframes title-move {
+  0%   {right:0px; top:0px;}
+  25%  {right:100px; top:0px;}
+  70%  {right:0px; top:0px;}
+}
+
+.breed-picture-move {
+  animation-name: picture-move;
+  animation-duration: 3s;
+  position: relative;
+}
+
+@keyframes picture-move {
+  0%   {left:0px; top:0px;}
+  25%  {left:100px; top:0px;}
+  70%  {left:0px; top:0px;}
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .breed-cards {
