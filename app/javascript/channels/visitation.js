@@ -35,5 +35,3 @@ const flipButton = () => {
 }
 
 export { flipButton };
-
-
