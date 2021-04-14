@@ -14,15 +14,36 @@
     <div class="row puppy-card d-flex justify-content-center">
       <div class="parent-card-litter">
         <% @parents.reverse_each do |parent|%>
-          <div class="card-parent">
+          <div class="card-parent" data-toggle="modal" data-target="#parent-<%= parent.id %>">
               <%= cl_image_tag parent.photo.key, crop: :fill, class: 'show-img'%>
             <div class="card-parent-infos">
               <div>
-                <h2><%= link_to parent.name, breeder_parent_path(@litter.breeder.id, parent.id), class: "parent-name" %></h2>
+                <h2><%= parent.name %></h2>
                 <p class="p-card"><%= parent.description %></p>
               </div>
-              <p class="p-card"><%= parent.coat %></p>
             </div>            
+          </div>
+          <div class="modal fade" id="parent-<%= parent.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+              <div class="modal-content container">
+                <div class="modal-body">
+                  <h2><%= parent.name %></h2>
+                  <div id="parent-photo">
+                    <%= cl_image_tag parent.photo.key, crop: :fill, class: 'show-img'%>
+                  </div>
+                  <div id="parent-description">
+                    <h2>About <%= parent.name  %></h2>
+                    <p><%= parent.description %></p>
+                  </div>
+                  <div id="parent-info">
+                    <h4>Weight: <%= parent.weight %></h4>
+                    <h4>Coat: <%= parent.coat %></h4>
+                    <h4>Gender: <%= parent.gender %></h4>
+                  </div>
+                  <button type="button" class="btn btn-primary-pup" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
           </div>
         <% end %>
       </div>
@@ -41,17 +62,4 @@
     <%= link_to "See all breeders", breeders_path, class: "btn-secondary-pup" %>
     <%= link_to "send visitation", new_breeder_visitation_path(@litter.breeder.id, litter_id: @litter.id), class: "btn-primary-pup shadow" %>
   </div>
-
-  <button class="trigger">Click here to trigger the modal!</button>
-  <div class="modal">
-    <div class="modal-content">
-      <span class="close-button">&times;</span>
-      <h1>Hello, I am a modal!</h1>
-    </div>
-  </div>
-
-  <div class="space"></div>
-</div>
-
-<%= javascript_pack_tag 'litters-show-page' %>
 
