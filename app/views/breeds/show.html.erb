@@ -14,7 +14,7 @@
           <h4 class="py-2">Coats: <%= @breed.coats %></h4>
         </div>
         <div class="mt-4">
-          <a href="#" class="btn-primary-pup">Find Nearby</a>
+          <%= link_to "Find Nearby", { controller: "breeders", query: "#{@breed.name}" }, class: "btn-primary-pup" %>
         </div>
       </div>
   </div>
