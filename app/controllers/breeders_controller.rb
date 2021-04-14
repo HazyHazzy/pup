@@ -45,6 +45,7 @@ class BreedersController < ApplicationController
   def destroy
     @breeder = Breeder.find(params[:id])
     @breeder.destroy
+    redirect_to my_brand_path
   end
 
   def breeder_params
