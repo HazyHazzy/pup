@@ -1,6 +1,6 @@
 <div class="litter-cards">
   <% @breeder.litters.reverse_each do |litter|%>
-     <div class="card-litter">
+     <div class="card-litter draw-border">
           <%= cl_image_tag litter.photo.key, crop: :fill, class: 'show-img' %>
         <div class="card-litter-infos">
           <div>
