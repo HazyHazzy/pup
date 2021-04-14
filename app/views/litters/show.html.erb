@@ -31,14 +31,17 @@
                   <div id="parent-photo">
                     <%= cl_image_tag parent.photo.key, crop: :fill, class: 'show-img'%>
                   </div>
-                  <div id="parent-description">
-                    <h2>About <%= parent.name  %></h2>
-                    <p><%= parent.description %></p>
-                  </div>
-                  <div id="parent-info">
-                    <h4>Weight: <%= parent.weight %></h4>
-                    <h4>Coat: <%= parent.coat %></h4>
-                    <h4>Gender: <%= parent.gender %></h4>
+                  <div class="about-parent">
+                    <div id="parent-description">
+                      <h3>About <%= parent.name  %></h3>
+                      <!-- <p><%= parent.description %></p> -->
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie, ante eget vulputate malesuada, arcu lectus ultricies purus, ut commodo elit turpis eu nisi. Praesent placerat ut lorem non maximus. Morbi at vehicula neque. Fusce efficitur maximus purus ac tempor. Maecenas varius neque at leo hendrerit, sit amet blandit augue dapibus. Suspendisse laoreet sodales elit non consequat. Nullam neque velit, suscipit in nulla sit amet, rutrum fringilla ante. Nullam sit amet cursus mi. Nullam pulvinar volutpat sagittis. Vestibulum quis dui dignissim, tincidunt dolor sit amet, rutrum leo. Duis eget dignissim risus, ac consequat enim. Sed eu ante nec arcu gravida malesuada ut eget erat. Nunc sollicitudin euismod semper.</p>
+                    </div>
+                    <div id="parent-info">
+                      <h4>Weight: <%= parent.weight %></h4>
+                      <h4>Coat: <%= parent.coat %></h4>
+                      <h4>Gender: <%= parent.gender %></h4>
+                    </div>
                   </div>
                   <button type="button" class="btn btn-primary-pup" data-dismiss="modal">Close</button>
                 </div>
