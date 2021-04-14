@@ -24,10 +24,11 @@
   margin-bottom: 32px;
 }
 
-.breed-index-img:hover {
-  transform: scale(1.3);
-  transition: 0.5s;
-}
+// This code is to make the image enlarge when hover on it
+// .breed-index-img:hover {
+//   transform: scale(1.3);
+//   transition: 0.5s;
+// }
 
 .breed-name {
   color: white;
@@ -49,28 +50,21 @@
  justify-content: center;
 }
 
-// .breed-category:hover {
-//   transform: scale(1.05) translateZ(1);
+
+// This code is for making the title moving following a rectangular trace
+// .mark-parent {
+//   animation-name: title-move;
+//   animation-duration: 3s;
+//   position: relative;
 // }
 
-// .breed-cards:hover > .breed-category:not(:hover) {
-//   filter: brightness(0.5) saturate(1) contrast(1) blur(2px);
+// @keyframes title-move {
+//   0%   {left:0px; top:0px;}
+//   25%  {left:200px; top:0px;}
+//   50%  {left:200px; top:100px;}
+//   75%  {left:0px; top:100px;}
+//   100% {left:0px; top:0px;}
 // }
-
-
-.mark-parent {
-  animation-name: title-move;
-  animation-duration: 3s;
-  position: relative;
-}
-
-@keyframes title-move {
-  0%   {left:0px; top:0px;}
-  25%  {left:200px; top:0px;}
-  50%  {left:200px; top:100px;}
-  75%  {left:0px; top:100px;}
-  100% {left:0px; top:0px;}
-}
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
