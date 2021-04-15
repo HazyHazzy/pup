@@ -23,7 +23,7 @@ class BreedersController < ApplicationController
     @breeder.save
     # raise
     if @breeder.save
-      redirect_to breeder_path(@breeder)
+      redirect_to my_brand_path
       # raise
     else
       render :new
@@ -39,7 +39,7 @@ class BreedersController < ApplicationController
     @breeder = Breeder.find(params[:id])
     @breeder.update(breeder_params)
 
-    redirect_to breeder_path(@breeder)
+    redirect_to my_brand_path
   end
 
   def destroy
