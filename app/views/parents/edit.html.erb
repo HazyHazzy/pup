@@ -1,13 +1,17 @@
-<h1>Edit <%= @parent.name %> </h1>
+<div class="container">
+  <h1>Edit <%= @parent.name.capitalize() %> </h1>
 
-<%= simple_form_for [@breeder, @parent] do |f| %>
-    <%= f.input :name %>
-    <%= f.input :weight %>
-    <%= f.input :coat %>
-    <%= f.input :gender %>
-    <%= f.input :description %>
-    <%= f.input :breed_id, collection: @breed  %>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit %>
-<% end %>
+  <div class="form-group col-7">
+    <%= simple_form_for [@breeder, @parent] do |f| %>
+        <%= f.input :name %>
+        <%= f.input :weight %>
+        <%= f.input :coat %>
+        <%= f.input :gender %>
+        <%= f.input :description, as: :text %>
+        <%= f.input :breed_id, collection: @breed  %>
+        <%= f.input :photo, as: :file %>
+        <%= f.submit class: 'btn-primary-pup'%>
+    <% end %>
+  </div>
+</div>
 
