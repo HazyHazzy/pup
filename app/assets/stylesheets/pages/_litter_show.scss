@@ -15,23 +15,50 @@
   grid-gap: 32px;
 }
 
+.modal-body {
+  padding: 5%;
+}
+
 .show-img {
   max-width: 500px;
   max-height: auto;
 }
 
 #parent-photo {
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+
+#parent-photo .show-img {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 15px;
 }
 
 .about-parent {
-  margin-top: 30px;
+  margin-top: 1%;
   display: flex;
-  flex-grow: 4;
+  margin-bottom: 3%;
+}
+
+#parent-description {
+  padding-right: 5%;
 }
 
 #parent-description p {
   font-size: medium;
+}
+
+#parent-info {
+  padding-right: 18%;
+  padding-left: 5%;
+  display: flex;
+  align-items: center;
+  padding-bottom: 10%;
+  border-left: 5px solid $primary-color;
+}
+
+.parent-info-table-row {
+  display: table-cell;
 }

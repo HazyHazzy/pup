@@ -10,11 +10,16 @@
   </div>
   <div>
     <br>
+
+<!-- PARENTS -->
+
     <h2><span class="highlight-parent"><span class="highlight"></span>Parents</span></h2>
+
+    <!-- PARENTS CARDS -->
     <div class="row puppy-card d-flex justify-content-center">
       <div class="parent-card-litter">
         <% @parents.reverse_each do |parent|%>
-          <div class="card-parent" data-toggle="modal" data-target="#parent-<%= parent.id %>">
+          <div class="card-parent draw-border" data-toggle="modal" data-target="#parent-<%= parent.id %>">
               <%= cl_image_tag parent.photo.key, crop: :fill, class: 'show-img'%>
             <div class="card-parent-infos">
               <div>
@@ -23,6 +28,8 @@
               </div>
             </div>            
           </div>
+    
+    <!-- PARENTS MODAL -->
           <div class="modal fade" id="parent-<%= parent.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg">
               <div class="modal-content container">
@@ -31,16 +38,28 @@
                   <div id="parent-photo">
                     <%= cl_image_tag parent.photo.key, crop: :fill, class: 'show-img'%>
                   </div>
+                  <h4>About <%= parent.name  %></h4>
                   <div class="about-parent">
                     <div id="parent-description">
-                      <h3>About <%= parent.name  %></h3>
                       <!-- <p><%= parent.description %></p> -->
                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie, ante eget vulputate malesuada, arcu lectus ultricies purus, ut commodo elit turpis eu nisi. Praesent placerat ut lorem non maximus. Morbi at vehicula neque. Fusce efficitur maximus purus ac tempor. Maecenas varius neque at leo hendrerit, sit amet blandit augue dapibus. Suspendisse laoreet sodales elit non consequat. Nullam neque velit, suscipit in nulla sit amet, rutrum fringilla ante. Nullam sit amet cursus mi. Nullam pulvinar volutpat sagittis. Vestibulum quis dui dignissim, tincidunt dolor sit amet, rutrum leo. Duis eget dignissim risus, ac consequat enim. Sed eu ante nec arcu gravida malesuada ut eget erat. Nunc sollicitudin euismod semper.</p>
                     </div>
+                    
                     <div id="parent-info">
-                      <h4>Weight: <%= parent.weight %></h4>
-                      <h4>Coat: <%= parent.coat %></h4>
-                      <h4>Gender: <%= parent.gender %></h4>
+                      <div id="parent-info-table" style="display: table">
+                        <div style="display: table-row">
+                          <div class="parent-info-table-row"><h4>Gender:</h4></div>
+                          <div class="parent-info-table-row"><%= parent.gender %></div>
+                        </div>
+                        <div style="display: table-row">
+                          <div class="parent-info-table-row"><h4>Weight:</h4></div>
+                          <div class="parent-info-table-row"><%= parent.weight %></div>
+                        </div>
+                        <div style="display: table-row">
+                          <div class="parent-info-table-row"><h4>Coat:</h4></div>
+                          <div class="parent-info-table-row"><%= parent.coat %></div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <button type="button" class="btn btn-primary-pup" data-dismiss="modal">Close</button>
@@ -53,10 +72,65 @@
     </div>
 
     <br><br>
+  
+  <!-- PUPPIES -->
 
     <h2><span class="highlight-parent"><span class="highlight"></span>Puppies</span></h2>
+
+    <!-- PUPPIES CARDS -->
     <div class="row puppy-card">
-      <%= render 'puppies/puppies_card' %>
+      <div class="puppies-cards">
+        <% @litter.puppies.each do |puppy| %>
+          <div class="card-puppies draw-border" data-toggle="modal" data-target="#parent-<%= puppy.id %>">
+            <%= cl_image_tag puppy.photo.key, crop: :fill, class: 'show-img'%>
+            <div class="card-puppies-infos">
+              <div>
+                <h2><%= link_to puppy.name, puppy_path(puppy), class: "puppies-name" %></h2>
+                <p class="p-card"><%= puppy.gender %></p>
+              </div>
+              <p class="p-card"><%= puppy.coat %></p>
+            </div>
+          </div>
+    
+    <!-- PUPPIES MODAL -->
+            <div class="modal fade" id="parent-<%= puppy.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content container">
+                  <div class="modal-body">
+                    <h2><%= puppy.name %></h2>
+                    <div id="parent-photo">
+                      <%= cl_image_tag puppy.photo.key, crop: :fill, class: 'show-img'%>
+                    </div>
+                    <h4>About <%= puppy.name  %></h4>
+                    <div class="about-parent">
+                      <div id="parent-description">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie, ante eget vulputate malesuada, arcu lectus ultricies purus, ut commodo elit turpis eu nisi. Praesent placerat ut lorem non maximus. Morbi at vehicula neque. Fusce efficitur maximus purus ac tempor. Maecenas varius neque at leo hendrerit, sit amet blandit augue dapibus. Suspendisse laoreet sodales elit non consequat. Nullam neque velit, suscipit in nulla sit amet, rutrum fringilla ante. Nullam sit amet cursus mi. Nullam pulvinar volutpat sagittis. Vestibulum quis dui dignissim, tincidunt dolor sit amet, rutrum leo. Duis eget dignissim risus, ac consequat enim. Sed eu ante nec arcu gravida malesuada ut eget erat. Nunc sollicitudin euismod semper.</p>
+                      </div>
+                      
+                      <div id="parent-info">
+                        <div id="parent-info-table" style="display: table">
+                          <div style="display: table-row">
+                            <div class="parent-info-table-row"><h4>Gender:</h4></div>
+                            <div class="parent-info-table-row"><%= puppy.gender %></div>
+                          </div>
+                          <div style="display: table-row">
+                            <div class="parent-info-table-row"><h4>Weight:</h4></div>
+                            <div class="parent-info-table-row"><%= puppy.weight %></div>
+                          </div>
+                          <div style="display: table-row">
+                            <div class="parent-info-table-row"><h4>Coat:</h4></div>
+                            <div class="parent-info-table-row"><%= puppy.coat %></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <button type="button" class="btn btn-primary-pup" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        <% end %>
+      </div>
     </div>
 
     <br><br>
