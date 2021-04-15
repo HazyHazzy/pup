@@ -6,7 +6,7 @@
         <%= f.input :name %>
         <%= f.input :weight %>
         <%= f.input :coat %>
-        <%= f.input :gender %>
+        <%= f.input :gender, collection: ["Male", "Female"] %>
         <%= f.input :description, as: :text %>
         <%= f.input :breed_id, collection: @breed  %>
         <%= f.input :photo, as: :file %>
