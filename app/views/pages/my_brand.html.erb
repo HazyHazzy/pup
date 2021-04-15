@@ -27,7 +27,7 @@
           <div class="row">
             <div class="parent-cards">
               <% @breeder[0].parents.reverse_each do |parent|%>
-                <div class="card-parent">
+                <div class="card-parent draw-border">
                   <%= cl_image_tag parent.photo.key, crop: :fill, class: 'show-img'%>
                   <div class="card-parent-infos">
                     <div>
@@ -47,7 +47,7 @@
           <div class="row">
             <div class="litter-cards">
               <% @breeder[0].litters.reverse_each do |litter|%>
-                 <div class="card-litter">
+                 <div class="card-litter draw-border">
                     <img src="<%= image_path 'litter_pic.jpg' %>" />
                     <div class="card-litter-infos">
                       <div>
@@ -71,4 +71,5 @@
     <p>You don't have a brand page yet</p>
     <%= link_to "create my brand page", new_breeder_path, class: "btn btn-outline-dark" %>
   <% end %>
+  <div class="space"></div>
 </div>

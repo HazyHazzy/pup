@@ -1,6 +1,6 @@
 <div class="puppies-cards">
   <% @litter.puppies.each do |puppy| %>
-    <div class="card-puppies">
+    <div class="card-puppies draw-border">
       <%= cl_image_tag puppy.photo.key, crop: :fill, class: 'show-img'%>
       <div class="card-puppies-infos">
         <div>
