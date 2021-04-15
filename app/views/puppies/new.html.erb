@@ -1,11 +1,14 @@
-<h1>Create New Puppy</h1>
-
-<%= simple_form_for [@litter.breeder, @litter, @puppy] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :weight %>
-  <%= f.input :gender %>
-  <%= f.input :coat %>
-  <%= f.input :breed_id, collection: @breeds  %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit %>
-<% end %>
+<div class="container">
+  <h1>Create New Puppy</h1>
+  <div class="form-group col-7">
+    <%= simple_form_for [@litter.breeder, @litter, @puppy] do |f| %>
+      <%= f.input :name %>
+      <%= f.input :weight %>
+      <%= f.input :gender, collection: ["Male", "Female"] %>
+      <%= f.input :coat %>
+      <%= f.input :breed_id, collection: @breeds  %>
+      <%= f.input :photo, as: :file %>
+      <%= f.submit class: 'btn-primary-pup'%>
+    <% end %>
+  </div>
+</div>

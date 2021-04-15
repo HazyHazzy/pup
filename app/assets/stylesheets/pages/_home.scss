@@ -30,3 +30,12 @@
   top: 10px;
 }
 
+.avatar:hover {
+  transform: scale(1.3);
+  transition: 0.5s;
+}
+
+.navbar-brand:hover {
+  transform: scale(1.3);
+  transition: 0.5s;
+}

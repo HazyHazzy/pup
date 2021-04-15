@@ -1,9 +1,7 @@
 <div class="container">
-  <h1>Edit <%= @breeder.name %></h1>
+  <h1>Edit My Brand</h1>
 
   <%= render 'form', breeder: @breeder %>
   <hr>
-  <%= link_to breeders_path do %>
-    <i class="fa fa-history"></i> Back to all breeder
-  <% end %>
+  <%= link_to "See all breeders", breeders_path, class: "btn-secondary-pup" %>
 </div>
