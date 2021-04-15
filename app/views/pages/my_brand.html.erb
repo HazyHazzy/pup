@@ -62,9 +62,12 @@
       </div>
 
       <br>
-      <%= link_to "edit my brand page", edit_breeder_path(@breeder.ids), class: "btn btn-outline-dark" %>
-      <%= link_to "add parents", new_breeder_parent_path(@breeder.ids), class: "btn btn-outline-dark" %>
-      <%= link_to "add litters", new_breeder_litter_path(@breeder.ids), class: "btn btn-outline-dark" %>
+      <%= link_to "Edit my brand page", edit_breeder_path(@breeder.ids), class: "btn btn-outline-dark" %>
+      <%= link_to breeder_path(@breeder.ids), method: "delete", data: { confirm: "Delete My Brand?" }, :class => "btn btn-outline-dark" do %>
+        Delete My Brand page
+      <% end %>
+      <%= link_to "Add parents", new_breeder_parent_path(@breeder.ids), class: "btn btn-outline-dark" %>
+      <%= link_to "Add litters", new_breeder_litter_path(@breeder.ids), class: "btn btn-outline-dark" %>
 
     </div>
   <% else %>
