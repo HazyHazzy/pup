@@ -1,11 +1,14 @@
-<h1>Create new Litter for <%= @breeder.name %></h1>
+<div class="container">
+  <h1>Create new Litter for <%= @breeder.name %></h1>
 
-<%= simple_form_for [@breeder, @litter] do |f| %>
-    <%= f.input :name %>
-    <%= f.input :birth_date %>
-    <%= f.input :stud_id, collection: @studs  %>
-    <%= f.input :mom_id, collection: @moms  %>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit %>
-<% end %>
-
+  <div class="form-group col-7">
+    <%= simple_form_for [@breeder, @litter] do |f| %>
+        <%= f.input :name %>
+        <%= f.input :birth_date %>
+        <%= f.input :stud_id, collection: @studs  %>
+        <%= f.input :mom_id, collection: @moms  %>
+        <%= f.input :photo, as: :file %>
+        <%= f.submit class: 'btn-primary-pup'%>
+    <% end %>
+  </div>
+</div>
