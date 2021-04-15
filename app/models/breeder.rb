@@ -1,10 +1,10 @@
 class Breeder < ApplicationRecord
-  has_many :litters
-  has_many :puppies, through: :litters
-  has_many :parents
-  has_many :visitations
-  has_many :breed_breeders
-  has_many :breeds, through: :parents
+  has_many :litters, dependent: :destroy
+  has_many :puppies, through: :litters, dependent: :destroy
+  has_many :parents, dependent: :destroy
+  has_many :visitations, dependent: :destroy
+  has_many :breed_breeders, dependent: :destroy
+  has_many :breeds, through: :parents, dependent: :destroy
   has_one_attached :photo
   belongs_to :user
   validates :name, presence: true

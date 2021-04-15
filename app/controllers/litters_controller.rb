@@ -24,6 +24,8 @@ class LittersController < ApplicationController
 
     def edit
         @litter = Litter.find(params[:id])
+        @studs = Parent.where(gender: "Male")
+        @moms = Parent.where(gender: "Female")
     end
 
     def update
@@ -43,8 +45,7 @@ class LittersController < ApplicationController
 
     def show
         @litter = Litter.find(params[:id])
-        # raise
-        # @parents = Litter.Breeder.Litter.find()
+        @parents = @litter.breeder.parents
     end
 
     private
