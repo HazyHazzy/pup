@@ -45,8 +45,7 @@ class LittersController < ApplicationController
 
     def show
         @litter = Litter.find(params[:id])
-        # raise
-        # @parents = Litter.Breeder.Litter.find()
+        @parents = @litter.breeder.parents
     end
 
     private
