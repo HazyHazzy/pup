@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Create new Parent for <%= @breeder.name %></h1>
+  <h1>Create new Parent for <%= @breeder.name.capitalize() %></h1>
 
   <div class="form-group col-7">
     <%= simple_form_for [@breeder, @parent] do |f| %>
