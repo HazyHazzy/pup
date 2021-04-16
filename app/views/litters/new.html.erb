@@ -27,7 +27,7 @@
         <%= f.input :stud_id, collection: choose_stud(@studs) %>
         <%= f.input :mom_id, collection: choose_mom(@moms) %>
         <%= f.input :photo, as: :file %>
-        <%= f.submit %>
+        <%= f.submit class: 'btn-primary-pup'%>
     <% end %>
   </div>
 </div>
