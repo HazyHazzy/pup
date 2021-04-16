@@ -1,7 +1,7 @@
 <div class="breeder-cards">
   <% @breeders.reverse_each do |breeder|%>
       <div class="card-breeder draw-border">
-          <%= cl_image_tag breeder.photo.key, crop: :fill, class: 'show-img' %>
+          <%= cl_image_tag breeder.photo.key, crop: :fill, class: 'show-img' if breeder.photo.attached? %>
         <div class="card-breeder-infos">
           <div>
             <h2 class="hover-underline-animation"><%= link_to breeder.name, breeder_path(breeder.id), class: "breeder-name" %></h2>

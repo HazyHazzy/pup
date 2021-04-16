@@ -1,6 +1,6 @@
 <h1><%= @parent.name  %></h1>
 
-<%= cl_image_tag @parent.photo.key, class: 'breed-img'%>
+<%= cl_image_tag @parent.photo.key, class: 'breed-img' if @parent.photo.attached?%>
 
 <p> About <%= @parent.name  %></p>
 <p><%= @parent.description %></p>

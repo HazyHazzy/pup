@@ -1,7 +1,7 @@
 <div class="parent-cards">
   <% @breeder.parents.reverse_each do |parent|%>
     <div class="card-parent draw-border">
-        <%= cl_image_tag parent.photo.key, crop: :fill, class: 'show-img'%>
+        <%= cl_image_tag parent.photo.key, crop: :fill, class: 'show-img' if parent.photo.attached? %>
       <div class="card-parent-infos">
         <div>
           <h2><%= link_to parent.name, breeder_parent_path(@breeder.id, parent.id), class: "parent-name" %></h2>

@@ -20,7 +20,7 @@
       <div class="parent-card-litter">
         <% @parents.reverse_each do |parent|%>
           <div class="card-parent draw-border" data-toggle="modal" data-target="#parent-<%= parent.id %>">
-              <%= cl_image_tag parent.photo.key, crop: :fill, class: 'show-img'%>
+              <%= cl_image_tag parent.photo.key, crop: :fill, class: 'show-img' if parent.photo.attached?%>
             <div class="card-parent-infos">
               <div>
                 <h2><%= parent.name %></h2>
@@ -36,7 +36,7 @@
                 <div class="modal-body">
                   <h2><%= parent.name %></h2>
                   <div id="parent-photo">
-                    <%= cl_image_tag parent.photo.key, crop: :fill, class: 'show-img'%>
+                    <%= cl_image_tag parent.photo.key, crop: :fill, class: 'show-img' if parent.photo.attached?%>
                   </div>
                   <h4>About <%= parent.name  %></h4>
                   <div class="about-parent">
@@ -82,7 +82,7 @@
       <div class="puppies-cards">
         <% @litter.puppies.each do |puppy| %>
           <div class="card-puppies draw-border" data-toggle="modal" data-target="#parent-<%= puppy.id %>">
-            <%= cl_image_tag puppy.photo.key, crop: :fill, class: 'show-img'%>
+            <%= cl_image_tag puppy.photo.key, crop: :fill, class: 'show-img' if puppy.photo.attached? %>
             <div class="card-puppies-infos">
               <div>
                 <h2><%= link_to puppy.name, puppy_path(puppy), class: "puppies-name" %></h2>
@@ -99,7 +99,7 @@
                   <div class="modal-body">
                     <h2><%= puppy.name %></h2>
                     <div id="parent-photo">
-                      <%= cl_image_tag puppy.photo.key, crop: :fill, class: 'show-img'%>
+                      <%= cl_image_tag puppy.photo.key, crop: :fill, class: 'show-img' if puppy.photo.attached? %>
                     </div>
                     <h4>About <%= puppy.name  %></h4>
                     <div class="about-parent">
