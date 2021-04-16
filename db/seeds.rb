@@ -23,7 +23,7 @@ puts "Creating user"
 end
 
 def dog
-  url = 'https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1'
+  url = 'https://api.thedogapi.com/v1/images/search?size=small&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1'
   dog_serialized = open(url).read
   return dog = JSON.parse(dog_serialized)
   # All the information needed as follow
@@ -32,13 +32,13 @@ def dog
 end
 
 def dog_description_breed
-  url = 'https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1'
+  url = 'https://api.thedogapi.com/v1/images/search?size=small&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1'
   dog_serialized = open(url).read
   return dog_description = "This breed is #{dog[0]["breeds"][0]["bred_for"]}, #{dog[0]["breeds"][0]["breed_group"]}, #{dog[0]["breeds"][0]["temperament"]}"
 end
 
 def dog_description
-  url = 'https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1'
+  url = 'https://api.thedogapi.com/v1/images/search?size=small&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1'
   dog_serialized = open(url).read
   return dog_description = "#{dog[0]["breeds"][0]["bred_for"]}, #{dog[0]["breeds"][0]["breed_group"]}, #{dog[0]["breeds"][0]["temperament"]}"
 end
@@ -133,7 +133,7 @@ end
           name: Faker::Creature::Dog.name,
           coat: Faker::Creature::Dog.coat_length,
           gender: Faker::Creature::Dog.gender,
-          weight: rand(10..40),
+          weight: rand(5..10),
           litter_id: Litter.ids[0],
           breed_id: Breed.find(rand(1..Breed.ids.length)).id
           )
@@ -213,7 +213,7 @@ end
           name: Faker::Creature::Dog.name,
           coat: Faker::Creature::Dog.coat_length,
           gender: Faker::Creature::Dog.gender,
-          weight: rand(10..40),
+          weight: rand(5..10),
           litter_id: Litter.ids[1],
           breed_id: Breed.find(rand(1..Breed.ids.length)).id
           )
@@ -292,7 +292,7 @@ end
           name: Faker::Creature::Dog.name,
           coat: Faker::Creature::Dog.coat_length,
           gender: Faker::Creature::Dog.gender,
-          weight: rand(10..40),
+          weight: rand(5..10),
           litter_id: Litter.ids[2],
           breed_id: Breed.find(rand(1..Breed.ids.length)).id
           )
@@ -371,7 +371,7 @@ end
           name: Faker::Creature::Dog.name,
           coat: Faker::Creature::Dog.coat_length,
           gender: Faker::Creature::Dog.gender,
-          weight: rand(10..40),
+          weight: rand(5..10),
           litter_id: Litter.ids[3],
           breed_id: Breed.find(rand(1..Breed.ids.length)).id
           )
@@ -450,7 +450,7 @@ end
           name: Faker::Creature::Dog.name,
           coat: Faker::Creature::Dog.coat_length,
           gender: Faker::Creature::Dog.gender,
-          weight: rand(10..40),
+          weight: rand(5..10),
           litter_id: Litter.ids[4],
           breed_id: Breed.find(rand(1..Breed.ids.length)).id
           )
@@ -529,7 +529,7 @@ end
           name: Faker::Creature::Dog.name,
           coat: Faker::Creature::Dog.coat_length,
           gender: Faker::Creature::Dog.gender,
-          weight: rand(10..40),
+          weight: rand(15..10),
           litter_id: Litter.ids[5],
           breed_id: Breed.find(rand(1..Breed.ids.length)).id
           )
@@ -607,7 +607,7 @@ end
           name: Faker::Creature::Dog.name,
           coat: Faker::Creature::Dog.coat_length,
           gender: Faker::Creature::Dog.gender,
-          weight: rand(10..40),
+          weight: rand(5..10),
           litter_id: Litter.ids[6],
           breed_id: Breed.find(rand(1..Breed.ids.length)).id
           )
@@ -685,7 +685,7 @@ end
           name: Faker::Creature::Dog.name,
           coat: Faker::Creature::Dog.coat_length,
           gender: Faker::Creature::Dog.gender,
-          weight: rand(10..40),
+          weight: rand(5..10),
           litter_id: Litter.ids[7],
           breed_id: Breed.find(rand(1..Breed.ids.length)).id
           )
@@ -762,7 +762,7 @@ end
           name: Faker::Creature::Dog.name,
           coat: Faker::Creature::Dog.coat_length,
           gender: Faker::Creature::Dog.gender,
-          weight: rand(10..40),
+          weight: rand(5..10),
           litter_id: Litter.ids[8],
           breed_id: Breed.find(rand(1..Breed.ids.length)).id
           )
