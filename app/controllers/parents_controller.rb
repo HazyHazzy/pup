@@ -26,6 +26,7 @@ class ParentsController < ApplicationController
     @breeder = Breeder.find(params[:breeder_id])
     @parent = Parent.find(params[:id])
     @parent.breeder = @breeder
+    @breeds = Breed.all
   end
 
   def destroy

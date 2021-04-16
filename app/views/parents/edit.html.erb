@@ -8,7 +8,7 @@
         <%= f.input :coat %>
         <%= f.input :gender, collection: ["Male", "Female"] %>
         <%= f.input :description, as: :text %>
-        <%= f.input :breed_id, collection: @breed  %>
+        <%= f.input :breed_id, collection: @breeds %>
         <%= f.input :photo, as: :file %>
         <%= f.submit class: 'btn-primary-pup'%>
     <% end %>
