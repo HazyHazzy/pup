@@ -9,9 +9,6 @@
     <li class="nav-item">
       <%= link_to "Breeders", breeders_path , class: "nav-link" %>
     </li>
-    <li class="nav-item">
-      <%= link_to "About Us", '#' , class: "nav-link" %>
-    </li>
     <% unless action_name == "home" %>
     <div class="search-navbar">
     <%= form_tag breeders_path, method: :get do %>
@@ -36,9 +33,6 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
       <% if user_signed_in? %>
-        <li class="nav-item">
-          <%= link_to "Help", "#", class: "nav-link" %>
-        </li>
         <li class="nav-item">
           <%= link_to "My Brand", my_brand_path, class: "nav-link" %>
         </li>
