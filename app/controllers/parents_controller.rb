@@ -2,7 +2,7 @@ class ParentsController < ApplicationController
 
   def new
     @breeder = Breeder.find(params[:breeder_id])
-    @breed = Breed.all
+    @breeds = Breed.all
     @parent = Parent.new
   end
 
