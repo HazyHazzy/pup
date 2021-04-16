@@ -1,13 +1,15 @@
-<h1><%= @parent.name  %></h1>
+<div class="container">
+  <div class="pop shadow text-center">
+    <h2 style="margin-left: -520px;"><%= @parent.name %></h2>
+    <%= cl_image_tag @parent.photo.key, crop: :fill, class: 'show-img' if @parent.photo.attached? %>
 
-<%= cl_image_tag @parent.photo.key, class: 'breed-img'%>
+    <p> Gender: <%= @parent.gender  %></p>
+    <p> Weight: <%= @parent.weight  %></p>
+    <p> Coat: <%= @parent.coat  %></p>
 
-<p> About <%= @parent.name  %></p>
-<p><%= @parent.description %></p>
-<p> Gender: <%= @parent.gender  %></p>
-<p> Weight: <%= @parent.weight  %></p>
-<p> Coat: <%= @parent.coat  %></p>
-
-<%= link_to "Edit #{@parent.name} parent", edit_breeder_parent_path(@parent.breeder, @parent), class: "btn btn-dark popular" %>
-<%= link_to "Delete #{@parent.name} parent", breeder_parent_path(@parent.breeder, @parent), method: "delete", class: "btn btn-dark popular" %>
-<%= link_to "Back to #{@parent.breeder.name} breeder", breeder_path(@parent.breeder), class: "btn-secondary-pup" %>
+    <%= link_to "Edit #{@parent.name} parent", edit_breeder_parent_path(@parent.breeder, @parent), class: "btn btn-dark popular" %>
+    <%= link_to "Delete #{@parent.name} parent", breeder_parent_path(@parent.breeder, @parent), method: "delete", class: "btn btn-dark popular" %>
+    <%= link_to "Back to #{@parent.breeder.name} breeder", breeder_path(@parent.breeder), class: "btn-secondary-pup" %>
+  </div>
+  <div class="space"></div>
+</div>
