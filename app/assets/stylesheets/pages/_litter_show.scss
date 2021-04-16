@@ -53,12 +53,12 @@
 #parent-info {
   padding-right: 18%;
   padding-left: 5%;
-  display: flex;
-  align-items: center;
-  padding-bottom: 10%;
   border-left: 5px solid $primary-color;
 }
 
-.parent-info-table-row {
-  display: table-cell;
+.parent-info-text {
+  display: flex;
+  width: 125px;
+  justify-content: space-between;
+  margin-top: 10px;
 }
