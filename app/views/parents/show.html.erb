@@ -2,7 +2,7 @@
   <div class="pop shadow text-center">
     <h2 style="margin-left: -520px;"><%= @parent.name %></h2>
     <%= cl_image_tag @parent.photo.key, crop: :fill, class: 'show-img' if @parent.photo.attached? %>
-
+    
     <p> Gender: <%= @parent.gender  %></p>
     <p> Weight: <%= @parent.weight  %></p>
     <p> Coat: <%= @parent.coat  %></p>

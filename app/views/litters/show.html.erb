@@ -20,15 +20,15 @@
       <div class="parent-card-litter">
         <% @parents.reverse_each do |parent|%>
           <div class="card-parent draw-border" data-toggle="modal" data-target="#parent-<%= parent.id %>">
-              <%= cl_image_tag parent.photo.key, crop: :fill, class: 'show-img'%>
+              <%= cl_image_tag parent.photo.key, crop: :fill, class: 'show-img' if parent.photo.attached?%>
             <div class="card-parent-infos">
               <div>
                 <h2><%= parent.name %></h2>
                 <p class="p-card"><%= parent.description %></p>
               </div>
-            </div>            
+            </div>
           </div>
-    
+
     <!-- PARENTS MODAL -->
           <div class="modal fade" id="parent-<%= parent.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -36,7 +36,7 @@
                 <div class="modal-body">
                   <h2><%= parent.name %></h2>
                   <div id="parent-photo">
-                    <%= cl_image_tag parent.photo.key, crop: :fill, class: 'show-img'%>
+                    <%= cl_image_tag parent.photo.key, crop: :fill, class: 'show-img' if parent.photo.attached?%>
                   </div>
                   <h4>About <%= parent.name  %></h4>
                   <div class="about-parent">
@@ -60,7 +60,7 @@
     </div>
 
     <br><br>
-  
+
   <!-- PUPPIES -->
 
     <h2><span class="highlight-parent"><span class="highlight"></span>Puppies</span></h2>
@@ -70,7 +70,7 @@
       <div class="puppies-cards">
         <% @litter.puppies.each do |puppy| %>
           <div class="card-puppies draw-border" data-toggle="modal" data-target="#puppy-<%= puppy.id %>">
-            <%= cl_image_tag puppy.photo.key, crop: :fill, class: 'show-img'%>
+            <%= cl_image_tag puppy.photo.key, crop: :fill, class: 'show-img' if puppy.photo.attached? %>
             <div class="card-puppies-infos">
               <div>
                 <h2><%= puppy.name %></h2>
@@ -79,7 +79,7 @@
               <p class="p-card"><%= puppy.coat %></p>
             </div>
           </div>
-    
+
     <!-- PUPPIES MODAL -->
             <div class="modal fade" id="puppy-<%= puppy.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -87,7 +87,7 @@
                   <div class="modal-body">
                     <h2><%= puppy.name %></h2>
                     <div id="parent-photo">
-                      <%= cl_image_tag puppy.photo.key, crop: :fill, class: 'show-img'%>
+                      <%= cl_image_tag puppy.photo.key, crop: :fill, class: 'show-img' if puppy.photo.attached? %>
                     </div>
                     <h4>About <%= puppy.name  %></h4>
                     <div class="about-parent">
@@ -116,4 +116,3 @@
     <%= link_to "See all breeders", breeders_path, class: "btn-secondary-pup" %>
     <%= link_to "send visitation", new_breeder_visitation_path(@litter.breeder.id, litter_id: @litter.id), class: "btn-primary-pup shadow" %>
   </div>
-

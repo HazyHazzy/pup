@@ -1,7 +1,7 @@
 <div class="container">
   <div class="pop shadow text-center">
     <h2 style="margin-left: -520px;"><%= @puppy.name %></h2>
-    <%= cl_image_tag @puppy.photo.key, crop: :fill, class: 'show-img'%>
+    <%= cl_image_tag @puppy.photo.key, crop: :fill, class: 'show-img' if @puppy.photo.attached?%>
 
     <p>Gender: <%= @puppy.gender %></p>
     <p>Weight: <%= @puppy.weight %></p>
