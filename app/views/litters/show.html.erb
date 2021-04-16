@@ -100,6 +100,7 @@
                         <div class="parent-info-text"><h4>Coat:</h4><span><%= puppy.coat %></span></div>
                       </div>
                     </div>
+                    <%= link_to "send visitation", new_breeder_visitation_path(puppy.litter.breeder.id, litter_id: puppy.litter.id), class: "btn btn-primary-pup" %>
                     <button type="button" class="btn btn-primary-pup" data-dismiss="modal">Close</button>
                   </div>
                 </div>
