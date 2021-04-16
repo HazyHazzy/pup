@@ -4,7 +4,7 @@
     <%= cl_image_tag @puppy.photo.key, crop: :fill, class: 'show-img' if @puppy.photo.attached?%>
 
     <p>Gender: <%= @puppy.gender %></p>
-    <p>Weight: <%= @puppy.weight %></p>
+    <p>Weight: <%= @puppy.weight %> Kg</p>
     <p>Coat: <%= @puppy.coat %></p>
 
     <%= link_to "Edit #{@puppy.name} Puppy", edit_puppy_path(@puppy), class: "btn-secondary-pup" %>
