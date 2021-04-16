@@ -42,24 +42,12 @@
                   <div class="about-parent">
                     <div id="parent-description">
                       <!-- <p><%= parent.description %></p> -->
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie, ante eget vulputate malesuada, arcu lectus ultricies purus, ut commodo elit turpis eu nisi. Praesent placerat ut lorem non maximus. Morbi at vehicula neque. Fusce efficitur maximus purus ac tempor. Maecenas varius neque at leo hendrerit, sit amet blandit augue dapibus. Suspendisse laoreet sodales elit non consequat. Nullam neque velit, suscipit in nulla sit amet, rutrum fringilla ante. Nullam sit amet cursus mi. Nullam pulvinar volutpat sagittis. Vestibulum quis dui dignissim, tincidunt dolor sit amet, rutrum leo. Duis eget dignissim risus, ac consequat enim. Sed eu ante nec arcu gravida malesuada ut eget erat. Nunc sollicitudin euismod semper.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie, ante eget vulputate malesuada, arcu lectus ultricies purus, ut commodo elit turpis eu nisi. Praesent placerat ut lorem non maximus. Morbi at vehicula neque. Fusce efficitur maximus purus ac tempor. </p>
                     </div>
-                    
                     <div id="parent-info">
-                      <div id="parent-info-table" style="display: table">
-                        <div style="display: table-row">
-                          <div class="parent-info-table-row"><h4>Gender:</h4></div>
-                          <div class="parent-info-table-row"><%= parent.gender %></div>
-                        </div>
-                        <div style="display: table-row">
-                          <div class="parent-info-table-row"><h4>Weight:</h4></div>
-                          <div class="parent-info-table-row"><%= parent.weight %></div>
-                        </div>
-                        <div style="display: table-row">
-                          <div class="parent-info-table-row"><h4>Coat:</h4></div>
-                          <div class="parent-info-table-row"><%= parent.coat %></div>
-                        </div>
-                      </div>
+                      <div class="parent-info-text"><h4>Gender:</h4><span><%= parent.gender %></span></div>
+                      <div class="parent-info-text"><h4>Weight:</h4><span><%= parent.weight %></span></div>
+                      <div class="parent-info-text"><h4>Coat:</h4><span><%= parent.coat %></span></div>
                     </div>
                   </div>
                   <button type="button" class="btn btn-primary-pup" data-dismiss="modal">Close</button>
@@ -81,11 +69,11 @@
     <div class="row puppy-card">
       <div class="puppies-cards">
         <% @litter.puppies.each do |puppy| %>
-          <div class="card-puppies draw-border" data-toggle="modal" data-target="#parent-<%= puppy.id %>">
+          <div class="card-puppies draw-border" data-toggle="modal" data-target="#puppy-<%= puppy.id %>">
             <%= cl_image_tag puppy.photo.key, crop: :fill, class: 'show-img'%>
             <div class="card-puppies-infos">
               <div>
-                <h2><%= link_to puppy.name, puppy_path(puppy), class: "puppies-name" %></h2>
+                <h2><%= puppy.name %></h2>
                 <p class="p-card"><%= puppy.gender %></p>
               </div>
               <p class="p-card"><%= puppy.coat %></p>
@@ -93,7 +81,7 @@
           </div>
     
     <!-- PUPPIES MODAL -->
-            <div class="modal fade" id="parent-<%= puppy.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="puppy-<%= puppy.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content container">
                   <div class="modal-body">
@@ -104,24 +92,12 @@
                     <h4>About <%= puppy.name  %></h4>
                     <div class="about-parent">
                       <div id="parent-description">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie, ante eget vulputate malesuada, arcu lectus ultricies purus, ut commodo elit turpis eu nisi. Praesent placerat ut lorem non maximus. Morbi at vehicula neque. Fusce efficitur maximus purus ac tempor. Maecenas varius neque at leo hendrerit, sit amet blandit augue dapibus. Suspendisse laoreet sodales elit non consequat. Nullam neque velit, suscipit in nulla sit amet, rutrum fringilla ante. Nullam sit amet cursus mi. Nullam pulvinar volutpat sagittis. Vestibulum quis dui dignissim, tincidunt dolor sit amet, rutrum leo. Duis eget dignissim risus, ac consequat enim. Sed eu ante nec arcu gravida malesuada ut eget erat. Nunc sollicitudin euismod semper.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie, ante eget vulputate malesuada, arcu lectus ultricies purus, ut commodo elit turpis eu nisi. Praesent placerat ut lorem non maximus. Morbi at vehicula neque. Fusce efficitur maximus purus ac tempor. </p>
                       </div>
-                      
                       <div id="parent-info">
-                        <div id="parent-info-table" style="display: table">
-                          <div style="display: table-row">
-                            <div class="parent-info-table-row"><h4>Gender:</h4></div>
-                            <div class="parent-info-table-row"><%= puppy.gender %></div>
-                          </div>
-                          <div style="display: table-row">
-                            <div class="parent-info-table-row"><h4>Weight:</h4></div>
-                            <div class="parent-info-table-row"><%= puppy.weight %></div>
-                          </div>
-                          <div style="display: table-row">
-                            <div class="parent-info-table-row"><h4>Coat:</h4></div>
-                            <div class="parent-info-table-row"><%= puppy.coat %></div>
-                          </div>
-                        </div>
+                        <div class="parent-info-text"><h4>Gender:</h4><span><%= puppy.gender %></span></div>
+                        <div class="parent-info-text"><h4>Weight:</h4><span><%= puppy.weight %></span></div>
+                        <div class="parent-info-text"><h4>Coat:</h4><span><%= puppy.coat %></span></div>
                       </div>
                     </div>
                     <button type="button" class="btn btn-primary-pup" data-dismiss="modal">Close</button>
