@@ -66,7 +66,7 @@
 
 .visitation-decision {
   overflow: hidden;
-  height: 250px;
+  height: 260px;
   width: 300px;
   align-items: center;
   background-color: #F6CCFF;
@@ -79,22 +79,41 @@
 }
 
 .visitation-decision h2 {
-  margin-top: 8px;
-  margin-left: 15px;
+  margin-top: 15px;
+  margin-left: 25px;
 }
 
 .visitation-decision .btn-primary-pup {
-  margin-left: 15px;
+  margin-left: 25px;
 }
 
-.visitor-info {
-  width: 600px;
+.visitor-card {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  width: 560px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: $border-radius;
+}
+
+.visitor-card p {
+  width: 540px;
+  margin-left: 15px;
+  margin-bottom: 10px;
+}
+
+.visitor-card h2 {
+  width: 560px;
+  margin-top: 15px;
+  margin-left: 15px;
 }
 
 .visitation-edit {
   display: flex;
   justify-content: space-between;
   align-items: end;
+  margin-bottom: 30px;
 }
 
 .visitation-margin {
@@ -125,3 +144,6 @@
   margin-left: 20px;
 }
 
+.form-control.is-valid {
+  background-image: none;
+}
