@@ -119,3 +119,5 @@
     <%= link_to "Back to #{Breeder.find(@litter.breeder_id).name}' page", breeder_path(@litter.breeder_id), class: "btn-secondary-pup" %>
     <%= link_to "Send visitation", new_breeder_visitation_path(@litter.breeder.id, litter_id: @litter.id), class: "btn-primary-pup shadow" %>
   </div>
+  <div class="space"></div>
+</div>
