@@ -18,27 +18,27 @@
       <div>
         <div class="breed-info-card shadow">
           <div class="text-center">
-            <img src="<%= image_path 'Montreal_map.jpg' %>" class="info-map shadow"/>
+            <img src="<%= image_path 'Montreal_map.jpg' %>" class="info-map"/>
           </div>
           <ul class="list">
-            <li><i class="fas fa-map-marker-alt"></i> <%= @breeder.city %> </li>
-            <li><i class="fas fa-link"></i> <%= @breeder.website_url %> </li>
-            <li><i class="fas fa-paper-plane"></i> <%= @breeder.email %></li>
-            <li><i class="fas fa-phone-alt"></i> <%= @breeder.phone_number %></li>
+            <li class="mb-1"><i class="fas fa-map-marker-alt"></i> <%= @breeder.city %> </li>
+            <li class="mb-1"><i class="fas fa-link"></i> <%= @breeder.website_url %> </li>
+            <li class="mb-1"><i class="fas fa-paper-plane"></i> <%= @breeder.email %></li>
+            <li class="mb-1"><i class="fas fa-phone-alt"></i> <%= @breeder.phone_number %></li>
           </ul>
         </div>
       </div>
     </div>
 
     <div class="row-container">
-      <h3 style="margin-top: 24px;"><span class="highlight-parent-h3"><span class="highlight-h3"></span>Parents</span></h3>
+      <h3 style="margin-top: 24px; margin-bottom: 16px;"><span class="highlight-parent-h3"><span class="highlight-h3"></span>Parents</span></h3>
       <div class="row">
         <%= render 'parent_cards' %>
       </div>
     </div>
 
     <div class="row-container">
-      <h3 style="margin-top: 24px;"><span class="highlight-parent-h3"><span class="highlight-h3"></span>Litters</span></h3>
+      <h3 style="margin-top: 24px; margin-bottom: 16px;"><span class="highlight-parent-h3"><span class="highlight-h3"></span>Litters</span></h3>
       <div class="row">
         <%= render 'litter_cards' %>
       </div>
