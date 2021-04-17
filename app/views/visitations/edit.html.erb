@@ -35,7 +35,7 @@
     <div class="visitation-decision">
       <h2>Choose your decision</h2>
       <%= simple_form_for [@breeder, @visitation] do |v| %>
-        <div class="col-12">
+        <div class="col-10">
           <%= v.input :status, label: false, hint: "You can Approve, Reject or Pend", collection: %w[Pending Approve Reject] %>
         </div>
         <%= v.submit class: 'btn-primary-pup update-visitation' %>
