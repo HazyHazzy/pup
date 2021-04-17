@@ -48,7 +48,7 @@
             <div class="litter-cards">
               <% @breeder[0].litters.reverse_each do |litter|%>
                  <div class="card-litter draw-border">
-                    <img src="<%= image_path 'three_dalmatians' %>" />
+                    <img src="<%= image_path 'three_dalmatians.jpg' %>" />
                     <div class="card-litter-infos">
                       <div>
                         <h2><%= link_to litter.name, litter_path(litter.id), class: "litter-name" %></h2>
