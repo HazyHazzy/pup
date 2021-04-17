@@ -1,7 +1,7 @@
 <div class="container">
   <div class="d-flex flex-row">
     <div class="p-2">
-      <%= cl_image_tag @breed.photo.key, class: 'breed-img'%>
+      <%= cl_image_tag @breed.photo.key, class: 'breed-img' if @breed.photo.attached? %>
     </div>
       <div class="d-flex align-items-start flex-column ml-5">
         <div>
