@@ -17,8 +17,15 @@
       <% @my_visit.reverse_each do |visitation| %>
         <div class="card-brand">
           <div class="card-brand-infos">
-            <h2>
+            <h2 class="decision-info">
               <%= visitation.name.capitalize() %> request to visit your puppy <%= visitation.puppy_select %>
+              <div>
+                <% if visitation.status == "Approve" %>
+                  <img src="<%= image_path 'approved.png' %>" style="opacity: .9; height: 40px; width: 60px; object-fit: cover;" />
+                <% elsif visitation.status == "Reject" %>
+                  <img src="<%= image_path 'declined.png' %>" style="opacity: .9; height: 40px; width: 60px; object-fit: cover;" />
+                <% end %>
+              </div>
             </h2>
             <p class="insert-html">
               <%= link_to "look into details for this visitation", edit_breeder_visitation_path(visitation.breeder_id, visitation.id), class: "btn-primary-pup" %>
@@ -28,6 +35,7 @@
         </div>
       <% end %>
     </div>
+
   <% end %>
 
   <% if @my_visitations.blank? %>
