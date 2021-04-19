@@ -33,7 +33,7 @@
 
 .search-navbar form {
   display: flex;
-  padding-top:4px;
+  padding-top: 6px;
 
 }
 
@@ -48,10 +48,9 @@
   width: 400px;
   height: 30px;
   position: relative;
-  padding-top: 10px;
 }
 
 .search-navbar i {
-  transform: translateY(-10px);
+  transform: translateY(-5px);
   font-size:15px;
 }
