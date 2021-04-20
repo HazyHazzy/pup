@@ -13,7 +13,7 @@
       <h2>The Puppy request to visit: <%= @visitation.puppy_select %></h2>
       <div class="visitor-card">
         <h2 class="text-underline">The Visitor Info</h2>
-        <p><strong class="text-underline">Name:</strong> <%= @visitation.name %></p>
+        <p><strong class="text-underline">Name:</strong> <%= @visitation.name.capitalize() %></p>
         <p><strong class="text-underline">Home Address:</strong> <%= @visitation.home_address %></p>
         <p><strong class="text-underline">Email Address:</strong> <%= @visitation.email_address %></p>
         <p><strong class="text-underline">Contact Number:</strong> <%= @visitation.contact_number %></p>
