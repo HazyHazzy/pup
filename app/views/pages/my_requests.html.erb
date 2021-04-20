@@ -22,7 +22,7 @@
               <div>
                 <% if visitation.status == "Approve" %>
                   <img src="<%= image_path 'approved.png' %>" style="opacity: .9; height: 40px; width: 60px; object-fit: cover;" />
-                <% elsif visitation.status == "Reject" %>
+                <% elsif visitation.status == "Rejected" %>
                   <img src="<%= image_path 'declined.png' %>" style="opacity: .9; height: 40px; width: 60px; object-fit: cover;" />
                 <% end %>
               </div>
@@ -51,7 +51,7 @@
           <div>
             <% if visitation.status == "Approve" %>
               <h3><%= "Congratulations, your visitation request to #{visitation.breeder.name.capitalize()} got approved" %></h3>
-              <p><%= "You can contact the breeder through Email: #{visitation.breeder.email} Phone: #{visitation.breeder.phone_number}" %></p>
+              <p><%= "You can contact the breeder through Email: #{visitation.breeder.email}, Phone: #{visitation.breeder.phone_number}" %></p>
             <% else %>
               <h2>Visitation request to <%= visitation.breeder.name.capitalize() %> is <%= visitation.status %></h2>
             <% end %>
