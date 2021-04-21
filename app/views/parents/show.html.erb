@@ -1,17 +1,17 @@
 <div class="container">
   <div class="pop shadow text-center">
-    <h2 style="margin-left: -520px;"><%= @parent.name %></h2>
+    <h2 style="margin-left: -520px;"><%= @parent.name.capitalize() %></h2>
     <%= cl_image_tag @parent.photo.key, crop: :fill, class: 'show-img' if @parent.photo.attached? %>
 
     <p> Gender: <%= @parent.gender  %></p>
     <p> Weight: <%= @parent.weight  %> Kg</p>
-    <p> Coat: <%= @parent.coat  %></p>
+    <p> Coat: <%= @parent.coat.capitalize()  %></p>
 
     <% if Breeder.find(@parent.breeder_id).user_id == current_user.id.to_s %>
-      <%= link_to "Edit #{@parent.name} parent", edit_breeder_parent_path(@parent.breeder, @parent), class: "btn btn-dark popular" %>
-      <%= link_to "Delete #{@parent.name} parent", breeder_parent_path(@parent.breeder, @parent), method: "delete", class: "btn btn-dark popular" %>
+      <%= link_to "Edit #{@parent.name.capitalize()} parent", edit_breeder_parent_path(@parent.breeder, @parent), class: "btn btn-dark popular" %>
+      <%= link_to "Delete #{@parent.name.capitalize()} parent", breeder_parent_path(@parent.breeder, @parent), method: "delete", class: "btn btn-dark popular" %>
     <% end %>
-    <%= link_to "Back to #{@parent.breeder.name} breeder", breeder_path(@parent.breeder), class: "btn-secondary-pup" %>
+    <%= link_to "Back to #{@parent.breeder.name.capitalize()} breeder", breeder_path(@parent.breeder), class: "btn-secondary-pup" %>
   </div>
   <div class="space"></div>
 </div>
