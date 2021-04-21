@@ -5,7 +5,7 @@
             <%= cl_image_tag breeder.photo.key, crop: :fill, class: 'show-img' if breeder.photo.attached? %>
           <div class="card-breeder-infos">
             <div>
-              <h2 class="hover-underline-animation"><%= breeder.name %></h2>
+              <h2 class="hover-underline-animation" style="padding-bottom: 8px;"><%= breeder.name %></h2>
               <h5><i class="fas fa-map-marker-alt"></i> <%= breeder.city %> </h5>
               <p class="about-breeder"> <%= breeder.about_us %> </p>
             </div>

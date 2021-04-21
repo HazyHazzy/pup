@@ -11,7 +11,7 @@
 
   <br>
   <% if @my_visit.blank? %>
-    <%= link_to "No one send visitation, Polish your brand page?", my_brand_path, class: "btn-secondary-pup visitation-margin" %>
+    <%= link_to "No one send visitation, Polish your profile page?", my_brand_path, class: "btn-secondary-pup visitation-margin" %>
   <% else %>
     <div class="visitation-blur">
       <% @my_visit.reverse_each do |visitation| %>
@@ -44,10 +44,10 @@
   <% else %>
     <% @my_visitations.reverse_each do |visitation| %>
       <div class="card-visitation">
-        <div class="card-front">
+        <div class="card-front" style="border-radius: 8px;">
           <h2>Visitation request to <%= visitation.breeder.name.capitalize() %></h2>
         </div>
-        <div class="card-back">
+        <div class="card-back" style="border-radius: 8px;">
           <div>
             <% if visitation.status == "Approve" %>
               <h3><%= "Congratulations, your visitation request to #{visitation.breeder.name.capitalize()} got approved" %></h3>
