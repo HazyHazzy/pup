@@ -11,7 +11,7 @@
 
   <br>
   <% if @my_visit.blank? %>
-    <%= link_to "No one send visitation, Polish your brand page?", my_brand_path, class: "btn-secondary-pup visitation-margin" %>
+    <%= link_to "No one send visitation, Polish your profile page?", my_brand_path, class: "btn-secondary-pup visitation-margin" %>
   <% else %>
     <div class="visitation-blur">
       <% @my_visit.reverse_each do |visitation| %>
