@@ -1,7 +1,7 @@
 .card-product {
   overflow: hidden;
-  height: 310px;
-  width: 300px;
+  height: 300px;
+  width: 800px;
   background: white;
   box-shadow: 0 0 15px #d100ff;
   display: flex;
@@ -10,11 +10,6 @@
   margin-top: 80px;
   margin-bottom: 40px;
   border-radius: 10px;
-}
-
-.card-product:hover {
-  width: 800px;
-  transition: 1s;
 }
 
 .card-product img {
