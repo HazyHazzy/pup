@@ -1,10 +1,10 @@
-.card-product {
+.personal-cards {
   overflow: hidden;
-  height: 300px;
+  height: 400px;
   width: 800px;
   background: white;
   box-shadow: 0 0 15px #d100ff;
-  display: flex;
+  // display: flex;
   // align-items: center;
   margin-left: 80px;
   margin-top: 80px;
@@ -12,12 +12,28 @@
   border-radius: 10px;
 }
 
-.card-product img {
-  height: 100%;
-  width: 300px;
+.personal-information img {
+  height: 260px;
+  width: 250px;
   object-fit: cover;
+  padding-right: 20px;
 }
 
-.card-product .card-product-infos {
-  padding: 16px;
+.personal-information {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.personal-infos {
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+.personal-links-icons i {
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  margin-left: 5px;
+  color: black;
 }
