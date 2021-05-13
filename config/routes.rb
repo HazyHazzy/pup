@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   get 'my_brand', to: 'pages#my_brand', as: 'my_brand'
   resources :litters, only: [:show, :destroy, :edit, :update]
   resources :puppies, only: [:show, :destroy, :edit, :update]
+  get 'about_us', to: 'pages#about_us', as: 'about_us'
 end

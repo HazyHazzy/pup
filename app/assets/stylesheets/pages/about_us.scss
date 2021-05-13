@@ -1,0 +1,39 @@
+.personal-cards {
+  overflow: hidden;
+  height: 400px;
+  width: 800px;
+  background: white;
+  box-shadow: 0 0 15px #d100ff;
+  // display: flex;
+  // align-items: center;
+  margin-left: 80px;
+  margin-top: 80px;
+  margin-bottom: 40px;
+  border-radius: 10px;
+}
+
+.personal-information img {
+  height: 260px;
+  width: 250px;
+  object-fit: cover;
+  padding-right: 20px;
+}
+
+.personal-information {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.personal-infos {
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+.personal-links-icons i {
+  width: 50px;
+  height: 50px;
+  font-size: 25px;
+  margin-left: 10px;
+  color: black;
+}
