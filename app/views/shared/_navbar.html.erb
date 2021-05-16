@@ -9,9 +9,6 @@
     <li class="nav-item">
       <%= link_to "Breeders", breeders_path , class: "nav-link" %>
     </li>
-    <li class="nav-item">
-      <%= link_to "About Us", about_us_path , class: "nav-link" %>
-    </li>
     <% unless action_name == "home" %>
     <div class="search-navbar">
     <%= form_tag breeders_path, method: :get do %>
