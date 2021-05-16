@@ -1,4 +1,7 @@
 class BreedsController < ApplicationController
+
+  skip_before_action :authenticate_user!
+
   def index
     @breeds = Breed.all
   end

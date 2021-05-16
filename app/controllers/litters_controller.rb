@@ -1,4 +1,7 @@
 class LittersController < ApplicationController
+
+    skip_before_action :authenticate_user!, only: [:index, :show]
+
     def index
         @litters = Litter.all
     end
