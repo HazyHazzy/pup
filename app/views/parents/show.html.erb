@@ -7,10 +7,6 @@
     <p> Weight: <%= @parent.weight  %> Kg</p>
     <p> Coat: <%= @parent.coat.capitalize()  %></p>
 
-    <% if Breeder.find(@parent.breeder_id).user_id == current_user.id.to_s %>
-      <%= link_to "Edit #{@parent.name.capitalize()} parent", edit_breeder_parent_path(@parent.breeder, @parent), class: "btn btn-dark popular" %>
-      <%= link_to "Delete #{@parent.name.capitalize()} parent", breeder_parent_path(@parent.breeder, @parent), method: "delete", class: "btn btn-dark popular" %>
-    <% end %>
     <%= link_to "Back to #{@parent.breeder.name.capitalize()} breeder", breeder_path(@parent.breeder), class: "btn-secondary-pup" %>
   </div>
   <div class="space"></div>

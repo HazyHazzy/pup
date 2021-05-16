@@ -110,11 +110,6 @@
     </div>
 
     <br><br>
-    <% if Breeder.find(@litter.breeder_id).user_id == current_user.id.to_s %>
-      <%= link_to "Edit #{@litter.name.capitalize()} Litter", edit_litter_path(@litter), class: "btn-secondary-pup" %>
-      <%= link_to "Delete #{@litter.name.capitalize()} Litter", litter_path(@litter), method: "delete", class: "btn-secondary-pup" %>
-      <%= link_to "Create a puppy", new_breeder_litter_puppy_path(@litter.breeder_id, @litter.id), class: "btn-secondary-pup" %>
-    <% end %>
     <%= link_to "Back to #{Breeder.find(@litter.breeder_id).name.capitalize()}' page", breeder_path(@litter.breeder_id), class: "btn-secondary-pup" %>
     <%= link_to "Send visitation", new_breeder_visitation_path(@litter.breeder.id, litter_id: @litter.id), class: "btn-primary-pup shadow" %>
   </div>
