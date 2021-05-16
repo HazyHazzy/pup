@@ -13,7 +13,7 @@ class BreedersController < ApplicationController
 
   def show
     @breeder = Breeder.find(params[:id])
-    # raise
+    @parents = @breeder.parents
   end
 
   def new

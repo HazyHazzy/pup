@@ -30,10 +30,51 @@
       </div>
     </div>
 
+    <!-- PARENTS -->
     <div class="row-container">
-      <h3 style="margin-top: 24px; margin-bottom: 16px;"><span class="highlight-parent-h3"><span class="highlight-h3"></span>Parents</span></h3>
+      <h2><span class="highlight-parent"><span class="highlight"></span>Parents</span></h2>
+
+      <!-- PARENTS CARDS -->
       <div class="row">
-        <%= render 'parent_cards' %>
+        <div class="parent-cards">
+          <% @parents.reverse_each do |parent|%>
+            <div class="card-parent draw-border" data-toggle="modal" data-target="#parent-<%= parent.id %>">
+                <%= cl_image_tag parent.photo.key, crop: :fill, class: 'show-img' if parent.photo.attached?%>
+              <div class="card-parent-infos">
+                <div>
+                  <h2><%= parent.name.capitalize() %></h2>
+                  <p class="p-card"><%= parent.description %></p>
+                </div>
+              </div>
+            </div>
+
+    <!-- PARENTS MODAL -->
+            <div class="modal fade" id="parent-<%= parent.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content container" style="border-radius: 8px;">
+                  <div class="modal-body">
+                    <h2><%= parent.name.capitalize() %></h2>
+                    <div id="parent-photo">
+                      <%= cl_image_tag parent.photo.key, crop: :fill, class: 'show-img' if parent.photo.attached?%>
+                    </div>
+                    <h4>About <%= parent.name.capitalize()  %></h4>
+                    <div class="about-parent">
+                      <div id="parent-description">
+                        <p><%= parent.description %></p>
+                      </div>
+                      <div id="parent-info">
+                        <div class="parent-info-text"><h4>Gender:</h4><span><%= parent.gender %></span></div>
+                        <div class="parent-info-text"><h4>Weight:</h4><span><%= parent.weight %> Kg</span></div>
+                        <div class="parent-info-text"><h4>Coat:</h4><span><%= parent.coat.capitalize() %></span></div>
+                      </div>
+                    </div>
+                    <button type="button" class="btn btn-primary-pup" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
 
