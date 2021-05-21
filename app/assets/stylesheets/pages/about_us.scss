@@ -1,39 +1,82 @@
+.card-product-infos p {
+  font-size: 16px;
+  margin-top: 12px;
+}
+
 .personal-cards {
   overflow: hidden;
-  height: 400px;
-  width: 800px;
+  height: 525px;
+  width: 275px;
   background: white;
-  box-shadow: 0 0 15px #d100ff;
+  box-shadow: 0 0 15px rgba(209, 0, 255, 0.40);
   // display: flex;
-  // align-items: center;
-  margin-left: 80px;
-  margin-top: 80px;
-  margin-bottom: 40px;
-  border-radius: 10px;
+  align-items: center;
+  /*margin-left: 80px;*/
+  margin: 48px 8px;
+  border-radius: 8px;
 }
 
 .personal-information img {
-  height: 260px;
-  width: 250px;
+  height: 210px;
+  width: 200px;
   object-fit: cover;
-  padding-right: 20px;
+  /*padding-right: 20px;*/
+  border-radius: 8px;
+  margin-left: 12px;
 }
 
 .personal-information {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 10px;
+  align-items: center;
+
 }
 
 .personal-infos {
-  margin-top: 30px;
-  margin-left: 30px;
+  margin: 24px 12px;
+  margin-left: 12px;
 }
 
 .personal-links-icons i {
   width: 50px;
   height: 50px;
-  font-size: 25px;
-  margin-left: 10px;
+  font-size: 20px;
   color: black;
+  align-items: center;
 }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 12px;
+  margin-left: -12px;
+}
+
+@media(max-width: 1080px) {
+  .grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 12px;
+  }
+}
+
+@media(max-width: 992px) {
+  .grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 12px;
+  }
+}
+
+@media(max-width: 768px) {
+  .grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 12px;
+  margin-left: 54px;
+  }
+  .header-sec{
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+  }
+}
+
