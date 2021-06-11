@@ -19,3 +19,25 @@
   margin-top: 12px;
   text-size: 8px !important;
 }
+
+@media (max-width: 420px) {
+  .about-us-info {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+
+  .breed-info-card {
+    margin: auto;
+    margin-top: 20px;
+  }
+
+  .header-sec {
+    margin-top: 30px;
+  }
+
+  .parent-cards {
+    margin-left: 25px;
+  }
+}
