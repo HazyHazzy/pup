@@ -3,29 +3,24 @@
   <div class="top-section">
     <div>
       <h1 class="homepage-title">Find your<br><span class="mark-parent"><span class="marc"></span>Best</span> Friend</h1>
-
       <p>Connecting Dog Lovers with <br>Reputable Breeders in their area</p>
     </div>
-      <div>
-        <%= image_tag 'Homepage-img.png', class: "homepage-image" %>
-      </div>
+    <div id="homepage-image">
+      <%= image_tag 'Homepage-img.png', class: "homepage-image" %>
     </div>
-    <div class="search-homepage">
+  </div>
+  <div class="search-homepage">
     <%= form_tag breeders_path, method: :get do %>
-    <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-      placeholder: "Find a Breeder"
+      <%= text_field_tag :query,
+      params[:query],
+        class: "form-control",
+        placeholder: "Find a Breeder"
       %>
-    <%= button_tag(type: 'submit', class: "btn btn-primary-pup") do %>
-    <i class="fas fa-search"></i>
-  <% end %>
-      <!-- submit_tag "", class: "btn-primary-pup"
-      <i class="fas fa-search"></i> -->
+      <%= button_tag(type: 'submit', class: "btn btn-primary-pup") do %>
+        <i class="fas fa-search"></i>
       <% end %>
-    </div>
-
-
+    <% end %>
+  </div>
 
   <div class="middle-section">
     <h2>Our <span class="highlight-parent"><span class="highlight"></span>Mission</span></h2>
@@ -40,28 +35,21 @@
     at a time. </p>
   </div>
 
-
-
-  <div class="d-flex justify-content-around">
-    <div>
-      <img src="<%= image_path 'PuP-home-img.jpg' %>" style="opacity: .88; height: 330px; width: 500px; object-fit: cover; border-radius: 8px;"/>
-    </div>
-    <div style= "position: relative;">
+  <div class="bottom-section">
+    <img src="<%= image_path 'PuP-home-img.jpg' %>", class="homepage-pup-img">
+    <div class="bottom-paint">
       <svg width="578" height="390" viewBox="0 0 578 390" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M529.274 63.6489C567.137 77.4078 574.538 136.026 573.506 163.616C576.897 220.228 581.645 336.963 573.506 351.009C563.333 368.566 232.477 405.471 121.013 382.898C9.5479 360.325 33.8754 265.732 4.2399 205.896C-25.3956 146.059 107.743 148.925 173.206 123.486C238.67 98.0461 191.341 34.6263 243.977 6.67854C296.213 -21.0566 479.134 45.4256 528.17 63.2477L529.274 63.6489Z" fill="#7000BC" fill-opacity="0.03"/>
+        <path d="M529.274 63.6489C567.137 77.4078 574.538 136.026 573.506 163.616C576.897 220.228 581.645 336.963 573.506 351.009C563.333 368.566 232.477 405.471 121.013 382.898C9.5479 360.325 33.8754 265.732 4.2399 205.896C-25.3956 146.059 107.743 148.925 173.206 123.486C238.67 98.0461 191.341 34.6263 243.977 6.67854C296.213 -21.0566 479.134 45.4256 528.17 63.2477L529.274 63.6489Z" fill="#7000BC" fill-opacity="0.03"/>
       </svg>
-
-      <%= image_path '' %>
-      <div class="bottom-section">
+      <div class="bottom-text">
         <h2>Only <span class="highlight-parent"><span class="highlight"></span>Verified</span><br>Breeders</h2>
-          <p>Finding a dog shouldn’t be stressful. With <br>
+        <p>Finding a dog shouldn’t be stressful. With <br>
              PuP’s list of verified breeders you have a peice
              <br>of mind when welcoming a new family member
-          </p>
-          <%= link_to "Search for Breeders →", breeders_path , class: "h5 hover-underline-animation" %>
-
+        </p>
+        <%= link_to "Search for Breeders →", breeders_path , class: "h5 hover-underline-animation" %>
       </div>
     </div>
-  </div>
+  </div>  
   <div class="space"></div>
 </div>
