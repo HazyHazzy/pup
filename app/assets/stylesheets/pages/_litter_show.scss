@@ -5,8 +5,8 @@
 }
 
 .puppy-card {
- display: flex;
- justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .parent-card-litter {
@@ -61,4 +61,23 @@
   width: 125px;
   justify-content: space-between;
   margin-top: 10px;
+}
+
+@media (max-width: 420px) {
+  .parent-card-litter {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #send-visitation-button {
+    margin-top: 10px;
+  }
+
+  #parent-show-img-litter {
+    max-width: 80%;
+  }
+
+  #puppies-show-img {
+    max-width: 80%;
+  }
 }

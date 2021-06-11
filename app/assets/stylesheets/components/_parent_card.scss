@@ -1,5 +1,5 @@
 .parent-cards {
-  display:grid;
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 24px;
 }
@@ -7,7 +7,7 @@
 .card-parent {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   width: 330px;
   border-radius: $border-radius;
 }
@@ -26,10 +26,9 @@
 
 .card-parent p {
   font-size: 14px;
-  opacity: .7;
+  opacity: 0.7;
   margin: 0;
 }
-
 
 .card-parent .card-parent-infos {
   padding: 16px;
@@ -54,26 +53,17 @@
   color: $font-color;
 }
 
-@media(max-width: 992px) {
+@media (max-width: 992px) {
   .parent-cards {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-@media(max-width: 768px) {
+@media (max-width: 768px) {
   .parent-cards {
     grid-template-columns: 1fr;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
