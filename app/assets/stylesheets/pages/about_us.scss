@@ -8,7 +8,7 @@
   height: 525px;
   width: 275px;
   background: white;
-  box-shadow: 0 0 15px rgba(209, 0, 255, 0.40);
+  box-shadow: 0 0 15px rgba(209, 0, 255, 0.4);
   // display: flex;
   align-items: center;
   /*margin-left: 80px;*/
@@ -50,36 +50,41 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 12px;
-  margin-left: -12px;
 }
 
-@media(max-width: 1080px) {
+@media (max-width: 1080px) {
   .grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 12px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 12px;
   }
 }
 
-@media(max-width: 992px) {
+@media (max-width: 992px) {
   .grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 12px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 12px;
   }
 }
 
-@media(max-width: 768px) {
+@media (max-width: 768px) {
   .grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 12px;
-  margin-left: 54px;
+    display: flex;
+    flex-wrap: wrap;
   }
-  .header-sec{
+  .header-sec {
     display: grid;
     grid-template-columns: 1fr;
     align-items: center;
   }
-}
 
+  #about-us-hero-img {
+    max-width: 100%;
+  }
+
+  .personal-cards {
+    width: 100%;
+    margin: 15px auto;
+  }
+}
