@@ -1,0 +1,10 @@
+@media (max-width: 420px) {
+  .header-sec {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .header-sec .header-img img {
+    max-width: 100%;
+  }
+}

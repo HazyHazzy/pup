@@ -36,7 +36,7 @@
                 <div class="modal-body">
                   <h2><%= parent.name.capitalize() %></h2>
                   <div id="parent-photo">
-                    <%= cl_image_tag parent.photo.key, crop: :fill, class: 'show-img' if parent.photo.attached?%>
+                    <%= cl_image_tag parent.photo.key, crop: :fill, class: 'show-img', id: "parent-show-img-litter" if parent.photo.attached?%>
                   </div>
                   <h4>About <%= parent.name.capitalize()  %></h4>
                   <div class="about-parent">
@@ -86,7 +86,7 @@
                   <div class="modal-body">
                     <h2><%= puppy.name %></h2>
                     <div id="parent-photo">
-                      <%= cl_image_tag puppy.photo.key, crop: :fill, class: 'show-img' if puppy.photo.attached? %>
+                      <%= cl_image_tag puppy.photo.key, crop: :fill, class: 'show-img', id: "puppies-show-img" if puppy.photo.attached? %>
                     </div>
                     <h4>About <%= puppy.name  %></h4>
                     <div class="about-parent">
@@ -111,7 +111,7 @@
 
     <br><br>
     <%= link_to "Back to #{Breeder.find(@litter.breeder_id).name.capitalize()}' page", breeder_path(@litter.breeder_id), class: "btn-secondary-pup" %>
-    <%= link_to "Send visitation", new_breeder_visitation_path(@litter.breeder.id, litter_id: @litter.id), class: "btn-primary-pup shadow" %>
+    <%= link_to "Send visitation", new_breeder_visitation_path(@litter.breeder.id, litter_id: @litter.id), id: "send-visitation-button", class: "btn-primary-pup shadow" %>
   </div>
   <div class="space"></div>
 </div>

@@ -1,6 +1,5 @@
 //Homepage Styling
 
-
 .search-homepage {
   margin-top: -50px;
   margin-bottom: 100px;
@@ -8,14 +7,12 @@
 
 .search-homepage form {
   display: flex;
-
 }
 
 .search-homepage .btn-primary-pup {
-  width:80px;
+  width: 80px;
   transform: translateX(-50px);
   height: 48px;
-
 }
 
 .search-homepage .form-control {
@@ -28,29 +25,27 @@
 
 .search-navbar {
   margin-top: 0px;
-  margin-bottom:0px;
+  margin-bottom: 0px;
 }
 
 .search-navbar form {
   display: flex;
   padding-top: 6px;
-
 }
 
 .search-navbar .btn-primary-pup {
-  width:52px;
+  width: 52px;
   transform: translateX(-40px);
   height: 30px;
-
 }
 
 .search-navbar .form-control {
-  width: 400px;
+  width: 300px;
   height: 30px;
   position: relative;
 }
 
 .search-navbar i {
   transform: translateY(-5px);
-  font-size:15px;
+  font-size: 15px;
 }

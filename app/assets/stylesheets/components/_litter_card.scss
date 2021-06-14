@@ -3,16 +3,15 @@
 }
 
 .litter-cards {
-  display:grid;
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 32px;
-  margin-left: 0;
 }
 
 .card-litter {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   width: 330px;
   border-radius: $border-radius;
 }
@@ -31,10 +30,9 @@
 
 .card-litter p {
   font-size: 14px;
-  opacity: .7;
+  opacity: 0.7;
   margin: 0;
 }
-
 
 .card-litter .card-litter-infos {
   padding: 16px;
@@ -57,4 +55,10 @@
 
 .litter-name:hover {
   color: $font-color;
+}
+
+@media (max-width: 420px) {
+  .litter-cards {
+    margin-left: 15px;
+  }
 }
