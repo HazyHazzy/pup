@@ -23,8 +23,8 @@ puts "Creating user"
 end
 
 def dog
-  url = 'https://api.thedogapi.com/v1/images/search?size=small&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1'
-  dog_serialized = open(url).read
+  url = 'https://api.thedogapi.com/v1/images/search?api_key=live_9DMY25o1N3Afdxb6TjjteCs3JJXyDOucqufzJyc27mMOX6DScAm8ZjnM9rvN4448?size=small&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1?'
+  dog_serialized = URI.open(url).read
   return dog = JSON.parse(dog_serialized)
   # All the information needed as follow
   # dog_name = dog[0]["breeds"][0]["name"]
@@ -32,14 +32,14 @@ def dog
 end
 
 def dog_description_breed
-  url = 'https://api.thedogapi.com/v1/images/search?size=small&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1'
-  dog_serialized = open(url).read
+  url = 'https://api.thedogapi.com/v1/images/search?api_key=live_9DMY25o1N3Afdxb6TjjteCs3JJXyDOucqufzJyc27mMOX6DScAm8ZjnM9rvN4448?size=small&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1'
+  dog_serialized = URI.open(url).read
   return dog_description = "This breed is #{dog[0]["breeds"][0]["bred_for"]}, #{dog[0]["breeds"][0]["breed_group"]}, #{dog[0]["breeds"][0]["temperament"]}"
 end
 
 def dog_description
-  url = 'https://api.thedogapi.com/v1/images/search?size=small&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1'
-  dog_serialized = open(url).read
+  url = 'https://api.thedogapi.com/v1/images/search?api_key=live_9DMY25o1N3Afdxb6TjjteCs3JJXyDOucqufzJyc27mMOX6DScAm8ZjnM9rvN4448?size=small&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1'
+  dog_serialized = URI.open(url).read
   return dog_description = "#{dog[0]["breeds"][0]["bred_for"]}, #{dog[0]["breeds"][0]["breed_group"]}, #{dog[0]["breeds"][0]["temperament"]}"
 end
 
